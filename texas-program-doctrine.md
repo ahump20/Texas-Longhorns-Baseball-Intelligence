@@ -26,7 +26,7 @@ UFCU Disch-Falk Field is one of the best venues in the sport. 7,273 capacity, fi
 
 ## SEC-Era Recalibration
 
-Texas joined the SEC in 2024. This changes three things and leaves two things alone.
+Texas joined the SEC in 2024. This changes three things and leaves three things alone.
 
 **What changes:**
 
