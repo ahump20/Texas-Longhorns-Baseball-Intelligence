@@ -12,9 +12,19 @@ UFCU Disch-Falk Field is one of the best venues in the sport. 7,273 capacity, fi
 
 **Augie Garrido (1997-2016):** Two national titles (2002, 2005). Program identity builder. Garrido's Texas was mental toughness, competitive fire, and the belief that Texas should be the standard in college baseball. His decline years (2012-2016) created a development debt the program spent years repaying.
 
-**David Pierce (2017-present):** Rebuilt through recruiting and player development. Pierce's fingerprint: pitching depth, defensive positioning, competitive at-bats. Took Texas to the 2022 College World Series. The program has stabilized but the championship standard remains the measuring stick — CWS appearances are expected, not celebrated as endpoints.
+**David Pierce (2017-2024):** Rebuilt through recruiting and player development. Pierce's fingerprint: pitching depth, defensive positioning, competitive at-bats. Took Texas to the 2022 College World Series. The program stabilized during his tenure but the championship standard remained the measuring stick — CWS appearances were expected, not celebrated as endpoints.
 
-**Pierce-era evaluation lens:** Judge the program by draft output, development trajectory of recruited classes, and postseason advancement — not regular-season record alone. A 40-win season that ends in regionals is not the same as a 35-win season that reaches Omaha.
+**Pierce-era evaluation lens (retrospective):** His tenure is judged by draft output, development trajectory of recruited classes, and postseason advancement — not regular-season record alone. A 40-win season that ended in regionals was not the same as a 35-win season that reached Omaha. Pierce left a program with a solid foundation but without a title in eight seasons.
+
+**Jim Schlossnagle (2025-present):** Arrived from Texas A&M (2021-2024), where he made two CWS appearances. Previously built TCU into a national power with five CWS appearances. Prior to TCU, head coach at UNLV. Schlossnagle represents proven championship infrastructure being imported directly into the Texas program.
+
+**2025 first season:** 44-14 overall record. SEC regular season title. Named SEC Coach of the Year. Immediate validation of the hire — the program responded to a more demanding competitive standard.
+
+**2026 early returns:** 12-0 start through early March. Career milestone reached: 1,000+ Division I wins (1,002-469 overall career record). The pace of transformation has been faster than any realistic projection.
+
+**Schlossnagle philosophy:** Pitching wins championships — build the deepest staff in the SEC. The transfer portal is a weapon: identify specific roster needs and fill them with proven, experienced talent. Compete for Omaha every year — not in five-year plans, now. Mental toughness through relentless internal competition for playing time. Recruit the best arms in Texas and supplement nationally through the portal.
+
+**Schlossnagle-era evaluation lens:** Judge the program by speed of transformation, portal acquisition quality relative to positional need, and whether the championship standard moves from aspiration to executable reality. The CWS run history at TCU (5 appearances) and Texas A&M (2 appearances) is the baseline expectation, not an aspirational ceiling.
 
 ## Roster Construction
 
@@ -78,6 +88,6 @@ Evaluate the lineup by: K/BB ratio, two-strike approach quality, RISP performanc
 
 ## Pitching and Defensive Identity
 
-Pierce-era Texas leans on pitching depth — a Friday starter capable of going deep, a Saturday arm who competes, and enough bullpen pieces to cover the back end. The program values command over pure stuff, though the best Texas arms have both.
+Schlossnagle-era Texas is built on pitching depth — a Friday starter capable of going deep, a Saturday arm who competes, and enough bullpen pieces to cover the back end. The program values command over pure stuff, though the best Texas arms have both. Schlossnagle's emphasis on the deepest staff in the SEC elevates this from a preference to a non-negotiable program identity.
 
 Defensive positioning and up-the-middle stability (C, SS, CF) matter more than corner athleticism. An elite defensive middle infield changes the pitching staff's effectiveness.
