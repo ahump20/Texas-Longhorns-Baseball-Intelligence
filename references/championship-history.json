@@ -1,0 +1,63 @@
+{
+  "championships": [
+    {
+      "year": 1949,
+      "coach": "Bibb Falk",
+      "record": "25-7",
+      "conference": "Southwest Conference",
+      "keyPlayers": ["Tom Hamilton"],
+      "notes": "First national championship in program history."
+    },
+    {
+      "year": 1950,
+      "coach": "Bibb Falk",
+      "record": "27-6",
+      "conference": "Southwest Conference",
+      "keyPlayers": ["Murray Wall"],
+      "notes": "Back-to-back titles established Texas as a national power."
+    },
+    {
+      "year": 1975,
+      "coach": "Cliff Gustafson",
+      "record": "59-6",
+      "conference": "Southwest Conference",
+      "keyPlayers": ["Keith Moreland", "Rick Bradley"],
+      "notes": "59-6 record set the standard for dominance."
+    },
+    {
+      "year": 1983,
+      "coach": "Cliff Gustafson",
+      "record": "66-14",
+      "conference": "Southwest Conference",
+      "keyPlayers": ["Calvin Schiraldi", "Roger Clemens", "Spike Owen"],
+      "notes": "Featured future MLB Hall of Famer Roger Clemens."
+    },
+    {
+      "year": 2002,
+      "coach": "Augie Garrido",
+      "record": "57-15",
+      "conference": "Big 12",
+      "keyPlayers": ["Huston Street", "Drew Stubbs"],
+      "notes": "Garrido's first title at Texas, the program's 5th overall."
+    },
+    {
+      "year": 2005,
+      "coach": "Augie Garrido",
+      "record": "56-16",
+      "conference": "Big 12",
+      "keyPlayers": ["David Maroul", "Drew Stubbs", "Kyle McCulloch"],
+      "notes": "6th national championship cemented Texas's elite status."
+    }
+  ],
+  "programStandard": {
+    "totalChampionships": 6,
+    "lastChampionship": 2005,
+    "expectation": "Every season is measured against the championship standard. Any deviation from elite performance must be identified and corrected.",
+    "benchmarkMetrics": {
+      "minimumWins": 40,
+      "minimumConferenceWinPercentage": 0.600,
+      "postseasonExpectation": "College World Series appearance",
+      "rpiTarget": 15
+    }
+  }
+}

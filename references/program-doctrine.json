@@ -1,0 +1,48 @@
+{
+  "program": "Texas Longhorns Baseball",
+  "university": "The University of Texas at Austin",
+  "nationalChampionships": [
+    { "year": 1949, "coach": "Bibb Falk" },
+    { "year": 1950, "coach": "Bibb Falk" },
+    { "year": 1975, "coach": "Cliff Gustafson" },
+    { "year": 1983, "coach": "Cliff Gustafson" },
+    { "year": 2002, "coach": "Augie Garrido" },
+    { "year": 2005, "coach": "Augie Garrido" }
+  ],
+  "totalChampionships": 6,
+  "collegeWorldSeriesAppearances": 38,
+  "allTimeWins": 3600,
+  "conferenceTitles": 88,
+  "doctrineStandards": {
+    "pitching": {
+      "eraThreshold": 3.50,
+      "strikeoutToWalkRatio": 2.5,
+      "description": "Championship-caliber pitching demands an ERA under 3.50 and a K/BB ratio above 2.5."
+    },
+    "hitting": {
+      "teamBattingAverage": 0.280,
+      "onBasePercentage": 0.370,
+      "sluggingPercentage": 0.440,
+      "description": "Offensive production must sustain a .280+ team average with power-speed balance."
+    },
+    "fielding": {
+      "fieldingPercentage": 0.975,
+      "description": "Defensive excellence demands a .975+ fielding percentage."
+    },
+    "baserunning": {
+      "stolenBaseSuccessRate": 0.780,
+      "description": "Aggressive but disciplined baserunning with 78%+ success rate."
+    }
+  },
+  "coachingPhilosophy": {
+    "identity": "Pitching and defense win championships. Offense must be disciplined and situational.",
+    "recruiting": "Prioritize Texas high school talent, supplement with elite national and international players.",
+    "development": "Build depth through player development. Every roster spot must earn its place.",
+    "competition": "Schedule and compete against the best. Championship teams are forged in difficult environments."
+  },
+  "conferenceHistory": {
+    "southwestConference": { "years": "1915-1996", "era": "founding" },
+    "big12": { "years": "1996-2024", "era": "expansion" },
+    "sec": { "years": "2024-present", "era": "current" }
+  }
+}
