@@ -1,0 +1,20 @@
+{
+  "youtube": {
+    "channels": [
+      { "name": "Texas Longhorns", "id": "UCdRb0vVGFJPGMjRNrmx5-Jw", "type": "official" },
+      { "name": "SEC Network", "id": "UCLScsKKiCaEbwxBmHmFBdxA", "type": "conference" },
+      { "name": "D1Baseball", "id": "UCCa-m8S9BaLKdJhPk9ptXjQ", "type": "media" }
+    ],
+    "searchTerms": ["Texas Longhorns baseball", "Texas baseball SEC", "UFCU Disch-Falk"]
+  },
+  "rss": [
+    { "name": "Texas Sports", "url": "https://texassports.com/rss.aspx", "filter": "baseball" },
+    { "name": "D1Baseball", "url": "https://d1baseball.com/feed/", "filter": "texas" },
+    { "name": "Baseball America", "url": "https://www.baseballamerica.com/feed/", "filter": "texas longhorns" }
+  ],
+  "social": {
+    "twitter": ["@TexasBaseball", "@TexasSports", "@D1Baseball", "@BaseballAmerica", "@SECNetwork"],
+    "instagram": ["texasbaseball", "texassports"],
+    "tiktok": ["texaslonghorns"]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "program": "Texas Longhorns Baseball",
+  "calibrationEra": "Big 12 (1996-2023)",
+  "note": "SEC competition may compress expected ranges. Use cbb_conference_strength to adjust.",
+  "baselines": [
+    { "metric": "Team ERA", "expectedRange": [3.50, 4.20], "redFlagBelow": 4.50, "eliteAbove": 3.20 },
+    { "metric": "Team OPS", "expectedRange": [0.750, 0.830], "redFlagBelow": 0.700, "eliteAbove": 0.850 },
+    { "metric": "BB% (pitching)", "expectedRange": [0.08, 0.11], "redFlagAbove": 0.13, "eliteBelow": 0.07 },
+    { "metric": "K% (pitching)", "expectedRange": [0.22, 0.28], "redFlagBelow": 0.18, "eliteAbove": 0.30 },
+    { "metric": "Run diff/game", "expectedRange": [1.5, 2.5], "redFlagBelow": 0.5, "eliteAbove": 3.0 },
+    { "metric": "Fielding %", "expectedRange": [0.970, 0.978], "redFlagBelow": 0.965, "eliteAbove": 0.980 }
+  ]
+}

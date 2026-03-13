@@ -1,0 +1,24 @@
+{
+  "program": "Texas Longhorns Baseball",
+  "venue": "UFCU Disch-Falk Field",
+  "venueCapacity": 7273,
+  "conference": "SEC",
+  "conferenceJoinYear": 2024,
+  "nationalTitles": 6,
+  "titleYears": [1949, 1950, 1975, 1983, 2002, 2005],
+  "cwsAppearances": 38,
+  "coachingEras": [
+    { "coach": "Billy Disch", "era": "1911-1939", "titles": 0 },
+    { "coach": "Bibb Falk", "era": "1940-1967", "titles": 2, "record": "463-176-2" },
+    { "coach": "Cliff Gustafson", "era": "1968-1996", "titles": 2, "record": "1161-384-1" },
+    { "coach": "Augie Garrido", "era": "1997-2016", "titles": 2, "record": "827-387" },
+    { "coach": "David Pierce", "era": "2017-2024", "titles": 0, "record": "250-134" },
+    { "coach": "Jim Schlossnagle", "era": "2025-present", "titles": 0, "record": "56-14", "careerRecord": "1002-469" }
+  ],
+  "conferenceMemberships": [
+    { "conference": "Independent", "startYear": 1895, "endYear": 1914 },
+    { "conference": "SWC", "startYear": 1915, "endYear": 1995 },
+    { "conference": "Big 12", "startYear": 1996, "endYear": 2023 },
+    { "conference": "SEC", "startYear": 2024, "endYear": null }
+  ]
+}
