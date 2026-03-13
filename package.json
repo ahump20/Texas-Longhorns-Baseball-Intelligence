@@ -1,0 +1,27 @@
+{
+  "name": "texas-longhorns-baseball-intelligence",
+  "version": "1.0.0",
+  "description": "Texas Longhorns Baseball Intelligence System: analytical engine bridging historical program doctrine with live MCP performance data.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "lint": "tsc --noEmit"
+  },
+  "keywords": [
+    "baseball",
+    "analytics",
+    "texas-longhorns",
+    "sabermetrics",
+    "mcp"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@types/node": "^22.0.0",
+    "jest": "^30.3.0",
+    "ts-jest": "^29.4.6",
+    "typescript": "^5.9.3"
+  }
+}
