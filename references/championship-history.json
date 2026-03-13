@@ -1,63 +1,56 @@
 {
-  "championships": [
+  "program": "Texas Longhorns Baseball",
+  "totalTitles": 6,
+  "titles": [
     {
       "year": 1949,
+      "opponent": "Wake Forest",
+      "score": "10-3",
       "coach": "Bibb Falk",
-      "record": "25-7",
-      "conference": "Southwest Conference",
-      "keyPlayers": ["Tom Hamilton"],
-      "notes": "First national championship in program history."
+      "venue": "Bovard Field, Los Angeles, CA",
+      "notes": "First national championship for the Texas Longhorns baseball program."
     },
     {
       "year": 1950,
+      "opponent": "Washington State",
+      "score": "3-0",
       "coach": "Bibb Falk",
-      "record": "27-6",
-      "conference": "Southwest Conference",
-      "keyPlayers": ["Murray Wall"],
-      "notes": "Back-to-back titles established Texas as a national power."
+      "venue": "Bovard Field, Los Angeles, CA",
+      "notes": "Back-to-back championships under coach Bibb Falk."
     },
     {
       "year": 1975,
+      "opponent": "South Carolina",
+      "score": "5-1",
       "coach": "Cliff Gustafson",
-      "record": "59-6",
-      "conference": "Southwest Conference",
-      "keyPlayers": ["Keith Moreland", "Rick Bradley"],
-      "notes": "59-6 record set the standard for dominance."
+      "venue": "Johnny Rosenblatt Stadium, Omaha, NE",
+      "notes": "First College World Series title under Cliff Gustafson, the modern era standard-setter."
     },
     {
       "year": 1983,
+      "opponent": "Alabama",
+      "score": "4-3",
       "coach": "Cliff Gustafson",
-      "record": "66-14",
-      "conference": "Southwest Conference",
-      "keyPlayers": ["Calvin Schiraldi", "Roger Clemens", "Spike Owen"],
-      "notes": "Featured future MLB Hall of Famer Roger Clemens."
+      "venue": "Johnny Rosenblatt Stadium, Omaha, NE",
+      "notes": "Second CWS title under Gustafson; cemented Texas as a perennial national power."
     },
     {
       "year": 2002,
+      "opponent": "South Carolina",
+      "score": "12-6",
       "coach": "Augie Garrido",
-      "record": "57-15",
-      "conference": "Big 12",
-      "keyPlayers": ["Huston Street", "Drew Stubbs"],
-      "notes": "Garrido's first title at Texas, the program's 5th overall."
+      "venue": "Rosenblatt Stadium, Omaha, NE",
+      "notes": "Augie Garrido's first national title at Texas. Program returned to dominance."
     },
     {
       "year": 2005,
+      "opponent": "Florida",
+      "score": "6-2",
       "coach": "Augie Garrido",
-      "record": "56-16",
-      "conference": "Big 12",
-      "keyPlayers": ["David Maroul", "Drew Stubbs", "Kyle McCulloch"],
-      "notes": "6th national championship cemented Texas's elite status."
+      "venue": "Rosenblatt Stadium, Omaha, NE",
+      "notes": "Sixth and most recent national championship. The 'National Championship Standard' benchmark."
     }
   ],
-  "programStandard": {
-    "totalChampionships": 6,
-    "lastChampionship": 2005,
-    "expectation": "Every season is measured against the championship standard. Any deviation from elite performance must be identified and corrected.",
-    "benchmarkMetrics": {
-      "minimumWins": 40,
-      "minimumConferenceWinPercentage": 0.600,
-      "postseasonExpectation": "College World Series appearance",
-      "rpiTarget": 15
-    }
-  }
+  "cwsAppearances": 38,
+  "omahaTradition": "The Longhorns are the only program with 6+ national titles and consistent CWS presence across eight decades."
 }

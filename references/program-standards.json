@@ -1,0 +1,50 @@
+{
+  "program": "Texas Longhorns Baseball",
+  "description": "National Championship Standard performance thresholds. Metrics below these values are flagged as 'Doctrine Deviations.' Thresholds derived from Texas championship-season averages and modern CWS-qualifier benchmarks.",
+  "standards": [
+    {
+      "metric": "battingAverage",
+      "nationalChampionshipThreshold": 0.285,
+      "unit": "avg",
+      "description": "Team batting average. Championship-caliber Texas teams average .285+ at the plate."
+    },
+    {
+      "metric": "ops",
+      "nationalChampionshipThreshold": 0.800,
+      "unit": "ops",
+      "description": "Team on-base plus slugging. An OPS of .800+ reflects the offensive identity of a championship contender."
+    },
+    {
+      "metric": "era",
+      "nationalChampionshipThreshold": 3.50,
+      "unit": "era",
+      "lowerIsBetter": true,
+      "description": "Team ERA. Championship rotations hold opponents to 3.50 ERA or better. Lower is better."
+    },
+    {
+      "metric": "whip",
+      "nationalChampionshipThreshold": 1.25,
+      "unit": "whip",
+      "lowerIsBetter": true,
+      "description": "Team WHIP. Elite pitching staffs surrender fewer than 1.25 baserunners per inning. Lower is better."
+    },
+    {
+      "metric": "fieldingPct",
+      "nationalChampionshipThreshold": 0.970,
+      "unit": "pct",
+      "description": "Team fielding percentage. Championship caliber requires .970+ to minimize unearned runs."
+    },
+    {
+      "metric": "strikeoutsPer9",
+      "nationalChampionshipThreshold": 9.0,
+      "unit": "k/9",
+      "description": "Pitching strikeouts per 9 innings. Modern championship staffs produce 9+ K/9."
+    },
+    {
+      "metric": "runsPerGame",
+      "nationalChampionshipThreshold": 6.5,
+      "unit": "runs",
+      "description": "Offensive runs per game. Championship offenses score 6.5+ runs per game on average."
+    }
+  ]
+}

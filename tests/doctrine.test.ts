@@ -1,57 +1,122 @@
-import * as path from 'path';
-import * as fs from 'fs';
+/**
+ * Tests: Doctrine Module
+ *
+ * Validates loading from /references JSON files, era classification,
+ * and National Championship Standard lookups.
+ */
+
 import {
-  loadProgramDoctrine,
-  loadChampionshipHistory,
-  getDoctrineStandards,
-  getChampionshipCount,
-  getBenchmarkMetrics,
-} from '../src/doctrine/standards';
+  loadDoctrine,
+  getNationalTitleCount,
+  getConferenceEra,
+  getPerformanceStandard,
+} from '../src/doctrine';
+import type { DoctrineRecord } from '../src/doctrine';
 
-describe('Doctrine Standards', () => {
-  test('loadProgramDoctrine returns valid program data', () => {
-    const doctrine = loadProgramDoctrine();
-    expect(doctrine.program).toBe('Texas Longhorns Baseball');
-    expect(doctrine.totalChampionships).toBe(6);
-    expect(doctrine.nationalChampionships).toHaveLength(6);
-    expect(doctrine.conferenceHistory.sec.era).toBe('current');
+describe('Doctrine Module', () => {
+  let doctrine: DoctrineRecord;
+
+  beforeAll(() => {
+    doctrine = loadDoctrine();
   });
 
-  test('loadChampionshipHistory returns all 6 championships', () => {
-    const history = loadChampionshipHistory();
-    expect(history.championships).toHaveLength(6);
-    expect(history.championships[0].year).toBe(1949);
-    expect(history.championships[5].year).toBe(2005);
-    expect(history.programStandard.totalChampionships).toBe(6);
+  // -------------------------------------------------------------------------
+  // loadDoctrine
+  // -------------------------------------------------------------------------
+  describe('loadDoctrine()', () => {
+    it('loads the program doctrine without throwing', () => {
+      expect(doctrine).toBeDefined();
+    });
+
+    it('sets the correct program name', () => {
+      expect(doctrine.programName).toBe('Texas Longhorns Baseball');
+    });
+
+    it('loads exactly 6 national championship titles (the 6-title legacy)', () => {
+      expect(doctrine.nationalTitles).toHaveLength(6);
+    });
+
+    it('includes the correct championship years', () => {
+      const years = doctrine.nationalTitles.map((t) => t.year);
+      expect(years).toEqual(expect.arrayContaining([1949, 1950, 1975, 1983, 2002, 2005]));
+    });
+
+    it('loads coaching philosophies', () => {
+      expect(doctrine.coachingPhilosophies.length).toBeGreaterThan(0);
+    });
+
+    it('loads performance standards', () => {
+      expect(doctrine.performanceStandards.length).toBeGreaterThan(0);
+    });
+
+    it('includes all four conference memberships', () => {
+      const conferences = doctrine.conferenceMemberships.map((m) => m.conference);
+      expect(conferences).toEqual(
+        expect.arrayContaining(['Independent', 'SWC', 'Big12', 'SEC'])
+      );
+    });
+
+    it('marks the SEC membership as current (endYear: null)', () => {
+      const sec = doctrine.conferenceMemberships.find((m) => m.conference === 'SEC');
+      expect(sec?.endYear).toBeNull();
+    });
   });
 
-  test('getDoctrineStandards returns all four categories', () => {
-    const standards = getDoctrineStandards();
-    expect(standards.pitching).toBeDefined();
-    expect(standards.hitting).toBeDefined();
-    expect(standards.fielding).toBeDefined();
-    expect(standards.baserunning).toBeDefined();
-    expect(standards.pitching.eraThreshold).toBe(3.50);
-    expect(standards.hitting.teamBattingAverage).toBe(0.280);
-    expect(standards.fielding.fieldingPercentage).toBe(0.975);
-    expect(standards.baserunning.stolenBaseSuccessRate).toBe(0.780);
+  // -------------------------------------------------------------------------
+  // getNationalTitleCount
+  // -------------------------------------------------------------------------
+  describe('getNationalTitleCount()', () => {
+    it('returns 6 for the Texas Longhorns program', () => {
+      expect(getNationalTitleCount(doctrine)).toBe(6);
+    });
   });
 
-  test('getChampionshipCount returns 6', () => {
-    expect(getChampionshipCount()).toBe(6);
+  // -------------------------------------------------------------------------
+  // getConferenceEra
+  // -------------------------------------------------------------------------
+  describe('getConferenceEra()', () => {
+    it('classifies years before 1915 as Independent', () => {
+      expect(getConferenceEra(1895)).toBe('Independent');
+      expect(getConferenceEra(1914)).toBe('Independent');
+    });
+
+    it('classifies 1915–1995 as SWC', () => {
+      expect(getConferenceEra(1915)).toBe('SWC');
+      expect(getConferenceEra(1975)).toBe('SWC');
+      expect(getConferenceEra(1995)).toBe('SWC');
+    });
+
+    it('classifies 1996–2023 as Big12', () => {
+      expect(getConferenceEra(1996)).toBe('Big12');
+      expect(getConferenceEra(2002)).toBe('Big12');
+      expect(getConferenceEra(2023)).toBe('Big12');
+    });
+
+    it('classifies 2024+ as SEC', () => {
+      expect(getConferenceEra(2024)).toBe('SEC');
+      expect(getConferenceEra(2025)).toBe('SEC');
+    });
   });
 
-  test('getBenchmarkMetrics returns expected targets', () => {
-    const metrics = getBenchmarkMetrics();
-    expect(metrics.minimumWins).toBe(40);
-    expect(metrics.minimumConferenceWinPercentage).toBe(0.600);
-    expect(metrics.postseasonExpectation).toBe('College World Series appearance');
-    expect(metrics.rpiTarget).toBe(15);
-  });
+  // -------------------------------------------------------------------------
+  // getPerformanceStandard
+  // -------------------------------------------------------------------------
+  describe('getPerformanceStandard()', () => {
+    it('returns the ERA standard', () => {
+      const std = getPerformanceStandard(doctrine, 'era');
+      expect(std).toBeDefined();
+      expect(std?.nationalChampionshipThreshold).toBeLessThanOrEqual(4.0);
+    });
 
-  test('references directory contains expected JSON files', () => {
-    const referencesDir = path.resolve(__dirname, '../references');
-    expect(fs.existsSync(path.join(referencesDir, 'program-doctrine.json'))).toBe(true);
-    expect(fs.existsSync(path.join(referencesDir, 'championship-history.json'))).toBe(true);
+    it('returns the batting average standard', () => {
+      const std = getPerformanceStandard(doctrine, 'battingAverage');
+      expect(std).toBeDefined();
+      expect(std?.nationalChampionshipThreshold).toBeGreaterThan(0);
+    });
+
+    it('returns undefined for an unknown metric', () => {
+      const std = getPerformanceStandard(doctrine, 'unknownMetric');
+      expect(std).toBeUndefined();
+    });
   });
 });

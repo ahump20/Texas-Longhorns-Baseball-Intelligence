@@ -1,3 +1,17 @@
-export { MCPClient, createTimestamp } from './mcp-client';
-export type { IMCPClient, MCPClientConfig } from './mcp-client';
-export { fetchPlayerStatsFreshFirst, fetchTeamAnalyticsFreshFirst } from './fetch-first';
+/**
+ * Live Data Module — public API
+ */
+export { CollegeBaseballSabermetricsClient } from './mcpClient';
+export type { MCPServerTools, MCPToolFunction } from './mcpClient';
+export type {
+  MCPPlayerStatsRequest,
+  MCPTeamAnalyticsRequest,
+  MCPPlayerBattingStats,
+  MCPPlayerPitchingStats,
+  MCPPlayerFieldingStats,
+  MCPPlayerStats,
+  MCPTeamAnalytics,
+  FetchResult,
+  FetchError,
+  FetchOutcome,
+} from './types';

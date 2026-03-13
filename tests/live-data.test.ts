@@ -1,134 +1,182 @@
-import { fetchPlayerStatsFreshFirst, fetchTeamAnalyticsFreshFirst } from '../src/live-data/fetch-first';
-import { IMCPClient } from '../src/live-data/mcp-client';
-import { MCPPlayerStats, MCPTeamAnalytics, MCPToolResponse } from '../src/types/live-data';
+/**
+ * Tests: Live Data Module (MCP Client)
+ *
+ * Validates Fetch-First Protocol, strict typing, and error handling.
+ */
 
-function makeMockPlayer(): MCPPlayerStats {
-  return {
-    playerId: 'p1',
-    name: 'Test Player',
-    team: 'Texas',
-    season: 2025,
-    conference: 'SEC',
-    batting: { avg: 0.300, obp: 0.400, slg: 0.500, ops: 0.900, hits: 60, homeRuns: 10, rbi: 40, stolenBases: 10, stolenBaseAttempts: 12 },
-    pitching: null,
-    fielding: null,
-    timestamp: '2025-04-01T12:00:00Z',
-  };
-}
+import { CollegeBaseballSabermetricsClient } from '../src/live-data';
+import type {
+  MCPPlayerStats,
+  MCPTeamAnalytics,
+  MCPServerTools,
+  FetchResult,
+  FetchError,
+} from '../src/live-data';
 
-function makeMockTeam(): MCPTeamAnalytics {
-  return {
-    teamId: 't1',
-    teamName: 'Texas Longhorns',
-    season: 2025,
-    conference: 'SEC',
-    record: { wins: 35, losses: 15, conferenceWins: 16, conferenceLosses: 14 },
-    rankings: { rpiRank: 12, nationalRank: 10, conferenceStanding: 4 },
-    teamStats: {
-      teamBattingAvg: 0.285, teamEra: 3.40, teamFieldingPct: 0.978,
-      teamObp: 0.375, teamSlg: 0.445, runsPerGame: 6.2, runsAllowedPerGame: 3.6,
-    },
-    timestamp: '2025-04-01T12:00:00Z',
-  };
-}
+// ---------------------------------------------------------------------------
+// Mock data fixtures
+// ---------------------------------------------------------------------------
 
-function createMockClient(overrides: Partial<IMCPClient> = {}): IMCPClient {
-  return {
-    fetchPlayerStats: jest.fn().mockResolvedValue({
-      success: true,
-      data: makeMockPlayer(),
-      error: null,
-      source: 'cbb_player_stats',
-      fetchedAt: '2025-04-01T12:00:00Z',
-    } as MCPToolResponse<MCPPlayerStats>),
-    fetchTeamAnalytics: jest.fn().mockResolvedValue({
-      success: true,
-      data: makeMockTeam(),
-      error: null,
-      source: 'cbb_team_analytics',
-      fetchedAt: '2025-04-01T12:00:00Z',
-    } as MCPToolResponse<MCPTeamAnalytics>),
+const mockPlayerStats: MCPPlayerStats = {
+  playerId: 'p001',
+  playerName: 'Austin Humphrey',
+  team: 'Texas Longhorns',
+  season: 2024,
+  gamesPlayed: 55,
+  atBats: 190,
+  hits: 60,
+  doubles: 12,
+  triples: 2,
+  homeRuns: 8,
+  rbi: 38,
+  battingAverage: 0.316,
+  onBasePct: 0.390,
+  sluggingPct: 0.510,
+  ops: 0.900,
+  strikeouts: 35,
+  walks: 28,
+  stolenBases: 10,
+  wOBA: 0.380,
+};
+
+const mockTeamAnalytics: MCPTeamAnalytics = {
+  teamId: 'texas',
+  teamName: 'Texas Longhorns',
+  season: 2024,
+  conference: 'SEC',
+  record: { wins: 45, losses: 18, conferenceWins: 18, conferenceLosses: 12 },
+  offensiveStats: {
+    teamBattingAvg: 0.290,
+    teamOPS: 0.820,
+    runsPerGame: 7.2,
+    homeRunsTotal: 80,
+    stolenBasesTotal: 55,
+  },
+  pitchingStats: {
+    teamERA: 3.80,
+    teamWHIP: 1.22,
+    teamFIP: 3.70,
+    strikeoutsPer9: 9.8,
+    qualityStartPct: 0.58,
+  },
+  fieldingStats: {
+    teamFieldingPct: 0.975,
+    errorsTotal: 42,
+    doublePlays: 60,
+  },
+  advancedMetrics: {
+    runDifferential: 120,
+    pythagWinPct: 0.720,
+    rpiRank: 8,
+    strengthOfSchedule: 0.530,
+  },
+};
+
+// ---------------------------------------------------------------------------
+// Helper: build a client with mocked tools
+// ---------------------------------------------------------------------------
+
+function buildClient(overrides?: Partial<MCPServerTools>): CollegeBaseballSabermetricsClient {
+  const tools: MCPServerTools = {
+    cbb_player_stats: jest.fn().mockResolvedValue(mockPlayerStats),
+    cbb_team_analytics: jest.fn().mockResolvedValue(mockTeamAnalytics),
     ...overrides,
   };
+  return new CollegeBaseballSabermetricsClient(tools);
 }
 
-describe('Fetch-First Protocol', () => {
-  describe('fetchPlayerStatsFreshFirst', () => {
-    test('returns live data when MCP server responds successfully', async () => {
-      const client = createMockClient();
-      const result = await fetchPlayerStatsFreshFirst(client, 'p1', 2025);
-      expect(result.source).toBe('live');
-      expect(result.stale).toBe(false);
-      expect(result.data).toBeDefined();
-      expect(result.data!.name).toBe('Test Player');
-    });
+// ---------------------------------------------------------------------------
+// fetchPlayerStats
+// ---------------------------------------------------------------------------
 
-    test('falls back to cache when MCP server fails', async () => {
-      const client = createMockClient({
-        fetchPlayerStats: jest.fn().mockResolvedValue({
-          success: false, data: null, error: 'Connection timeout', source: 'cbb_player_stats', fetchedAt: '2025-04-01T12:00:00Z',
-        }),
-      });
-      const cachedData = makeMockPlayer();
-      cachedData.name = 'Cached Player';
-      const result = await fetchPlayerStatsFreshFirst(client, 'p1', 2025, cachedData);
-      expect(result.source).toBe('cache');
-      expect(result.stale).toBe(true);
-      expect(result.data!.name).toBe('Cached Player');
-    });
+describe('CollegeBaseballSabermetricsClient.fetchPlayerStats()', () => {
+  it('returns a successful FetchResult with player data', async () => {
+    const client = buildClient();
+    const outcome = await client.fetchPlayerStats({ playerId: 'p001', season: 2024 });
 
-    test('returns null fallback when no cache and MCP fails', async () => {
-      const client = createMockClient({
-        fetchPlayerStats: jest.fn().mockResolvedValue({
-          success: false, data: null, error: 'Server down', source: 'cbb_player_stats', fetchedAt: '2025-04-01T12:00:00Z',
-        }),
-      });
-      const result = await fetchPlayerStatsFreshFirst(client, 'p1', 2025);
-      expect(result.source).toBe('fallback');
-      expect(result.stale).toBe(true);
-      expect(result.data).toBeNull();
-    });
-
-    test('prioritizes live data over cache', async () => {
-      const client = createMockClient();
-      const cachedData = makeMockPlayer();
-      cachedData.name = 'Old Cached Player';
-      const result = await fetchPlayerStatsFreshFirst(client, 'p1', 2025, cachedData);
-      expect(result.source).toBe('live');
-      expect(result.data!.name).toBe('Test Player');
-    });
+    expect(outcome.success).toBe(true);
+    const result = outcome as FetchResult<MCPPlayerStats>;
+    expect(result.data).toEqual(mockPlayerStats);
+    expect(result.source).toBe('college-baseball-sabermetrics');
+    expect(result.toolName).toBe('cbb_player_stats');
   });
 
-  describe('fetchTeamAnalyticsFreshFirst', () => {
-    test('returns live data when MCP server responds successfully', async () => {
-      const client = createMockClient();
-      const result = await fetchTeamAnalyticsFreshFirst(client, 't1', 2025);
-      expect(result.source).toBe('live');
-      expect(result.stale).toBe(false);
-      expect(result.data!.teamName).toBe('Texas Longhorns');
-    });
+  it('stamps results with an ISO timestamp', async () => {
+    const client = buildClient();
+    const outcome = await client.fetchPlayerStats({ playerId: 'p001' });
 
-    test('falls back to cache when MCP server fails', async () => {
-      const client = createMockClient({
-        fetchTeamAnalytics: jest.fn().mockResolvedValue({
-          success: false, data: null, error: 'Timeout', source: 'cbb_team_analytics', fetchedAt: '2025-04-01T12:00:00Z',
-        }),
-      });
-      const cachedData = makeMockTeam();
-      const result = await fetchTeamAnalyticsFreshFirst(client, 't1', 2025, cachedData);
-      expect(result.source).toBe('cache');
-      expect(result.stale).toBe(true);
-    });
+    expect(outcome.success).toBe(true);
+    const result = outcome as FetchResult<MCPPlayerStats>;
+    expect(() => new Date(result.timestamp)).not.toThrow();
+    expect(result.timestamp).toMatch(/^\d{4}-\d{2}-\d{2}T/);
+  });
 
-    test('returns null fallback when no cache and MCP fails', async () => {
-      const client = createMockClient({
-        fetchTeamAnalytics: jest.fn().mockResolvedValue({
-          success: false, data: null, error: 'Server down', source: 'cbb_team_analytics', fetchedAt: '2025-04-01T12:00:00Z',
-        }),
-      });
-      const result = await fetchTeamAnalyticsFreshFirst(client, 't1', 2025);
-      expect(result.source).toBe('fallback');
-      expect(result.data).toBeNull();
+  it('records fetch latency in milliseconds', async () => {
+    const client = buildClient();
+    const outcome = await client.fetchPlayerStats({ playerId: 'p001' });
+
+    expect(outcome.success).toBe(true);
+    const result = outcome as FetchResult<MCPPlayerStats>;
+    expect(result.fetchLatencyMs).toBeGreaterThanOrEqual(0);
+  });
+
+  it('returns a FetchError when the MCP tool throws', async () => {
+    const client = buildClient({
+      cbb_player_stats: jest.fn().mockRejectedValue(new Error('server unavailable')),
     });
+    const outcome = await client.fetchPlayerStats({ playerId: 'p001' });
+
+    expect(outcome.success).toBe(false);
+    const err = outcome as FetchError;
+    expect(err.error).toContain('server unavailable');
+    expect(err.toolName).toBe('cbb_player_stats');
+  });
+
+  it('includes the tool name in error responses', async () => {
+    const client = buildClient({
+      cbb_player_stats: jest.fn().mockRejectedValue('non-Error rejection'),
+    });
+    const outcome = await client.fetchPlayerStats({ playerId: 'p001' });
+
+    expect(outcome.success).toBe(false);
+    expect((outcome as FetchError).toolName).toBe('cbb_player_stats');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// fetchTeamAnalytics
+// ---------------------------------------------------------------------------
+
+describe('CollegeBaseballSabermetricsClient.fetchTeamAnalytics()', () => {
+  it('returns a successful FetchResult with team analytics', async () => {
+    const client = buildClient();
+    const outcome = await client.fetchTeamAnalytics({ teamId: 'texas', season: 2024 });
+
+    expect(outcome.success).toBe(true);
+    const result = outcome as FetchResult<MCPTeamAnalytics>;
+    expect(result.data).toEqual(mockTeamAnalytics);
+    expect(result.source).toBe('college-baseball-sabermetrics');
+    expect(result.toolName).toBe('cbb_team_analytics');
+  });
+
+  it('stamps results with an ISO timestamp', async () => {
+    const client = buildClient();
+    const outcome = await client.fetchTeamAnalytics({ teamId: 'texas' });
+
+    expect(outcome.success).toBe(true);
+    const result = outcome as FetchResult<MCPTeamAnalytics>;
+    expect(result.timestamp).toMatch(/^\d{4}-\d{2}-\d{2}T/);
+  });
+
+  it('returns a FetchError when the MCP tool throws', async () => {
+    const client = buildClient({
+      cbb_team_analytics: jest.fn().mockRejectedValue(new Error('timeout')),
+    });
+    const outcome = await client.fetchTeamAnalytics({ teamId: 'texas' });
+
+    expect(outcome.success).toBe(false);
+    const err = outcome as FetchError;
+    expect(err.error).toContain('timeout');
+    expect(err.toolName).toBe('cbb_team_analytics');
   });
 });
