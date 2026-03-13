@@ -4,14 +4,14 @@
 
 TypeScript analytical engine + documentation hub for Texas Longhorns baseball intelligence. Four-module architecture: Doctrine (historical standards), Live Data (MCP client), Analytics (SEC variance, doctrine deviation), Validation (three-layer reports).
 
-**Owner:** Austin Humphrey — Austin@BlazeSportsIntel.com
+**Owner:** Austin Humphrey — Austin [at] BlazeSportsIntel [dot] com
 **Production API:** api.blazesportsintel.com (Blaze-sports-Intel/college-baseball-api)
 
 ## Architecture
 
 ```
 src/doctrine/     Historical program standards, coaching eras, conference memberships
-src/live-data/    MCP client for college-baseball-sabermetrics server
+src/live-data/    MCP client for Blaze Sports Intel college baseball API (api.blazesportsintel.com)
 src/analytics/    SEC variance calculator, doctrine deviation detector, report generator
 src/validation/   Three-layer report builder (Verified Facts → Inference → Recommendation)
 references/       JSON data: championship history, coaching philosophy, program standards

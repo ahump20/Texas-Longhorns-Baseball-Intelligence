@@ -82,12 +82,18 @@ Adjusts Big 12-calibrated baselines for current conference strength.
 | SWC | 0.90 |
 | Independent | 0.75 |
 
-**Application (implemented in `src/analytics/secVariance.ts`):**
+**Application (implemented in `src/analytics/secVariance.ts`, for lower-is-better metrics such as ERA):**
 ```
 adjustedValue = rawValue * (toMultiplier / fromMultiplier)
 ```
 
-**Example:** A team ERA of 3.80 earned in the SEC, evaluated against Big 12 baselines:
+For higher-is-better metrics (e.g., win%), the equivalent-strength normalization inverts the ratio:
+```
+adjustedValue = rawValue * (fromMultiplier / toMultiplier)
+```
+or is handled via a `lowerIsBetter` flag in the calling analytics layer rather than by this simple form.
+
+**Example (lower-is-better ERA):** A team ERA of 3.80 earned in the SEC, evaluated against Big 12 baselines:
 ```
 adjustedERA = 3.80 * (1.00 / 1.35) = 2.81
 ```

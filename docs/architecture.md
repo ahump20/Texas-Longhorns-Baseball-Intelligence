@@ -42,7 +42,7 @@ Production API + MCP server deployed at **api.blazesportsintel.com**.
 **Key packages:**
 - `packages/analytics/` — Pure math library (`@bsi/college-baseball-analytics`): wOBA, wRC+, FIP, HAV-F, MMI
 - `api/src/mcp/tools.ts` — 12 MCP tools
-- `api/src/mcp/resources.ts` — 8 MCP resources
+- `api/src/mcp/resources.ts` — 9 MCP resources
 
 **Infrastructure:** Hono + Cloudflare Workers, D1 database (`cbb-api-db`), KV caches (`CBB_API_CACHE`, `CBB_API_KEYS`)
 
@@ -75,7 +75,7 @@ BSI D1 (cbb-api-db)
   (api.blazesportsintel.com)
        │
        ├── MCP Tools (12 tools)
-       ├── MCP Resources (8 resources)
+       ├── MCP Resources (9 resources)
        └── REST Endpoints
               │
               ▼

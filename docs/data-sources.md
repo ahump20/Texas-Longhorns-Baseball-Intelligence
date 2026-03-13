@@ -86,7 +86,7 @@ All live data flows through **api.blazesportsintel.com**. The MCP client in `src
 
 ---
 
-## MCP Resources (8)
+## MCP Resources (9)
 
 Resources are addressed by URI pattern `cbb://`.
 
