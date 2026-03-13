@@ -1,0 +1,56 @@
+{
+  "program": "Texas Longhorns Baseball",
+  "totalTitles": 6,
+  "titles": [
+    {
+      "year": 1949,
+      "opponent": "Wake Forest",
+      "score": "10-3",
+      "coach": "Bibb Falk",
+      "venue": "Bovard Field, Los Angeles, CA",
+      "notes": "First national championship for the Texas Longhorns baseball program."
+    },
+    {
+      "year": 1950,
+      "opponent": "Washington State",
+      "score": "3-0",
+      "coach": "Bibb Falk",
+      "venue": "Bovard Field, Los Angeles, CA",
+      "notes": "Back-to-back championships under coach Bibb Falk."
+    },
+    {
+      "year": 1975,
+      "opponent": "South Carolina",
+      "score": "5-1",
+      "coach": "Cliff Gustafson",
+      "venue": "Johnny Rosenblatt Stadium, Omaha, NE",
+      "notes": "First College World Series title under Cliff Gustafson, the modern era standard-setter."
+    },
+    {
+      "year": 1983,
+      "opponent": "Alabama",
+      "score": "4-3",
+      "coach": "Cliff Gustafson",
+      "venue": "Johnny Rosenblatt Stadium, Omaha, NE",
+      "notes": "Second CWS title under Gustafson; cemented Texas as a perennial national power."
+    },
+    {
+      "year": 2002,
+      "opponent": "South Carolina",
+      "score": "12-6",
+      "coach": "Augie Garrido",
+      "venue": "Rosenblatt Stadium, Omaha, NE",
+      "notes": "Augie Garrido's first national title at Texas. Program returned to dominance."
+    },
+    {
+      "year": 2005,
+      "opponent": "Florida",
+      "score": "6-2",
+      "coach": "Augie Garrido",
+      "venue": "Rosenblatt Stadium, Omaha, NE",
+      "notes": "Sixth and most recent national championship. The 'National Championship Standard' benchmark."
+    }
+  ],
+  "cwsAppearances": 38,
+  "omahaTradition": "The Longhorns are the only program with 6+ national titles and consistent CWS presence across eight decades."
+}

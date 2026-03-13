@@ -1,0 +1,52 @@
+{
+  "program": "Texas Longhorns Baseball",
+  "coaches": [
+    {
+      "name": "Bibb Falk",
+      "era": "1940-1967",
+      "recordOverall": "463-176-2",
+      "principles": [
+        "Fundamentals-first: every player masters the basics before advanced techniques.",
+        "Pitching and defense win championships.",
+        "Recruit Texas-first: build a regional identity into a national brand.",
+        "Consistency over flash: process beats outcome in any single game."
+      ]
+    },
+    {
+      "name": "Cliff Gustafson",
+      "era": "1967-1996",
+      "recordOverall": "1161-384-1",
+      "principles": [
+        "Maximum effort on every pitch — effort is non-negotiable.",
+        "Team-first culture: individual statistics are subordinate to winning.",
+        "Pitching depth is the cornerstone of a championship rotation.",
+        "Discipline and accountability: hold every player to the same standard.",
+        "Speed and defense create run-prevention; offense creates opportunity."
+      ]
+    },
+    {
+      "name": "Augie Garrido",
+      "era": "1996-2016",
+      "recordOverall": "1975-896-5",
+      "principles": [
+        "Mental toughness is trainable — build it every day.",
+        "Play the game within the game: situational awareness over raw athleticism.",
+        "Every at-bat is a battle; compete with full presence.",
+        "Develop players for life, not just for baseball.",
+        "Omaha is the destination; every decision must point toward the College World Series."
+      ]
+    },
+    {
+      "name": "David Pierce",
+      "era": "2016-present",
+      "recordOverall": "dynamic",
+      "principles": [
+        "Elite player development: recruit high-ceiling athletes and accelerate growth.",
+        "Analytics-informed decision-making without losing player instinct.",
+        "Compete in the toughest competition — Big 12 then SEC era.",
+        "Championship culture is built in the offseason.",
+        "Adaptability: the SEC transition demands upgraded preparation and scouting."
+      ]
+    }
+  ]
+}
