@@ -1,0 +1,203 @@
+{
+  "checkedOn": "2026-10-31",
+  "method": "npm audit fix --ignore-scripts without --force; then npm audit --json and npm audit --omit=dev --json",
+  "before": {
+    "info": 0,
+    "low": 4,
+    "moderate": 18,
+    "high": 4,
+    "critical": 1,
+    "total": 27
+  },
+  "after": {
+    "info": 0,
+    "low": 4,
+    "moderate": 16,
+    "high": 0,
+    "critical": 0,
+    "total": 20
+  },
+  "runtime": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 0,
+    "critical": 0,
+    "total": 0
+  },
+  "remainingPackages": [
+    {
+      "name": "@jest/core",
+      "severity": "moderate",
+      "direct": false,
+      "fixAvailable": {
+        "name": "jest",
+        "version": "25.1.0",
+        "isSemVerMajor": true
+      }
+    },
+    {
+      "name": "@jest/expect",
+      "severity": "moderate",
+      "direct": false,
+      "fixAvailable": true
+    },
+    {
+      "name": "@jest/globals",
+      "severity": "moderate",
+      "direct": false,
+      "fixAvailable": true
+    },
+    {
+      "name": "@jest/reporters",
+      "severity": "moderate",
+      "direct": false,
+      "fixAvailable": {
+        "name": "jest",
+        "version": "25.1.0",
+        "isSemVerMajor": true
+      }
+    },
+    {
+      "name": "@jest/transform",
+      "severity": "moderate",
+      "direct": false,
+      "fixAvailable": {
+        "name": "jest",
+        "version": "25.1.0",
+        "isSemVerMajor": true
+      }
+    },
+    {
+      "name": "babel-jest",
+      "severity": "moderate",
+      "direct": false,
+      "fixAvailable": {
+        "name": "jest",
+        "version": "25.1.0",
+        "isSemVerMajor": true
+      }
+    },
+    {
+      "name": "babel-plugin-istanbul",
+      "severity": "moderate",
+      "direct": false,
+      "fixAvailable": {
+        "name": "jest",
+        "version": "25.1.0",
+        "isSemVerMajor": true
+      }
+    },
+    {
+      "name": "deepmerge",
+      "severity": "low",
+      "direct": false,
+      "fixAvailable": {
+        "name": "jest",
+        "version": "25.1.0",
+        "isSemVerMajor": true
+      }
+    },
+    {
+      "name": "glob",
+      "severity": "moderate",
+      "direct": false,
+      "fixAvailable": {
+        "name": "jest",
+        "version": "25.1.0",
+        "isSemVerMajor": true
+      }
+    },
+    {
+      "name": "jest",
+      "severity": "low",
+      "direct": true,
+      "fixAvailable": {
+        "name": "jest",
+        "version": "25.1.0",
+        "isSemVerMajor": true
+      }
+    },
+    {
+      "name": "jest-circus",
+      "severity": "moderate",
+      "direct": false,
+      "fixAvailable": true
+    },
+    {
+      "name": "jest-cli",
+      "severity": "low",
+      "direct": false,
+      "fixAvailable": true
+    },
+    {
+      "name": "jest-config",
+      "severity": "moderate",
+      "direct": false,
+      "fixAvailable": {
+        "name": "jest",
+        "version": "25.1.0",
+        "isSemVerMajor": true
+      }
+    },
+    {
+      "name": "jest-resolve-dependencies",
+      "severity": "moderate",
+      "direct": false,
+      "fixAvailable": true
+    },
+    {
+      "name": "jest-runner",
+      "severity": "moderate",
+      "direct": false,
+      "fixAvailable": true
+    },
+    {
+      "name": "jest-runtime",
+      "severity": "moderate",
+      "direct": false,
+      "fixAvailable": true
+    },
+    {
+      "name": "jest-snapshot",
+      "severity": "moderate",
+      "direct": false,
+      "fixAvailable": true
+    },
+    {
+      "name": "minimatch",
+      "severity": "moderate",
+      "direct": false,
+      "fixAvailable": {
+        "name": "jest",
+        "version": "25.1.0",
+        "isSemVerMajor": true
+      }
+    },
+    {
+      "name": "test-exclude",
+      "severity": "moderate",
+      "direct": false,
+      "fixAvailable": {
+        "name": "jest",
+        "version": "25.1.0",
+        "isSemVerMajor": true
+      }
+    },
+    {
+      "name": "ts-jest",
+      "severity": "low",
+      "direct": true,
+      "fixAvailable": {
+        "name": "ts-jest",
+        "version": "25.5.1",
+        "isSemVerMajor": true
+      }
+    }
+  ],
+  "limitations": [
+    "Audit reports describe the advisory database at the time of each request, not a complete security certification.",
+    "Remaining development/test dependency advisories are not resolved by forcing the suggested major-version downgrades.",
+    "No security permissions, credentials or runtime dependency were added."
+  ]
+}

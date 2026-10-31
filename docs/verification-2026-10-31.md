@@ -48,3 +48,7 @@ npm pack
 ```
 
 Extract the tarball in a clean directory, require its root library, call `loadDoctrine()`, and run `node dist/cli.js --help`. The normal report command makes read-only public requests; it does not publish or schedule anything.
+
+## Dependency-security follow-up
+
+The push surfaced existing dependency alerts. A compatible lockfile refresh using `npm audit fix --ignore-scripts` (no `--force`) removed the critical and high findings without changing declared dependency ranges. The saved follow-up audit reports 20 remaining development-tool dependency findings: 16 moderate and 4 low. The runtime-only audit reports zero findings. All 105 tests and the build still pass. These counts are tool observations, not a blanket security guarantee; see [the audit record](verification/dependency-audit-2026-10-31.json). Forced major-version downgrades suggested by the audit were not applied.

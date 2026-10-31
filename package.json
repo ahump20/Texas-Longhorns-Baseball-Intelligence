@@ -43,6 +43,7 @@
     "docs/data-sources.md",
     "docs/verification-2026-10-31.md",
     "docs/verification/live-smoke-2026-10-31.json",
-    "docs/superpowers/specs/2026-10-31-verified-workflows-design.md"
+    "docs/superpowers/specs/2026-10-31-verified-workflows-design.md",
+    "docs/verification/dependency-audit-2026-10-31.json"
   ]
 }
