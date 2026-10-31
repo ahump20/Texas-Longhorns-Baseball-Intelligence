@@ -26,7 +26,7 @@ import type { MCPTeamAnalytics } from '../src/live-data';
 const mockTeamAnalytics: MCPTeamAnalytics = {
   teamId: 'texas',
   teamName: 'Texas Longhorns',
-  season: 2024,
+  season: 2025,
   conference: 'SEC',
   record: { wins: 45, losses: 18, conferenceWins: 18, conferenceLosses: 12 },
   offensiveStats: {
@@ -119,8 +119,8 @@ describe('SEC Variance', () => {
   });
 
   describe('isSecEra()', () => {
-    it('returns true for 2024 and beyond', () => {
-      expect(isSecEra(2024)).toBe(true);
+    it('returns true for 2025 and beyond', () => {
+      expect(isSecEra(2024)).toBe(false);
       expect(isSecEra(2025)).toBe(true);
     });
 

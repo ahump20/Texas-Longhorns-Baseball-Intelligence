@@ -36,9 +36,13 @@ export function checkDoctrineDeviation(
   metric: string,
   observedValue: number,
   standard: ProgramStandard,
-  isLowerBetter = false
+  isLowerBetter = standard.lowerIsBetter ?? false
 ): DoctrineDeviation | null {
   const threshold = standard.nationalChampionshipThreshold;
+
+  if (!Number.isFinite(observedValue) || !Number.isFinite(threshold) || threshold <= 0) {
+    throw new Error('Observed metrics must be finite and benchmarks must be positive.');
+  }
 
   // Determine whether a deviation exists
   const isDeviation = isLowerBetter
@@ -53,6 +57,8 @@ export function checkDoctrineDeviation(
     ? (observedValue - threshold) / threshold
     : (threshold - observedValue) / threshold;
 
+  if (deviationMagnitude + Number.EPSILON < DEVIATION_THRESHOLDS.MINOR) return null;
+
   let severity: DoctrineDeviation['severity'];
   let recommendation: string;
 
@@ -61,17 +67,17 @@ export function checkDoctrineDeviation(
     recommendation =
       `CRITICAL: ${metric} is ${(deviationMagnitude * 100).toFixed(1)}% off ` +
       `National Championship Standard (${observedValue} vs ${threshold}). ` +
-      `Immediate roster/coaching adjustment required.`;
+      `Review sample size, opponent context and source quality before any personnel decision.`;
   } else if (deviationMagnitude >= DEVIATION_THRESHOLDS.MODERATE) {
     severity = 'MODERATE';
     recommendation =
-      `MODERATE: ${metric} is ${(deviationMagnitude * 100).toFixed(1)}% below ` +
+      `MODERATE: ${metric} is ${(deviationMagnitude * 100).toFixed(1)}% off ` +
       `National Championship Standard (${observedValue} vs ${threshold}). ` +
-      `Targeted development program recommended.`;
+      `Investigate the underlying sample before selecting a development priority.`;
   } else {
     severity = 'MINOR';
     recommendation =
-      `MINOR: ${metric} is ${(deviationMagnitude * 100).toFixed(1)}% below ` +
+      `MINOR: ${metric} is ${(deviationMagnitude * 100).toFixed(1)}% off ` +
       `National Championship Standard (${observedValue} vs ${threshold}). ` +
       `Monitor closely and adjust.`;
   }

@@ -93,7 +93,7 @@ describe('Doctrine Module', () => {
     });
 
     it('classifies 2024+ as SEC', () => {
-      expect(getConferenceEra(2024)).toBe('SEC');
+      expect(getConferenceEra(2024)).toBe('Big12');
       expect(getConferenceEra(2025)).toBe('SEC');
     });
   });

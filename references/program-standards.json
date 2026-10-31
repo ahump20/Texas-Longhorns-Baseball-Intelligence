@@ -1,50 +1,50 @@
 {
   "program": "Texas Longhorns Baseball",
-  "description": "National Championship Standard performance thresholds. Metrics below these values are flagged as 'Doctrine Deviations.' Thresholds derived from Texas championship-season averages and modern CWS-qualifier benchmarks.",
+  "description": "Editorial review benchmarks retained for continuity. No championship-season calibration dataset or predictive validation is supplied. Deviations begin at 5%, 15%, and 25%; these are policy thresholds, not probabilities.",
   "standards": [
     {
       "metric": "battingAverage",
       "nationalChampionshipThreshold": 0.285,
       "unit": "avg",
-      "description": "Team batting average. Championship-caliber Texas teams average .285+ at the plate."
+      "description": "Editorial review benchmark for battingAverage; not an empirically validated championship cutoff."
     },
     {
       "metric": "ops",
-      "nationalChampionshipThreshold": 0.800,
+      "nationalChampionshipThreshold": 0.8,
       "unit": "ops",
-      "description": "Team on-base plus slugging. An OPS of .800+ reflects the offensive identity of a championship contender."
+      "description": "Editorial review benchmark for ops; not an empirically validated championship cutoff."
     },
     {
       "metric": "era",
-      "nationalChampionshipThreshold": 3.50,
+      "nationalChampionshipThreshold": 3.5,
       "unit": "era",
       "lowerIsBetter": true,
-      "description": "Team ERA. Championship rotations hold opponents to 3.50 ERA or better. Lower is better."
+      "description": "Editorial review benchmark for era; not an empirically validated championship cutoff."
     },
     {
       "metric": "whip",
       "nationalChampionshipThreshold": 1.25,
       "unit": "whip",
       "lowerIsBetter": true,
-      "description": "Team WHIP. Elite pitching staffs surrender fewer than 1.25 baserunners per inning. Lower is better."
+      "description": "Editorial review benchmark for whip; not an empirically validated championship cutoff."
     },
     {
       "metric": "fieldingPct",
-      "nationalChampionshipThreshold": 0.970,
+      "nationalChampionshipThreshold": 0.97,
       "unit": "pct",
-      "description": "Team fielding percentage. Championship caliber requires .970+ to minimize unearned runs."
+      "description": "Editorial review benchmark for fieldingPct; not an empirically validated championship cutoff."
     },
     {
       "metric": "strikeoutsPer9",
       "nationalChampionshipThreshold": 9.0,
       "unit": "k/9",
-      "description": "Pitching strikeouts per 9 innings. Modern championship staffs produce 9+ K/9."
+      "description": "Editorial review benchmark for strikeoutsPer9; not an empirically validated championship cutoff."
     },
     {
       "metric": "runsPerGame",
       "nationalChampionshipThreshold": 6.5,
       "unit": "runs",
-      "description": "Offensive runs per game. Championship offenses score 6.5+ runs per game on average."
+      "description": "Editorial review benchmark for runsPerGame; not an empirically validated championship cutoff."
     }
   ]
 }
