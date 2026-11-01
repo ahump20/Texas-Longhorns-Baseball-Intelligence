@@ -85,6 +85,30 @@ function buildClient(overrides?: Partial<MCPServerTools>): CollegeBaseballSaberm
   return new CollegeBaseballSabermetricsClient(tools);
 }
 
+describe('Legacy response season matching', () => {
+  it('rejects a player response from a different requested season', async () => {
+    const outcome = await buildClient().fetchPlayerStats({playerId: 'p001', season: 2025});
+    expect(outcome).toMatchObject({success: false, toolName: 'cbb_player_stats', error: expect.stringMatching(/season/i)});
+    expect(outcome).not.toHaveProperty('data');
+  });
+
+  it('rejects a team response from a different requested season', async () => {
+    const outcome = await buildClient().fetchTeamAnalytics({teamId: 'texas', season: 2025});
+    expect(outcome).toMatchObject({success: false, toolName: 'cbb_team_analytics', error: expect.stringMatching(/season/i)});
+    expect(outcome).not.toHaveProperty('data');
+  });
+
+  it.each([undefined, 2024])('accepts player aliases with an omitted or matching season: %s', async season => {
+    const outcome = await buildClient().fetchPlayerStats({playerId: 'requested-player-alias', season});
+    expect(outcome).toMatchObject({success: true, data: {playerId: 'p001', season: 2024}});
+  });
+
+  it.each([undefined, 2024])('accepts team aliases with an omitted or matching season: %s', async season => {
+    const outcome = await buildClient().fetchTeamAnalytics({teamId: 'requested-team-alias', season});
+    expect(outcome).toMatchObject({success: true, data: {teamId: 'texas', season: 2024}});
+  });
+});
+
 // ---------------------------------------------------------------------------
 // fetchPlayerStats
 // ---------------------------------------------------------------------------

@@ -2,8 +2,8 @@
 /** Command-line source collection. No deployment or local credentials required. */
 import { writeFileSync } from 'fs';
 import { parseArgs } from 'util';
-import { BlazeMcpClient } from './live-data/httpClient';
-import { collectTeamEvidence, renderEvidencePacket } from './analytics/evidencePacket';
+import { BlazeMcpClient } from './live-data/http-client';
+import { collectTeamEvidence, renderEvidencePacket } from './analytics/evidence-packet';
 export async function main(args = process.argv.slice(2)): Promise<number> {
   const {values} = parseArgs({args, options: {
     team: {type: 'string', default: 'texas'}, conference: {type: 'string', default: 'SEC'},

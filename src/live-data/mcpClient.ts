@@ -1,4 +1,4 @@
-import { assertLegacyPlayer, assertLegacyTeam } from './validateLegacy';
+import { assertLegacyPlayer, assertLegacyTeam } from './validate-legacy';
 /**
  * MCP Client: college-baseball-sabermetrics
  *
@@ -61,6 +61,9 @@ export class CollegeBaseballSabermetricsClient {
     try {
       const data = await this.tools.cbb_player_stats(request);
       assertLegacyPlayer(data, request.statType);
+      if (request.season !== undefined && data.season !== request.season) {
+        throw new Error('Legacy player response does not match requested season.');
+      }
       const result: FetchResult<MCPPlayerStats> = {
         data,
         timestamp: new Date().toISOString(),
@@ -92,6 +95,9 @@ export class CollegeBaseballSabermetricsClient {
     try {
       const data = await this.tools.cbb_team_analytics(request);
       assertLegacyTeam(data);
+      if (request.season !== undefined && data.season !== request.season) {
+        throw new Error('Legacy team response does not match requested season.');
+      }
       const result: FetchResult<MCPTeamAnalytics> = {
         data,
         timestamp: new Date().toISOString(),

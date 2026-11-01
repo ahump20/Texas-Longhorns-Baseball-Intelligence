@@ -10,7 +10,7 @@ export interface ToolEvidence {
   providerMeta: Record<string, unknown> | null; data: unknown; rawResult: Record<string, unknown>;
 }
 export interface HttpClientOptions { endpoint?: string; timeoutMs?: number; maxResponseBytes?: number }
-function record(value: unknown): value is Record<string, unknown> {
+function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === 'object' && value !== null && !Array.isArray(value);
 }
 
@@ -35,8 +35,8 @@ export class BlazeMcpClient {
   }
   private async connect(): Promise<void> {
     if (!this.ready) this.ready = (async () => {
-      const hello = await this.rpc('initialize', {protocolVersion: this.protocol, capabilities: {}, clientInfo: {name: 'texas-baseball-intelligence', version: '1.1.0'}});
-      if (!record(hello) || typeof hello.protocolVersion !== 'string' || !['2024-11-05', '2025-03-26', '2025-06-18', '2025-11-25'].includes(hello.protocolVersion)) throw new Error('Unsupported MCP protocol response.');
+      const hello = await this.rpc('initialize', {protocolVersion: this.protocol, capabilities: {}, clientInfo: {name: 'texas-baseball-intelligence', version: '1.1.1'}});
+      if (!isRecord(hello) || typeof hello.protocolVersion !== 'string' || !['2024-11-05', '2025-03-26', '2025-06-18', '2025-11-25'].includes(hello.protocolVersion)) throw new Error('Unsupported MCP protocol response.');
       this.protocol = hello.protocolVersion;
       await this.rpc('notifications/initialized', {}, true);
     })().catch(error => { this.ready = undefined; this.session = undefined; throw error; });
@@ -78,7 +78,7 @@ export class BlazeMcpClient {
               const data = frame.split(/\r?\n/).filter(line => line.startsWith('data:')).map(line => line.slice(5).replace(/^ /, '')).join('\n');
               if (!data) continue;
               const message: unknown = JSON.parse(data);
-              if (record(message) && message.id === id) return this.unwrap(message, id);
+              if (isRecord(message) && message.id === id) return this.unwrap(message, id);
             }
           }
         }
@@ -89,10 +89,10 @@ export class BlazeMcpClient {
     } finally { clearTimeout(timer); }
   }
   private unwrap(message: unknown, id: number | undefined): unknown {
-    if (!record(message) || message.jsonrpc !== '2.0' || message.id !== id) throw new Error('Invalid MCP response identifier or envelope.');
+    if (!isRecord(message) || message.jsonrpc !== '2.0' || message.id !== id) throw new Error('Invalid MCP response identifier or envelope.');
     if ('error' in message) {
       const error = message.error;
-      throw new Error(record(error) && typeof error.message === 'string' ? error.message : 'MCP protocol error.');
+      throw new Error(isRecord(error) && typeof error.message === 'string' ? error.message : 'MCP protocol error.');
     }
     if (!('result' in message)) throw new Error('MCP response is missing result.');
     return message.result;
@@ -103,7 +103,7 @@ export class BlazeMcpClient {
     const tools: McpTool[] = []; const cursors = new Set<string>(); let cursor: string | undefined;
     for (let page = 0; page < 20; page++) {
       const result = await this.rpc('tools/list', cursor ? {cursor} : {});
-      if (!record(result) || !Array.isArray(result.tools) || !result.tools.every(t => record(t) && typeof t.name === 'string' && t.name.length > 0)) throw new Error('Invalid MCP tool catalog.');
+      if (!isRecord(result) || !Array.isArray(result.tools) || !result.tools.every(t => isRecord(t) && typeof t.name === 'string' && t.name.length > 0)) throw new Error('Invalid MCP tool catalog.');
       tools.push(...result.tools as McpTool[]);
       if (result.nextCursor === undefined) {
         if (new Set(tools.map(t => t.name)).size !== tools.length) throw new Error('Duplicate MCP tool names.');
@@ -115,21 +115,31 @@ export class BlazeMcpClient {
     throw new Error('MCP tool catalog exceeds page limit.');
   }
   async callTool(name: string, args: Record<string, unknown> = {}): Promise<ToolEvidence> {
+    if (!isRecord(args)) throw new Error('Tool arguments must be an object.');
+    // Capture the wire representation before discovery or any other await. Evidence
+    // must describe the request sent, even if its caller reuses a nested object.
+    let requestArguments: Record<string, unknown>;
+    try {
+      const snapshot: unknown = JSON.parse(JSON.stringify(args));
+      if (!isRecord(snapshot)) throw new Error('Expected an object.');
+      requestArguments = snapshot;
+    } catch {
+      throw new Error('Tool arguments must be a JSON-serializable object.');
+    }
     const tool = (await this.discoverTools()).find(t => t.name === name);
     if (!READ_ONLY_TOOLS.has(name) || !tool || tool.annotations?.readOnlyHint === false || tool.annotations?.destructiveHint === true) throw new Error(`Tool ${name} is unavailable or outside this client's supported read-only tools.`);
-    if (!record(args)) throw new Error('Tool arguments must be an object.');
     const required = tool.inputSchema?.required;
-    if (Array.isArray(required)) for (const key of required) if (typeof key === 'string' && (!(key in args) || args[key] === '' || args[key] == null)) throw new Error(`Tool ${name} requires ${key}.`);
-    const result = await this.rpc('tools/call', {name, arguments: args});
-    if (!record(result)) throw new Error(`Tool ${name} returned an invalid result.`);
+    if (Array.isArray(required)) for (const key of required) if (typeof key === 'string' && (!(key in requestArguments) || requestArguments[key] === '' || requestArguments[key] == null)) throw new Error(`Tool ${name} requires ${key}.`);
+    const result = await this.rpc('tools/call', {name, arguments: requestArguments});
+    if (!isRecord(result)) throw new Error(`Tool ${name} returned an invalid result.`);
     const blocks = Array.isArray(result.content) ? result.content : [];
-    const texts = blocks.filter(b => record(b) && b.type === 'text' && typeof b.text === 'string').map(b => b.text as string);
+    const texts = blocks.filter(b => isRecord(b) && b.type === 'text' && typeof b.text === 'string').map(b => b.text as string);
     if (result.isError) throw new Error(texts.join('\n') || `Tool ${name} reported an error.`);
     let data: unknown = result.structuredContent;
     if (data === undefined) {
       if (texts.length === 0) throw new Error(`Tool ${name} returned no text or structured content.`);
       const text = texts.join('\n'); try { data = JSON.parse(text); } catch { data = {text}; }
     }
-    return {toolName: name, arguments: {...args}, endpoint: this.endpoint, retrievedAt: new Date().toISOString(), providerMeta: record(data) && record(data.meta) ? data.meta : null, data, rawResult: result};
+    return {toolName: name, arguments: requestArguments, endpoint: this.endpoint, retrievedAt: new Date().toISOString(), providerMeta: isRecord(data) && isRecord(data.meta) ? data.meta : null, data, rawResult: result};
   }
 }

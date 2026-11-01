@@ -1,10 +1,14 @@
 # Texas Longhorns Baseball Intelligence
 
-A TypeScript analytical library and working command-line evidence collector for Texas baseball. Version 1.1.0 separates historical program context, source observations and editorial judgment. It does not deploy or modify the BSI website.
+A TypeScript analytical library and working command-line evidence collector for Texas baseball. Version 1.1.1 separates historical program context, source observations and editorial judgment. It does not deploy or modify the BSI website.
 
 ## Run it
 
 Node 22.12+ is required. No runtime dependencies or API keys are needed for the public read-only endpoint.
+
+### From a source checkout
+
+Run development setup and checks in a repository checkout containing the lockfile, source and tests:
 
 ```bash
 npm ci
@@ -13,7 +17,19 @@ npm run report -- --team texas --conference SEC --format markdown
 npm run report -- --team texas --format json --output texas-evidence.json
 ```
 
-`npm run check` builds the executable after testing. The Markdown packet is a compact source-attributed briefing. JSON retains complete provider results, request arguments, endpoint, retrieval timestamps and failures. Exit codes: 0 collection resolved, 1 partial collection, 2 argument or file error. A successful collection does not certify fresh season coverage or factual accuracy.
+`npm run check` builds the executable after testing.
+
+### From an extracted release package
+
+Extract the release tarball and change into its `package` directory. It includes the built CLI and references; development source, tests and `package-lock.json` are excluded. Run the packaged executable directly, without `npm ci` or development scripts:
+
+```bash
+node dist/cli.js --help
+node dist/cli.js --team texas --conference SEC --format markdown
+node dist/cli.js --team texas --format json --output texas-evidence.json
+```
+
+The Markdown packet is a compact source-attributed briefing. JSON retains complete provider results, request arguments, endpoint, retrieval timestamps and failures. Exit codes: 0 collection resolved, 1 partial collection, 2 argument or file error. A successful collection does not certify fresh season coverage or factual accuracy.
 
 ## What is implemented
 

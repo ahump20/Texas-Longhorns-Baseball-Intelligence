@@ -1,5 +1,5 @@
 import * as api from '../src';
-import type { ToolEvidence } from '../src/live-data/httpClient';
+import type { ToolEvidence } from '../src/live-data/http-client';
 const evidence: ToolEvidence = {
   toolName: 'bsi_get_standings', arguments: {conference: 'SEC'}, endpoint: 'https://example.org/mcp', retrievedAt: '2026-10-31T12:00:00Z',
   providerMeta: {source: 'synthetic-fixture', fetched_at: '2026-10-31T11:00:00Z'}, rawResult: {},
@@ -29,4 +29,33 @@ test('ambiguous or absent exact identity is unresolved', () => {
 test('missing numeric fields are not converted into zero', () => {
   const missing = {...evidence, data: {standings: [{teams: [{team: 'Texas Longhorns', wins: null, losses: null}]}]}};
   expect(build([missing]).teamObservation?.wins).toBeNull();
+});
+
+test.each([
+  ['Texas A&M', 'Texas A&M'],
+  [String.raw`x\|y`, String.raw`x\\\|y`],
+  ['[club](https://example.org)', String.raw`\[club\](https://example.org)`],
+  ['*bold* _italic_ **strong**', String.raw`\*bold\* \_italic\_ \*\*strong\*\*`],
+  ['`code`', '\\`code\\`'],
+  ['<img src=x onerror=alert(1)>', String.raw`\<img src=x onerror=alert(1)\>`],
+  ['first\r\nsecond\nthird', 'first  second third'],
+])('renders provider text as literal Markdown: %s', (value, escaped) => {
+  const packet = api.createEvidencePacket('texas', [evidence]);
+  packet.teamObservation = {team: value};
+  expect(api.renderEvidencePacket(packet)).toContain(`| team | ${escaped} |`);
+});
+
+test('escapes text in headings, provenance, warnings and failures', () => {
+  const packet = api.createEvidencePacket('[Texas]', [{...evidence, toolName: '`tool`', providerMeta: {source: '_source_'}}], [{toolName: '**tool**', error: '<error>'}]);
+  const markdown = api.renderEvidencePacket(packet);
+  expect(markdown).toContain('# \\[Texas\\] baseball source packet');
+  expect(markdown).toContain('| \\`tool\\` | \\_source\\_ | unavailable |');
+  expect(markdown).toContain('- \\`tool\\`: provider fetch timestamp is missing or invalid.');
+  expect(markdown).toContain('- \\*\\*tool\\*\\*: \\<error\\>');
+});
+
+test('retains unavailable values in the Markdown table', () => {
+  const packet = api.createEvidencePacket('texas', [evidence]);
+  expect(api.renderEvidencePacket(packet)).toContain('| season | unavailable |');
+  expect(api.renderEvidencePacket(packet)).toContain('| confWins | unavailable |');
 });

@@ -3,7 +3,7 @@
  *
  * Legacy injected-adapter types. These are not the deployed BSI HTTP schemas.
  * Runtime guards reject missing/nonfinite fields; types alone cannot verify
- * source truth. See httpClient.ts for actual discovered BSI tool evidence.
+ * source truth. See http-client.ts for actual discovered BSI tool evidence.
  *
  * Architecture: This module is the "Live Data" side of the Data Bifurcation.
  * It must never import from the Doctrine layer.

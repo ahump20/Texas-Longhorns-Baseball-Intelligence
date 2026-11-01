@@ -152,6 +152,36 @@ describe('Doctrine Deviation', () => {
   };
 
   describe('checkDoctrineDeviation()', () => {
+    it.each([
+      [0.285, 0.27075, false, 'MINOR'],
+      [0.97, 0.8245, false, 'MODERATE'],
+      [0.8, 0.6000000000000001, false, 'CRITICAL'],
+      [0.8, 0.8400000000000001, true, 'MINOR'],
+      [0.8, 0.9199999999999999, true, 'MODERATE'],
+      [0.8, 1, true, 'CRITICAL'],
+    ])('keeps the boundary tier for threshold %s observed at %s (lower is better: %s)', (threshold, observed, lowerIsBetter, severity) => {
+      const standard: ProgramStandard = {metric: 'fixture', nationalChampionshipThreshold: threshold, unit: 'fixture', description: 'Boundary fixture', lowerIsBetter};
+      expect(checkDoctrineDeviation('fixture', observed, standard)?.severity).toBe(severity);
+    });
+
+    it.each([
+      [0.8, 0.76000001, false, null],
+      [0.8, 0.68000001, false, 'MINOR'],
+      [0.8, 0.60000001, false, 'MODERATE'],
+      [0.8, 0.83999999, true, null],
+      [0.8, 0.91999999, true, 'MINOR'],
+      [0.8, 0.99999999, true, 'MODERATE'],
+    ])('does not promote a magnitude below the next boundary: threshold %s, observed %s', (threshold, observed, lowerIsBetter, severity) => {
+      const standard: ProgramStandard = {metric: 'fixture', nationalChampionshipThreshold: threshold, unit: 'fixture', description: 'Boundary fixture', lowerIsBetter};
+      expect(checkDoctrineDeviation('fixture', observed, standard)?.severity ?? null).toBe(severity);
+    });
+
+    it('retains the unrounded measured deviation when selecting a tolerant tier', () => {
+      const standard: ProgramStandard = {metric: 'ops', nationalChampionshipThreshold: 0.8, unit: 'ops', description: 'Boundary fixture'};
+      const deviation = checkDoctrineDeviation('ops', 0.6000000000000001, standard);
+      expect(deviation?.deviationMagnitude).toBe(0.24999999999999994);
+    });
+
     it('returns null when ERA meets the standard (lower is better)', () => {
       const result = checkDoctrineDeviation('era', 3.20, eraStandard, true);
       expect(result).toBeNull();

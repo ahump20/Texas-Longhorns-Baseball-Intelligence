@@ -1,5 +1,5 @@
 /** Live source packets preserve provider omissions and never synthesize advanced metrics. */
-import { BlazeMcpClient, ToolEvidence } from '../live-data/httpClient';
+import { BlazeMcpClient, ToolEvidence } from '../live-data/http-client';
 export interface EvidenceFailure {toolName: string; error: string}
 export interface EvidencePacket {
   schemaVersion: '1.0.0'; generatedAt: string; requestedTeam: string;
@@ -43,16 +43,16 @@ export async function collectTeamEvidence(client: BlazeMcpClient, team = 'texas'
   return createEvidencePacket(team, evidence, failures);
 }
 export function renderEvidencePacket(packet: EvidencePacket): string {
-  const safe = (value: unknown): string => String(value ?? 'unavailable').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\|/g, '\\|').replace(/[\r\n]/g, ' ');
-  const lines = [`# ${safe(packet.requestedTeam)} baseball source packet`, '', `Collection status: ${packet.status}`, `Generated: ${packet.generatedAt}`, '', '## Source observations', ''];
+  const escapeMarkdown = (value: unknown): string => String(value ?? 'unavailable').replace(/[\\`*_[\]<>|]/g, '\\$&').replace(/[\r\n]/g, ' ');
+  const lines = [`# ${escapeMarkdown(packet.requestedTeam)} baseball source packet`, '', `Collection status: ${packet.status}`, `Generated: ${packet.generatedAt}`, '', '## Source observations', ''];
   if (packet.teamObservation) {
     lines.push('| Field | Provider value |', '|---|---|');
-    for (const field of ['team', 'season', 'conference', 'wins', 'losses', 'confWins', 'confLosses', 'runsScored', 'runsAllowed', 'runDiff', 'gamesPlayed']) lines.push(`| ${field} | ${safe(packet.teamObservation[field])} |`);
+    for (const field of ['team', 'season', 'conference', 'wins', 'losses', 'confWins', 'confLosses', 'runsScored', 'runsAllowed', 'runDiff', 'gamesPlayed']) lines.push(`| ${field} | ${escapeMarkdown(packet.teamObservation[field])} |`);
   } else lines.push('No uniquely identified team observation is available.');
-  lines.push('', '## Interpretation and limits', ...packet.warnings.map(w => '- ' + w));
+  lines.push('', '## Interpretation and limits', ...packet.warnings.map(w => '- ' + escapeMarkdown(w)));
   lines.push('', '## Recommendation', 'Confirm season coverage, missing fields and individual source pages before publishing a current-season claim. This is an evidence collection, not a calibrated forecast.', '', '## Provenance', '| Tool | Provider | Provider fetch time | Client retrieval |', '|---|---|---|---|');
-  for (const row of packet.evidence) lines.push(`| ${safe(row.toolName)} | ${safe(row.providerMeta?.source)} | ${safe(row.providerMeta?.fetched_at)} | ${safe(row.retrievedAt)} |`);
-  if (packet.failures.length) lines.push('', '## Unavailable requests', ...packet.failures.map(f => `- ${safe(f.toolName)}: ${safe(f.error)}`));
+  for (const row of packet.evidence) lines.push(`| ${escapeMarkdown(row.toolName)} | ${escapeMarkdown(row.providerMeta?.source)} | ${escapeMarkdown(row.providerMeta?.fetched_at)} | ${escapeMarkdown(row.retrievedAt)} |`);
+  if (packet.failures.length) lines.push('', '## Unavailable requests', ...packet.failures.map(f => `- ${escapeMarkdown(f.toolName)}: ${escapeMarkdown(f.error)}`));
   lines.push('', 'The JSON output preserves complete tool responses, arguments and endpoint attribution. Schedule and rankings are retained there without being relabeled as independently verified facts.');
   return lines.join('\n') + '\n';
 }

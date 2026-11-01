@@ -57,18 +57,19 @@ export function checkDoctrineDeviation(
     ? (observedValue - threshold) / threshold
     : (threshold - observedValue) / threshold;
 
-  if (deviationMagnitude + Number.EPSILON < DEVIATION_THRESHOLDS.MINOR) return null;
+  const tieredMagnitude = deviationMagnitude + Number.EPSILON;
+  if (tieredMagnitude < DEVIATION_THRESHOLDS.MINOR) return null;
 
   let severity: DoctrineDeviation['severity'];
   let recommendation: string;
 
-  if (deviationMagnitude >= DEVIATION_THRESHOLDS.CRITICAL) {
+  if (tieredMagnitude >= DEVIATION_THRESHOLDS.CRITICAL) {
     severity = 'CRITICAL';
     recommendation =
       `CRITICAL: ${metric} is ${(deviationMagnitude * 100).toFixed(1)}% off ` +
       `National Championship Standard (${observedValue} vs ${threshold}). ` +
       `Review sample size, opponent context and source quality before any personnel decision.`;
-  } else if (deviationMagnitude >= DEVIATION_THRESHOLDS.MODERATE) {
+  } else if (tieredMagnitude >= DEVIATION_THRESHOLDS.MODERATE) {
     severity = 'MODERATE';
     recommendation =
       `MODERATE: ${metric} is ${(deviationMagnitude * 100).toFixed(1)}% off ` +
