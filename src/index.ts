@@ -57,3 +57,9 @@ export type {
   ProfessionalRecommendation,
   ThreeLayerReport,
 } from './validation';
+
+export { BlazeMcpClient, BSI_MCP_ENDPOINT } from './live-data/http-client';
+export type { McpTool, ToolEvidence, HttpClientOptions } from './live-data/http-client';
+
+export { createEvidencePacket, collectTeamEvidence, renderEvidencePacket } from './analytics/evidence-packet';
+export type { EvidencePacket, EvidenceFailure } from './analytics/evidence-packet';

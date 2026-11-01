@@ -15,3 +15,6 @@ export type {
   FetchError,
   FetchOutcome,
 } from './types';
+
+export { BlazeMcpClient, BSI_MCP_ENDPOINT } from './http-client';
+export type { McpTool, ToolEvidence, HttpClientOptions } from './http-client';

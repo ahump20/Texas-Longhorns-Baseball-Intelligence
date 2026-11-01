@@ -1,3 +1,4 @@
+import { assertLegacyPlayer, assertLegacyTeam } from './validate-legacy';
 /**
  * MCP Client: college-baseball-sabermetrics
  *
@@ -37,7 +38,8 @@ export interface MCPServerTools {
 // ---------------------------------------------------------------------------
 
 /**
- * Type-safe wrapper around the `college-baseball-sabermetrics` MCP server.
+ * Legacy injected adapter retained for compatibility. The cbb_* names are not
+ * advertised by the deployed BSI endpoint; use BlazeMcpClient for HTTP reads.
  *
  * Inject the raw MCP tool functions at construction time. This keeps the
  * client testable (tools can be mocked) without coupling it to a specific MCP
@@ -58,6 +60,10 @@ export class CollegeBaseballSabermetricsClient {
     const start = Date.now();
     try {
       const data = await this.tools.cbb_player_stats(request);
+      assertLegacyPlayer(data, request.statType);
+      if (request.season !== undefined && data.season !== request.season) {
+        throw new Error('Legacy player response does not match requested season.');
+      }
       const result: FetchResult<MCPPlayerStats> = {
         data,
         timestamp: new Date().toISOString(),
@@ -88,6 +94,10 @@ export class CollegeBaseballSabermetricsClient {
     const start = Date.now();
     try {
       const data = await this.tools.cbb_team_analytics(request);
+      assertLegacyTeam(data);
+      if (request.season !== undefined && data.season !== request.season) {
+        throw new Error('Legacy team response does not match requested season.');
+      }
       const result: FetchResult<MCPTeamAnalytics> = {
         data,
         timestamp: new Date().toISOString(),

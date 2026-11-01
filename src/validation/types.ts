@@ -22,7 +22,7 @@ export interface VerifiedFact {
   timestamp: string;
   source: string;
   toolName: string;
-  /** Confidence score 0–1. MCP-sourced facts are always 1.0. */
+  /** Transcription fidelity 0–1, not probability that a provider claim is true. */
   confidence: number;
 }
 

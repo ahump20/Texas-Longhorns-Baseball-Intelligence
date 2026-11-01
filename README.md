@@ -1,130 +1,78 @@
-# Texas-Longhorns-Baseball-Intelligence
 # Texas Longhorns Baseball Intelligence
 
-TypeScript analytical engine and documentation hub for Texas Longhorns baseball intelligence. Bridges historical program doctrine with live data from the BSI production API, producing validated three-layer reports for fans, coaches, NIL front offices, and researchers.
+A TypeScript analytical library and working command-line evidence collector for Texas baseball. Version 1.1.1 separates historical program context, source observations and editorial judgment. It does not deploy or modify the BSI website.
 
-**Planned deployment:** blazesportsintel.com/college-baseball/texas-intelligence/
+## Run it
 
----
+Node 22.12+ is required. No runtime dependencies or API keys are needed for the public read-only endpoint.
 
-## Architecture
+### From a source checkout
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                   This Repository                               │
-│                                                                 │
-│  src/doctrine/      Historical standards, coaching eras         │
-│  src/live-data/     MCP client → api.blazesportsintel.com       │
-│  src/analytics/     SEC variance, doctrine deviation            │
-│  src/validation/    Three-layer report builder                  │
-│                                                                 │
-│  references/        JSON: championships, philosophy, standards  │
-│  data/              Program constants, baselines, media sources │
-│  docs/              Architecture, frameworks, audiences         │
-│  assets/            Historical images, annual PDF fact books    │
-└────────────────────────────┬────────────────────────────────────┘
-                             │ MCP fetch calls
-                             ▼
-            api.blazesportsintel.com
-            (Blaze-sports-Intel/college-baseball-api)
-            12 MCP tools · 8 MCP resources
-            Cloudflare Workers + D1 + KV
-```
-
----
-
-## Modules
-
-### `src/doctrine/`
-Loads and validates historical program data from `references/*.json`. Provides:
-- `loadDoctrine()` — full doctrine record
-- `getNationalTitleCount()` — 6 titles (1949, 1950, 1975, 1983, 2002, 2005)
-- `getConferenceEra()` — current SEC membership context
-- `getPerformanceStandard()` — National Championship Standard thresholds
-
-### `src/live-data/`
-MCP client wrapping fetch calls to the production API:
-- `CollegeBaseballSabermetricsClient` — typed client for all 12 MCP tools
-- Fetch-first architecture with `FetchResult`/`FetchError`/`FetchOutcome` types
-
-### `src/analytics/`
-- `applySecVarianceAdjustment()` — adjusts Big 12 baselines for SEC competition (multiplier: 1.35)
-- `checkDoctrineDeviation()` / `detectDeviations()` — MINOR/MODERATE/CRITICAL flags at 5%/15%/25%
-- `generateTeamReport()` — produces `ThreeLayerReport` from live + doctrine data
-
-### `src/validation/`
-- `buildThreeLayerReport()` — assembles Verified Facts → Systemic Inference → Professional Recommendation
-- `validateReport()` — confirms all three layers are present and populated
-
----
-
-## Quick Start
+Run development setup and checks in a repository checkout containing the lockfile, source and tests:
 
 ```bash
-npm install       # Install dependencies
-npm run lint      # Type-check (tsc --noEmit)
-npm test          # Run Jest test suite (64 tests, 4 files)
-npm run build     # Compile TypeScript → dist/
+npm ci
+npm run check
+npm run report -- --team texas --conference SEC --format markdown
+npm run report -- --team texas --format json --output texas-evidence.json
 ```
 
----
+`npm run check` builds the executable after testing.
 
-## Program Facts
+### From an extracted release package
 
-| Fact | Value |
-|------|-------|
-| Head coach | Jim Schlossnagle (2025-present) |
-| National titles | 6 (1949, 1950, 1975, 1983, 2002, 2005) |
-| CWS appearances | 38 |
-| Conference | SEC (since 2024) |
-| Venue | UFCU Disch-Falk Field (7,273 capacity) |
-| 2025 season | 44-14, SEC regular season title, SEC COY |
-| 2026 early | 12-0 start, Schlossnagle 1,000+ career D1 wins |
+Extract the release tarball and change into its `package` directory. It includes the built CLI and references; development source, tests and `package-lock.json` are excluded. Run the packaged executable directly, without `npm ci` or development scripts:
 
----
+```bash
+node dist/cli.js --help
+node dist/cli.js --team texas --conference SEC --format markdown
+node dist/cli.js --team texas --format json --output texas-evidence.json
+```
 
-## MCP Tools (via api.blazesportsintel.com)
+The Markdown packet is a compact source-attributed briefing. JSON retains complete provider results, request arguments, endpoint, retrieval timestamps and failures. Exit codes: 0 collection resolved, 1 partial collection, 2 argument or file error. A successful collection does not certify fresh season coverage or factual accuracy.
 
-| Tool | Purpose |
-|------|---------|
-| `cbb_player_lookup` | Find player by name/team |
-| `cbb_player_stats` | Full stat line (batting/pitching/fielding) |
-| `cbb_compare_players` | Side-by-side comparison |
-| `cbb_havf_player` | HAV-F composite score (0–100) |
-| `cbb_team_analytics` | Team-level advanced metrics |
-| `cbb_leaderboard` | Ranked list by metric |
-| `cbb_park_factor` | Venue-adjusted run environment |
-| `cbb_conference_strength` | Conference-strength rating |
-| `cbb_mmi_game` | Momentum/Matchup Index per game |
-| `cbb_compute_batting` | Stateless wOBA/wRC+/ISO compute |
-| `cbb_compute_pitching` | Stateless FIP/xFIP compute |
-| `cbb_glossary` | Metric definitions and formulas |
+## What is implemented
 
-See [`docs/data-sources.md`](docs/data-sources.md) for full input/output schemas.
+| Component | Capability | Boundary |
+|---|---|---|
+| HTTP MCP reader | Initialization, session headers, discovery, paginated catalogs, JSON/SSE responses, timeouts and byte limits | Read-only allowlist; no hidden retries, credentials or production writes |
+| Texas source packet | SEC standings, Texas schedule and rankings with raw provenance | Exact team identity; null stays null; no assumed season |
+| Three-layer report | Observations, interpretation and editorial recommendation | Requires complete legacy team inputs; not synthesized from standings |
+| Runtime validation | Report shape, nonblank attribution, dates, inference links, confidence range and deviation counts | Structural validity is not source truth |
+| Program doctrine | Historical context and configurable review benchmarks | Benchmarks are editorial policy, not calibrated championship cutoffs |
+| Deviation checks | Five, fifteen and twenty-five percent thresholds | Review priority only, not coaching or personnel instructions |
 
----
+The deployed BSI MCP endpoint was inspected on October 31, 2026. It exposes seven tools: scoreboard, standings, rankings, player stats, team schedule, match detail and web intelligence search. Discovery is authoritative; this package does not assume undocumented advanced-metric tools.
 
-## Related Repositories
+## Library examples
 
-| Repo | Purpose | URL |
-|------|---------|-----|
-| [Blaze-sports-Intel/college-baseball-api](https://github.com/Blaze-sports-Intel/college-baseball-api) | Production MCP server | api.blazesportsintel.com |
-| [ahump20/college-baseball-sabermetrics-API](https://github.com/ahump20/college-baseball-sabermetrics-API) | React dashboard | sabermetrics.blazesportsintel.com |
+```ts
+import { BlazeMcpClient, collectTeamEvidence, renderEvidencePacket } from 'texas-longhorns-baseball-intelligence';
+const reader = new BlazeMcpClient();
+const catalog = await reader.discoverTools();
+const packet = await collectTeamEvidence(reader, 'texas', 'SEC');
+console.log(renderEvidencePacket(packet));
+```
 
----
+`CollegeBaseballSabermetricsClient` remains available as a legacy injected adapter for callers that supply `cbb_player_stats` and `cbb_team_analytics` functions. Those function names are **not** advertised by the live BSI endpoint. Its required full schemas are now runtime-checked before a successful result is returned. Do not manufacture missing advanced metrics to satisfy them.
 
-## Documentation
+## Historical and analytical corrections
 
-| File | Description |
-|------|-------------|
-| [`docs/architecture.md`](docs/architecture.md) | System design and data flow |
-| [`docs/data-sources.md`](docs/data-sources.md) | MCP tools, resources, freshness, caveats |
-| [`docs/audiences.md`](docs/audiences.md) | Output routing for fans, coaches, NIL, researchers |
-| [`docs/analytical-frameworks.md`](docs/analytical-frameworks.md) | HAV-F, MMI, SEC variance, all formulas |
-| [`CLAUDE.md`](CLAUDE.md) | Agent/Copilot instructions for this repo |
+Texas joined the SEC institutionally in July 2024; its first SEC **baseball season was 2025**. The 2024 baseball season belongs to the Big 12. Source: [Texas announces its 2025 SEC schedule](https://texaslonghorns.com/news/2024/9/12/baseball-announces-2025-sec-schedule).
 
----
+Legacy conference multipliers remain exported for compatibility, explicitly uncalibrated. Default reports no longer apply them to win percentages or label them verified facts. A Pythagorean estimate cannot be derived from run differential alone. No calibrated win prediction, HAV-F/MMI score, park factor, NIL valuation or personnel recommendation is produced by this release.
 
-## License
+## Data honesty
 
-MIT
+A provider's `fetched_at` and the client's `retrievedAt` are different timestamps. Neither establishes statistical coverage by itself. The live standings response inspected during this upgrade lacked explicit season and conference win/loss counts. The packet preserves those omissions and warns about them rather than turning missing values into zero or inferring counts from percentages.
+
+The legacy report's `confidence` field represents transcription fidelity, not the probability a source is correct. Actual publication still requires source review. Historical assets are retained; older design documents describe aspirations and must not override this release's executable contract.
+
+## Verification and reference
+
+- [Data contracts and limitations](docs/data-sources.md)
+- [Architecture](docs/architecture.md)
+- [Upgrade evidence](docs/verification-2026-10-31.md)
+- [Implementation design](docs/superpowers/specs/2026-10-31-verified-workflows-design.md)
+
+No hosting deployment, account-plugin publication, subscription change or background monitoring is performed by these commands.

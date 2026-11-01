@@ -1,12 +1,15 @@
 {
   "name": "texas-longhorns-baseball-intelligence",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "Texas Longhorns Baseball Intelligence System: analytical engine bridging historical program doctrine with live MCP performance data.",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "test": "jest",
-    "lint": "tsc --noEmit"
+    "lint": "tsc --noEmit",
+    "check": "npm run lint && npm test -- --runInBand && npm run build",
+    "report": "node dist/cli.js",
+    "prepack": "npm run build"
   },
   "keywords": [
     "baseball",
@@ -23,5 +26,30 @@
     "jest": "^30.3.0",
     "ts-jest": "^29.4.6",
     "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "types": "dist/index.d.ts",
+  "bin": {
+    "texas-baseball-intel": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "references",
+    "README.md",
+    "LICENSE",
+    "docs/architecture.md",
+    "docs/data-sources.md",
+    "docs/verification-2026-10-31.md",
+    "docs/verification/live-smoke-2026-10-31.json",
+    "docs/superpowers/specs/2026-10-31-verified-workflows-design.md",
+    "docs/verification/dependency-audit-2026-10-31.json",
+    "docs/verification-2026-11-01.md",
+    "docs/verification/dependency-audit-2026-11-01.json"
+  ],
+  "overrides": {
+    "glob": "^14.0.3",
+    "minimatch": "^11.0.3"
   }
 }

@@ -51,8 +51,8 @@ export function loadDoctrine(): DoctrineRecord {
     conferenceMemberships: [
       { conference: 'Independent', startYear: 1895, endYear: 1914 },
       { conference: 'SWC', startYear: 1915, endYear: 1995 },
-      { conference: 'Big12', startYear: 1996, endYear: 2023 },
-      { conference: 'SEC', startYear: 2024, endYear: null },
+      { conference: 'Big12', startYear: 1996, endYear: 2024 },
+      { conference: 'SEC', startYear: 2025, endYear: null },
     ],
   };
 }
@@ -73,7 +73,7 @@ export function getNationalTitleCount(doctrine: DoctrineRecord): number {
 export function getConferenceEra(year: number): ConferenceEra {
   if (year < 1915) return 'Independent';
   if (year < 1996) return 'SWC';
-  if (year < 2024) return 'Big12';
+  if (year < 2025) return 'Big12';
   return 'SEC';
 }
 

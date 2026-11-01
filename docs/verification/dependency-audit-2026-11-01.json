@@ -1,0 +1,97 @@
+{
+  "checkedAt": "2026-11-01",
+  "method": "npm audit --json; npm audit --omit=dev --json; npm ci --ignore-scripts with explicit supported-version overrides followed by project checks",
+  "before": {
+    "info": 0,
+    "low": 4,
+    "moderate": 16,
+    "high": 0,
+    "critical": 0,
+    "total": 20
+  },
+  "after": {
+    "info": 0,
+    "low": 6,
+    "moderate": 0,
+    "high": 0,
+    "critical": 0,
+    "total": 6
+  },
+  "runtime": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 0,
+    "critical": 0,
+    "total": 0
+  },
+  "overrides": {
+    "glob": "^14.0.3",
+    "minimatch": "^11.0.3"
+  },
+  "remainingPackages": [
+    {
+      "name": "@jest/core",
+      "severity": "low",
+      "via": [
+        "jest-config"
+      ]
+    },
+    {
+      "name": "deepmerge",
+      "severity": "low",
+      "via": [
+        {
+          "source": 1243505,
+          "name": "deepmerge",
+          "dependency": "deepmerge",
+          "title": "deepmerge mergeObject() allows prototype poisoning of returned objects",
+          "url": "https://github.com/advisories/GHSA-gcqx-w48m-w2h4",
+          "severity": "low",
+          "cwe": [
+            "CWE-1321"
+          ],
+          "cvss": {
+            "score": 5.3,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N"
+          },
+          "range": ">=4.2.0 <=4.3.1"
+        }
+      ]
+    },
+    {
+      "name": "jest",
+      "severity": "low",
+      "via": [
+        "@jest/core",
+        "jest-cli"
+      ]
+    },
+    {
+      "name": "jest-cli",
+      "severity": "low",
+      "via": [
+        "@jest/core",
+        "jest-config"
+      ]
+    },
+    {
+      "name": "jest-config",
+      "severity": "low",
+      "via": [
+        "deepmerge"
+      ]
+    },
+    {
+      "name": "ts-jest",
+      "severity": "low",
+      "via": [
+        "jest"
+      ]
+    }
+  ],
+  "limitations": [
+    "Audits reflect the advisory database at retrieval time; they are not a complete security certification.",
+    "Texas development/test deepmerge 4.3.1 has no published patched version; forced framework downgrades were not applied."
+  ]
+}
