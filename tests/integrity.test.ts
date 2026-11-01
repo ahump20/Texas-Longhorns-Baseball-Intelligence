@@ -50,6 +50,44 @@ describe('runtime report validation', () => {
     report.metadata.totalDeviations = 2;
     expect(validateReport(report)).toBe(false);
   });
+
+  test.each([
+    ['array', '["CRITICAL"]'],
+    ['object', '{"toString":null}'],
+  ])('rejects a JSON %s priority without throwing', (_kind, encoded) => {
+    const report = buildThreeLayerReport([fact], [inference], rec);
+    const malformed = {
+      ...report,
+      layers: {...report.layers, professionalRecommendation: {...rec, priority: JSON.parse(encoded) as unknown}},
+    };
+    let valid: boolean | undefined;
+    expect(() => { valid = validateReport(malformed); }).not.toThrow();
+    expect(valid).toBe(false);
+  });
+
+  test.each([
+    ['array', '["CRITICAL"]'],
+    ['object', '{"toString":null}'],
+  ])('rejects a JSON %s severity even with a misleading zero critical count', (_kind, encoded) => {
+    const report = buildThreeLayerReport([fact], [inference], rec);
+    const malformed = {
+      ...report,
+      layers: {
+        ...report.layers,
+        professionalRecommendation: {
+          ...rec,
+          doctrineDeviations: [{
+            metric: 'era', observedValue: 5.5, nationalChampionshipThreshold: 3.5, deviationMagnitude: 0.571,
+            severity: JSON.parse(encoded) as unknown, flag: 'DOCTRINE_DEVIATION', recommendation: 'Review the evidence.',
+          }],
+        },
+      },
+      metadata: {...report.metadata, totalDeviations: 1, criticalDeviations: 0},
+    };
+    let valid: boolean | undefined;
+    expect(() => { valid = validateReport(malformed); }).not.toThrow();
+    expect(valid).toBe(false);
+  });
 });
 
 const teamFixture: MCPTeamAnalytics = {
