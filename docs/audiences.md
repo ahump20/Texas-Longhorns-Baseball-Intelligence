@@ -1,74 +1,23 @@
-# Audience Routing
+# Audience guidance
 
-Texas Longhorns Baseball Intelligence outputs are tailored to four distinct audiences. Each receives different report depth, terminology, and emphasis from the same underlying data.
+Use the same retained evidence for every audience. Change the depth, vocabulary and useful next question. This page guides an analyst's writing; the current CLI does not automatically generate four audience-specific products.
 
----
+| Audience | Useful emphasis | Evidence boundary |
+|---|---|---|
+| Fans and readers | What happened, why the comparison matters and what to watch next | Explain metrics in context; identify the season and sample before calling a result unusual |
+| Coaches and analysts | Matchup questions, workload, opponent quality and competing explanations | Tactical or player-level conclusions require actual game and player inputs beyond the default team packet |
+| Program and business staff | Verified roster context, development evidence and questions that need follow-up | The engine has no NIL pricing, deal comparisons, draft model or private personnel information |
+| Researchers | Raw inputs, source timing, method definitions, missingness and reproducibility | Preserve original fields; do not treat editorial benchmarks as calibrated models |
 
-## Fans
+## A shared report discipline
 
-**Goal:** Accessible insight with program context. Make the statistics meaningful.
+1. Lead with the most consequential supported observation.
+2. Give the source, season, cutoff and denominator needed to assess it.
+3. Connect interpretation to the observation that supports it.
+4. State what additional evidence would strengthen or change the conclusion.
 
-**Output characteristics:**
-- Headline stats with plain-language interpretation
-- Comparison to program historical baselines (e.g., "ERA is 3.12 — elite by Texas standards")
-- Reference to key players by name, position, and season storyline
-- Historical context from doctrine layer (titles, CWS appearances, coaching era)
-- Avoid raw wOBA/FIP/HAV-F unless explained inline
+For example, an analyst can say, “The supplied packet does not identify the season. Confirm the statistical cutoff before comparing this record with another year.” That limitation is useful to every audience. It should remain visible when the prose becomes shorter or more accessible.
 
-**Key MCP tools:** `cbb_team_analytics`, `cbb_player_stats`, `cbb_leaderboard`
+Historical program references support context. The current public MCP catalog and actual returned fields determine what is available now. Older `cbb_*` names, HAV-F/MMI descriptions and speculative NIL examples do not establish deployed capabilities.
 
-**Example framing:** "Texas is 12-0 and the rotation ERA of 2.84 is the best SEC mark through the first month — ahead of the 3.20 threshold that historically signals a CWS-caliber staff."
-
----
-
-## Coaches
-
-**Goal:** Tactical detail for matchup preparation, roster construction, and in-game decisions.
-
-**Output characteristics:**
-- Full advanced metric suite: wOBA, wRC+, FIP, HAV-F, BABIP, K%, BB%
-- Matchup analysis (opposing pitcher tendencies, lineup vulnerabilities)
-- Bullpen leverage and usage patterns
-- Roster construction advice (transfer portal gaps, positional depth assessment)
-- SEC-adjusted metrics using conference variance factors
-- Doctrine deviation flags for performance anomalies
-
-**Key MCP tools:** `cbb_havf_player`, `cbb_compare_players`, `cbb_mmi_game`, `cbb_conference_strength`, `cbb_compute_batting`, `cbb_compute_pitching`
-
-**Example framing:** "Opposing Friday starter carries a 1.8 BB/9 but 11.2 K/9 with a .218 opponent BABIP — regression candidate. Attack early in counts to neutralize the swing-and-miss profile before BABIP normalizes."
-
----
-
-## NIL Front Offices
-
-**Goal:** Investment-grade analysis for NIL valuation and deal structuring.
-
-**Output characteristics:**
-- WAR-to-NIL efficiency: performance value relative to deal cost
-- Draft leverage scoring: projection of draft round and signing bonus range
-- Market exposure: social following, media mentions, program visibility
-- Development trajectory: is production accelerating or plateauing?
-- Risk factors: injury history, eligibility timeline, transfer portal risk
-- Comparative deal benchmarks across similar profiles
-
-**Key MCP tools:** `cbb_player_stats`, `cbb_havf_player`, `cbb_compare_players`, `cbb_leaderboard`
-
-**Example framing:** "Player X ranks 4th in SEC wRC+ among eligible sophomores. Draft model projects Day 2 (Rounds 2-3). Current NIL deal undervalues by ~35% relative to comparable profiles — renegotiation window is pre-draft rankings release."
-
----
-
-## Researchers
-
-**Goal:** Full methodological transparency, raw data access, and reproducible analysis.
-
-**Output characteristics:**
-- Complete formula documentation (see `docs/analytical-frameworks.md`)
-- Raw data with no interpretation overlay
-- Confidence intervals and sample size caveats
-- League context parameters and calibration source
-- Explicit notation of V1 limitations (MLB-derived weights, park factor defaults)
-- Three-layer report structure with full audit trail: Verified Facts → Systemic Inference → Professional Recommendation
-
-**Key MCP tools:** All tools; `cbb_glossary`, `cbb://methodology/*`, `cbb://weights/*` resources especially useful
-
-**Example framing:** "HAV-F computed as `0.30*H + 0.25*A + 0.25*V + 0.20*F` where H is weighted batting contact score, A is approach score, V is power score, F is fielding score. Linear weights sourced from MLB 2019-2023 run environment; SEC park factor applied at 1.0 (V1 default). n=247 PA — estimates stable above n=200."
+See [implemented workflows](WORKFLOWS.md), [data contracts](data-sources.md) and [analytical limits](analytical-frameworks.md).

@@ -1,7 +1,7 @@
 {
   "name": "texas-longhorns-baseball-intelligence",
   "version": "1.1.1",
-  "description": "Texas Longhorns Baseball Intelligence System: analytical engine bridging historical program doctrine with live MCP performance data.",
+  "description": "Texas baseball evidence and analysis: a TypeScript library and CLI for sourced team packets, SEC context and reproducible reporting.",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
@@ -18,7 +18,7 @@
     "sabermetrics",
     "mcp"
   ],
-  "author": "",
+  "author": "Austin Humphrey",
   "license": "MIT",
   "devDependencies": {
     "@types/jest": "^30.0.0",
@@ -46,10 +46,23 @@
     "docs/superpowers/specs/2026-10-31-verified-workflows-design.md",
     "docs/verification/dependency-audit-2026-10-31.json",
     "docs/verification-2026-11-01.md",
-    "docs/verification/dependency-audit-2026-11-01.json"
+    "docs/verification/dependency-audit-2026-11-01.json",
+    "docs/WORKFLOWS.md",
+    "docs/PROJECT_SCORECARD.md",
+    "docs/verification-2026-11-21.md",
+    "docs/verification/live-packet-2026-11-21.json",
+    "texas-program-doctrine.md",
+    "docs/analytical-frameworks.md",
+    "docs/audiences.md",
+    "docs/verification/live-packet-2026-11-21.md"
   ],
   "overrides": {
     "glob": "^14.0.3",
     "minimatch": "^11.0.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ahump20/Texas-Longhorns-Baseball-Intelligence.git"
+  },
+  "homepage": "https://github.com/ahump20/Texas-Longhorns-Baseball-Intelligence#readme"
 }

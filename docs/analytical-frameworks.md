@@ -1,191 +1,49 @@
-# Analytical Frameworks
+# Analytical frameworks and limits
 
-All formulas reflect the production implementation in `Blaze-sports-Intel/college-baseball-api` (`packages/analytics/`). Verify against `cbb://methodology/*` resources for current-season calibration values.
+This page describes the implemented engine. A method name, exported type or historical design does not establish that a live provider supplies its inputs or that the method has predictive validation.
 
----
+## Evidence collection and structured reports
 
-## HAV-F (Holistic Athletic Value — Field)
+`collectTeamEvidence` retains standings, schedule and ranking results with request arguments, endpoint attribution, timestamps, warnings and failures. `renderEvidencePacket` renders a collector-produced packet; it does not validate arbitrary imported JSON.
 
-A composite batting evaluation score, scaled 0–100.
+The separate `generateTeamReport` path accepts complete, caller-supplied team analytics and doctrine. It reports observations, descriptive win percentage and deviations from declared editorial benchmarks. Its three layers are observations, inference and recommendation. The `VerifiedFact` type is a historical API name: `validateReport` checks structure and internal references, not whether a provider's assertion is true. A confidence field of 1 represents transcription fidelity, not certainty about the real world.
 
-**Top-level formula:**
-```
-HAV-F = 0.30*H + 0.25*A + 0.25*V + 0.20*F
-```
+See [architecture](architecture.md) and [data contracts](data-sources.md) for the two supported paths.
 
-**H — Contact Score (weighted batting contact quality):**
-```
-H = 0.25*pAVG + 0.25*pOBP + 0.20*pSLG + 0.20*pwOBA + 0.10*pISO
-```
-Where `p` prefix = percentile rank (0–1) within the comparison population.
+## Doctrine deviation
 
-**A — Approach Score (plate discipline):**
-```
-A = 0.30*pBB% + 0.30*p(inv K%) + 0.20*pBABIP + 0.20*pHR%
-```
-`inv K%` = `1 - K%` so that lower strikeout rate scores higher.
+`checkDoctrineDeviation` compares a finite observed value with a positive `nationalChampionshipThreshold`. Direction comes from the standard or the caller's lower-is-better setting. For a value worse than its threshold:
 
-**V — Power Score (extra-base impact):**
-```
-V = 0.40*pISO + 0.35*pSLG + 0.25*pHR%
-```
+- Lower is better: `(observed - threshold) / threshold`.
+- Higher is better: `(threshold - observed) / threshold`.
 
-**F — Fielding Score:**
-```
-F = 0.60*pFielding% + 0.40*pRangeFactor
-```
+| Unfavorable distance | Result |
+|---|---|
+| Less than 5% | No flag |
+| At least 5%, below 15% | `MINOR` |
+| At least 15%, below 25% | `MODERATE` |
+| At least 25% | `CRITICAL` |
 
-**Interpretation:**
-| Score | Label |
-|-------|-------|
-| 80–100 | Elite |
-| 65–79 | Above average |
-| 50–64 | Average |
-| 35–49 | Below average |
-| 0–34 | Replacement level |
+For an illustrative ERA benchmark of 3.50, observed ERAs of 3.85, 4.20 and 4.55 are 10%, 20% and 30% above the benchmark. These are examples of the rule, not observed Texas statistics. The comparison uses the declared threshold, not the midpoint of a historical range.
 
----
+The [program standards](../references/program-standards.json) retain AVG .285, OPS .800, ERA 3.50, WHIP 1.25, fielding percentage .970, K/9 9.0 and runs/game 6.5. These are configurable editorial policy. No supplied calibration dataset establishes them as championship cutoffs. Default reports suppress deviation flags when there are no completed decisions and keep review priority separate from personnel decisions.
 
-## MMI (Momentum/Matchup Index)
+## Legacy conference arithmetic
 
-A game-level momentum and matchup quality score, signed -100 to +100.
+`applySecVarianceAdjustment` remains exported for compatibility. It calculates:
 
-**Formula:**
-```
-MMI = (SD*0.40 + RS*0.30 + BS*0.15) * GP
+```text
+rawValue * (toMultiplier / fromMultiplier)
 ```
 
-Where:
-- `SD` = Situational dominance score (baserunning efficiency, RISP performance)
-- `RS` = Run support differential (offensive output vs. opponent ERA)
-- `BS` = Bullpen stability score (inherited runners stranded, leverage performance)
-- `GP` = Game phase multiplier (late-inning leverage amplifier)
+The retained settings are SEC 1.35, Big12 1.00, SWC 0.90 and Independent 0.75. They are hand-set, uncalibrated scenario inputs. The function does not select metric direction, does not have a `lowerIsBetter` argument and does not establish equivalent performance between conferences. Default reports do not use it to adjust win percentage or turn its result into a verified fact.
 
-**Interpretation:**
-- **+50 to +100**: Strong momentum advantage; predictive of continued run-scoring
-- **+20 to +49**: Moderate advantage
-- **-20 to +19**: Contested game
-- **-50 to -20**: Momentum deficit
-- **-100 to -51**: Significant structural disadvantage
+`isSecEra` uses baseball season 2025 onward. Institutional conference entry in July 2024 and the first SEC baseball season answer different questions.
 
----
+## Metrics requiring another implementation or provider
 
-## SEC Conference Variance Adjustment
+This engine does not calculate HAV-F, MMI, NIL valuations, draft projections or calibrated win probabilities. Older descriptions of those models are not an available method or validated result.
 
-Adjusts Big 12-calibrated baselines for current conference strength.
+For wOBA, wRC+, FIP and other baseball calculations, use a documented calculator with its actual counting inputs, denominator and season-specific league context. The companion [Baseball plugin](https://github.com/ahump20/Sports-Plugins/tree/main/plugins/baseball) provides tested explicit-input calculations. Values supplied by an external provider retain that provider's definition and limitations; a typed field does not supply missing methodology.
 
-**Multipliers:**
-| Conference | Multiplier |
-|-----------|-----------|
-| SEC | 1.35 |
-| Big 12 | 1.00 (baseline) |
-| SWC | 0.90 |
-| Independent | 0.75 |
-
-**Application (implemented in `src/analytics/secVariance.ts`, for lower-is-better metrics such as ERA):**
-```
-adjustedValue = rawValue * (toMultiplier / fromMultiplier)
-```
-
-For higher-is-better metrics (e.g., win%), the equivalent-strength normalization inverts the ratio:
-```
-adjustedValue = rawValue * (fromMultiplier / toMultiplier)
-```
-or is handled via a `lowerIsBetter` flag in the calling analytics layer rather than by this simple form.
-
-**Example (lower-is-better ERA):** A team ERA of 3.80 earned in the SEC, evaluated against Big 12 baselines:
-```
-adjustedERA = 3.80 * (1.00 / 1.35) = 2.81
-```
-The ERA performance is equivalent to a 2.81 ERA in Big 12-calibrated terms.
-
----
-
-## Doctrine Deviation
-
-Flags when live performance metrics diverge from historical Texas program baselines.
-
-**Threshold levels (implemented in `src/analytics/doctrineDeviation.ts`):**
-| Threshold | Deviation | Action |
-|-----------|----------|--------|
-| MINOR | ≥5% | Flag in report, monitor trend |
-| MODERATE | ≥15% | Elevate to inference layer, investigate root cause |
-| CRITICAL | ≥25% | Escalate to recommendation layer, structural concern |
-
-**Example:** Program baseline ERA is 3.85 (midpoint of 3.50–4.20 range).
-- Current ERA 4.10: deviation = 6.5% → MINOR
-- Current ERA 4.60: deviation = 19.5% → MODERATE  
-- Current ERA 5.20: deviation = 35.1% → CRITICAL
-
----
-
-## National Championship Standard
-
-Threshold values defining elite performance for a championship-caliber Texas program (sourced from `references/program-standards.json`):
-
-| Metric | Threshold | Direction |
-|--------|----------|----------|
-| Team AVG | ≥ .285 | Higher is better |
-| Team OPS | ≥ .800 | Higher is better |
-| Team ERA | ≤ 3.50 | Lower is better |
-| Team WHIP | ≤ 1.25 | Lower is better |
-| Fielding % | ≥ .970 | Higher is better |
-| K/9 (pitching) | ≥ 9.0 | Higher is better |
-| Runs/Game | ≥ 6.5 | Higher is better |
-
----
-
-## Three-Layer Report Structure
-
-Every report produced by `src/validation/` follows this structure:
-
-**Layer 1 — Verified Facts**
-Direct data from MCP tools or doctrine JSON. No interpretation. Cited source required.
-
-**Layer 2 — Systemic Inference**
-Patterns derived from Layer 1 data. May synthesize multiple data points. Confidence level noted.
-
-**Layer 3 — Professional Recommendation**
-Actionable guidance based on Layers 1 and 2. Audience-appropriate framing. Explicitly flags uncertainty.
-
----
-
-## wOBA (Weighted On-Base Average)
-
-Standard linear weights formula:
-```
-wOBA = (wBB*BB + wHBP*HBP + w1B*1B + w2B*2B + w3B*3B + wHR*HR) / PA
-```
-
-Current league context defaults (V1):
-| Weight | Value |
-|--------|-------|
-| wBB | 0.690 |
-| wHBP | 0.720 |
-| w1B | 0.880 |
-| w2B | 1.247 |
-| w3B | 1.578 |
-| wHR | 2.031 |
-| League wOBA | 0.310 |
-
----
-
-## FIP (Fielding Independent Pitching)
-
-```
-FIP = ((13*HR + 3*(BB+HBP) - 2*K) / IP) + FIP_constant
-```
-
-FIP constant default: **3.186**
-
-FIP isolates pitcher performance from fielding quality. Lower is better.
-
----
-
-## wRC+ (Weighted Runs Created Plus)
-
-```
-wRC+ = ((wRAA/PA + leagueR/PA) + (leagueR/PA - parkFactor*leagueR/PA)) / (leagueWRC/PA) * 100
-```
-
-Scaled so that 100 = league average. Above 100 = above average. Park factor defaults to 1.0 in V1.
+Do not fill absent inputs with historical constants and label the resulting number current college-baseball performance. A run differential alone is insufficient for a Pythagorean estimate, and a quoted statistic without its sample or season cannot support a precise comparison.
