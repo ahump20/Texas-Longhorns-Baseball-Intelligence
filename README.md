@@ -1,78 +1,112 @@
 # Texas Longhorns Baseball Intelligence
 
-A TypeScript analytical library and working command-line evidence collector for Texas baseball. Version 1.1.1 separates historical program context, source observations and editorial judgment. It does not deploy or modify the BSI website.
+Collect sourced Texas baseball evidence and build reports that distinguish what the data says from what an analyst concludes. This repository provides the TypeScript library, command-line collector and historical program references.
 
-## Run it
+Maintained by [Austin Humphrey](https://github.com/ahump20), founder of [Blaze Sports Intel](https://blazesportsintel.com).
 
-Node 22.12+ is required. No runtime dependencies or API keys are needed for the public read-only endpoint.
+## What you can do
 
-### From a source checkout
+| Job | Implemented capability | What to check |
+|---|---|---|
+| Assemble a Texas research packet | Collect standings, schedule and rankings through the public BSI MCP endpoint | Exact team identity, season, statistical coverage and provider omissions |
+| Keep an audit trail | JSON retains raw results, request arguments, endpoint, timestamps and failures | A recent retrieval does not establish a recent statistical cutoff |
+| Read a compact briefing | Markdown shows available team fields, provenance and missing information | Schedule and ranking responses remain in the JSON packet |
+| Build a three-layer report | Separate observations, inference and recommendation using complete supplied team inputs | Report validation checks structure, not source truth |
+| Compare with program benchmarks | Historical doctrine and configurable deviation checks | Benchmarks are editorial review policy, not calibrated championship thresholds |
 
-Run development setup and checks in a repository checkout containing the lockfile, source and tests:
+The assistant-facing **Texas Longhorns Intel** plugin lives in [Sports Plugins](https://github.com/ahump20/Sports-Plugins/tree/main/plugins/texas-longhorns-intel). Install that workflow when you want an assistant to guide research. Use this engine when you want repeatable collection or a library to integrate into your own code.
+
+## Collect a packet
+
+Requires Node 22.12+. The public read-only endpoint needs no API key; the package has no runtime dependencies.
+
+From a source checkout:
 
 ```bash
 npm ci
 npm run check
 npm run report -- --team texas --conference SEC --format markdown
-npm run report -- --team texas --format json --output texas-evidence.json
+npm run report -- --team texas --conference SEC --format json --output texas-evidence.json
 ```
 
-`npm run check` builds the executable after testing.
+The two report commands collect separately, so their retrieval times may differ. To render Markdown from the **same** saved JSON, use the library renderer:
 
-### From an extracted release package
+```bash
+node -e 'const fs = require("node:fs"); const { renderEvidencePacket } = require("./dist"); const packet = JSON.parse(fs.readFileSync("texas-evidence.json", "utf8")); process.stdout.write(renderEvidencePacket(packet));' > texas-evidence.md
+```
 
-Extract the release tarball and change into its `package` directory. It includes the built CLI and references; development source, tests and `package-lock.json` are excluded. Run the packaged executable directly, without `npm ci` or development scripts:
+Use a packet produced by this collector. The renderer is not an import validator for arbitrary JSON.
+
+### From a release package
+
+Extract a release tarball and enter its `package` directory:
 
 ```bash
 node dist/cli.js --help
-node dist/cli.js --team texas --conference SEC --format markdown
-node dist/cli.js --team texas --format json --output texas-evidence.json
+node dist/cli.js --team texas --conference SEC --format json --output texas-evidence.json
 ```
 
-The Markdown packet is a compact source-attributed briefing. JSON retains complete provider results, request arguments, endpoint, retrieval timestamps and failures. Exit codes: 0 collection resolved, 1 partial collection, 2 argument or file error. A successful collection does not certify fresh season coverage or factual accuracy.
+Release packages contain built code and references. Development source, tests and the lockfile are omitted, so run the executable directly.
 
-## What is implemented
+| Exit code | Meaning |
+|---|---|
+| `0` | Collection resolved and a unique team row was found; season coverage may still be missing |
+| `1` | Partial collection: inspect failures, unresolved identity and retained evidence |
+| `2` | Invalid arguments or local file error |
 
-| Component | Capability | Boundary |
-|---|---|---|
-| HTTP MCP reader | Initialization, session headers, discovery, paginated catalogs, JSON/SSE responses, timeouts and byte limits | Read-only allowlist; no hidden retries, credentials or production writes |
-| Texas source packet | SEC standings, Texas schedule and rankings with raw provenance | Exact team identity; null stays null; no assumed season |
-| Three-layer report | Observations, interpretation and editorial recommendation | Requires complete legacy team inputs; not synthesized from standings |
-| Runtime validation | Report shape, nonblank attribution, dates, inference links, confidence range and deviation counts | Structural validity is not source truth |
-| Program doctrine | Historical context and configurable review benchmarks | Benchmarks are editorial policy, not calibrated championship cutoffs |
-| Deviation checks | Five, fifteen and twenty-five percent thresholds | Review priority only, not coaching or personnel instructions |
+The CLI writes to the supplied output path; choose a new filename when preserving an earlier packet.
 
-The deployed BSI MCP endpoint was inspected on October 31, 2026. It exposes seven tools: scoreboard, standings, rankings, player stats, team schedule, match detail and web intelligence search. Discovery is authoritative; this package does not assume undocumented advanced-metric tools.
+## Read the evidence
 
-## Library examples
+Review `teamObservation`, `evidence`, `warnings` and `failures` before using a packet in a story. Provider `fetched_at`, client `retrievedAt` and the season or statistical cutoff answer different questions.
+
+A live collection on November 21, 2026 completed all three requests. The selected standings row still omitted an explicit season and conference win/loss counts; the collector preserved those gaps. See the [verification record](docs/verification-2026-11-21.md) for the exact scope.
+
+The endpoint's discovered catalog is authoritative. The engine does not assume that older documentation's advanced-metric tools are deployed.
+
+## Use the library
 
 ```ts
-import { BlazeMcpClient, collectTeamEvidence, renderEvidencePacket } from 'texas-longhorns-baseball-intelligence';
+import {
+  BlazeMcpClient,
+  collectTeamEvidence,
+  renderEvidencePacket,
+} from 'texas-longhorns-baseball-intelligence';
+
 const reader = new BlazeMcpClient();
-const catalog = await reader.discoverTools();
+await reader.discoverTools();
 const packet = await collectTeamEvidence(reader, 'texas', 'SEC');
 console.log(renderEvidencePacket(packet));
 ```
 
-`CollegeBaseballSabermetricsClient` remains available as a legacy injected adapter for callers that supply `cbb_player_stats` and `cbb_team_analytics` functions. Those function names are **not** advertised by the live BSI endpoint. Its required full schemas are now runtime-checked before a successful result is returned. Do not manufacture missing advanced metrics to satisfy them.
+The source package also retains `CollegeBaseballSabermetricsClient` as a legacy injected adapter. Its `cbb_player_stats` and `cbb_team_analytics` functions must be supplied by the caller and satisfy their full schemas. Those names are not a promise about the public endpoint.
 
-## Historical and analytical corrections
+## Analytical boundaries
 
-Texas joined the SEC institutionally in July 2024; its first SEC **baseball season was 2025**. The 2024 baseball season belongs to the Big 12. Source: [Texas announces its 2025 SEC schedule](https://texaslonghorns.com/news/2024/9/12/baseball-announces-2025-sec-schedule).
+- **Season identity:** Texas's first SEC baseball season was **2025**. Its 2024 baseball season was in the Big 12. See [Texas Athletics' 2025 SEC schedule announcement](https://texaslonghorns.com/news/2024/9/12/baseball-announces-2025-sec-schedule).
+- **Program context:** historical reference files are retained as context. Verify current staff, roster and program totals from current authoritative sources.
+- **Conference adjustments:** legacy multipliers remain exported for compatibility and are explicitly uncalibrated. Default reports do not apply them to win percentages or label them verified facts.
+- **Benchmarks:** the “National Championship Standard” thresholds are configurable editorial policy. They are not measured probabilities of winning a title.
+- **Missing inputs:** a run differential alone cannot produce a Pythagorean estimate; absent player inputs cannot produce advanced metrics.
+- **Confidence:** the legacy report field represents transcription fidelity, not a probability that a source is correct.
 
-Legacy conference multipliers remain exported for compatibility, explicitly uncalibrated. Default reports no longer apply them to win percentages or label them verified facts. A Pythagorean estimate cannot be derived from run differential alone. No calibrated win prediction, HAV-F/MMI score, park factor, NIL valuation or personnel recommendation is produced by this release.
+This implementation does not produce calibrated win forecasts, HAV-F/MMI scores, NIL valuations or personnel recommendations.
 
-## Data honesty
+## Workflows and verification
 
-A provider's `fetched_at` and the client's `retrievedAt` are different timestamps. Neither establishes statistical coverage by itself. The live standings response inspected during this upgrade lacked explicit season and conference win/loss counts. The packet preserves those omissions and warns about them rather than turning missing values into zero or inferring counts from percentages.
-
-The legacy report's `confidence` field represents transcription fidelity, not the probability a source is correct. Actual publication still requires source review. Historical assets are retained; older design documents describe aspirations and must not override this release's executable contract.
-
-## Verification and reference
-
-- [Data contracts and limitations](docs/data-sources.md)
+- [Series preparation workflow](docs/WORKFLOWS.md): use current collection capabilities, official source review and the companion plugins.
+- [Project scorecard](docs/PROJECT_SCORECARD.md): exact checks and evidence required for changes.
+- [Data sources and contracts](docs/data-sources.md)
 - [Architecture](docs/architecture.md)
-- [Upgrade evidence](docs/verification-2026-10-31.md)
-- [Implementation design](docs/superpowers/specs/2026-10-31-verified-workflows-design.md)
+- [Latest verification](docs/verification-2026-11-21.md)
 
-No hosting deployment, account-plugin publication, subscription change or background monitoring is performed by these commands.
+```bash
+npm run check
+npm pack --dry-run
+```
+
+Changes use a branch and pull request. Running the collector or library does not deploy the BSI website, publish an article or change a subscription.
+
+## License
+
+[MIT](LICENSE). Source data and historical assets retain their respective rights.

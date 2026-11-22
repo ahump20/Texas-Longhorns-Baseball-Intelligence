@@ -1,0 +1,2208 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-11-21T22:51:08.815Z",
+  "requestedTeam": "texas",
+  "status": "collected",
+  "teamObservation": {
+    "team": "Texas Longhorns",
+    "abbreviation": "TEX",
+    "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+    "wins": 40,
+    "losses": 13,
+    "winPct": 0.754717,
+    "confWins": null,
+    "confLosses": null,
+    "confWinPct": 0.6551724,
+    "runsScored": 423,
+    "runsAllowed": 240,
+    "runDiff": "+183",
+    "streak": "L1",
+    "gamesBack": "-",
+    "gamesPlayed": 53,
+    "record": "40-13",
+    "conference": "SEC"
+  },
+  "evidence": [
+    {
+      "toolName": "bsi_get_standings",
+      "arguments": {
+        "conference": "SEC"
+      },
+      "endpoint": "https://sabermetrics.blazesportsintel.com/mcp",
+      "retrievedAt": "2026-11-21T22:51:05.723Z",
+      "providerMeta": {
+        "source": "espn-fallback",
+        "fetched_at": "2026-11-21T22:51:05.477Z",
+        "timezone": "America/Chicago"
+      },
+      "data": {
+        "standings": [
+          {
+            "conference": "SEC",
+            "teams": [
+              {
+                "team": "Georgia Bulldogs",
+                "abbreviation": "UGA",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/61.png",
+                "wins": 46,
+                "losses": 12,
+                "winPct": 0.79310346,
+                "confWins": null,
+                "confLosses": null,
+                "confWinPct": 0.76666665,
+                "runsScored": 541,
+                "runsAllowed": 291,
+                "runDiff": "+250",
+                "streak": "W3",
+                "gamesBack": "-",
+                "gamesPlayed": 58,
+                "record": "46-12",
+                "conference": "SEC"
+              },
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "wins": 40,
+                "losses": 13,
+                "winPct": 0.754717,
+                "confWins": null,
+                "confLosses": null,
+                "confWinPct": 0.6551724,
+                "runsScored": 423,
+                "runsAllowed": 240,
+                "runDiff": "+183",
+                "streak": "L1",
+                "gamesBack": "-",
+                "gamesPlayed": 53,
+                "record": "40-13",
+                "conference": "SEC"
+              },
+              {
+                "team": "Texas A&M Aggies",
+                "abbreviation": "TA&M",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/245.png",
+                "wins": 39,
+                "losses": 14,
+                "winPct": 0.7358491,
+                "confWins": null,
+                "confLosses": null,
+                "confWinPct": 0.62068963,
+                "runsScored": 477,
+                "runsAllowed": 279,
+                "runDiff": "+198",
+                "streak": "L1",
+                "gamesBack": "-",
+                "gamesPlayed": 53,
+                "record": "39-14",
+                "conference": "SEC"
+              },
+              {
+                "team": "Florida Gators",
+                "abbreviation": "FLA",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/57.png",
+                "wins": 39,
+                "losses": 19,
+                "winPct": 0.67241377,
+                "confWins": null,
+                "confLosses": null,
+                "confWinPct": 0.6,
+                "runsScored": 416,
+                "runsAllowed": 271,
+                "runDiff": "+145",
+                "streak": "L1",
+                "gamesBack": "-",
+                "gamesPlayed": 58,
+                "record": "39-19",
+                "conference": "SEC"
+              },
+              {
+                "team": "Alabama Crimson Tide",
+                "abbreviation": "ALA",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/333.png",
+                "wins": 37,
+                "losses": 19,
+                "winPct": 0.66071427,
+                "confWins": null,
+                "confLosses": null,
+                "confWinPct": 0.6,
+                "runsScored": 355,
+                "runsAllowed": 278,
+                "runDiff": "+77",
+                "streak": "L1",
+                "gamesBack": "-",
+                "gamesPlayed": 56,
+                "record": "37-19",
+                "conference": "SEC"
+              },
+              {
+                "team": "Auburn Tigers",
+                "abbreviation": "AUB",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2.png",
+                "wins": 38,
+                "losses": 19,
+                "winPct": 0.6666667,
+                "confWins": null,
+                "confLosses": null,
+                "confWinPct": 0.56666666,
+                "runsScored": 387,
+                "runsAllowed": 212,
+                "runDiff": "+175",
+                "streak": "L1",
+                "gamesBack": "-",
+                "gamesPlayed": 57,
+                "record": "38-19",
+                "conference": "SEC"
+              },
+              {
+                "team": "Arkansas Razorbacks",
+                "abbreviation": "ARK",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/8.png",
+                "wins": 39,
+                "losses": 20,
+                "winPct": 0.66101694,
+                "confWins": null,
+                "confLosses": null,
+                "confWinPct": 0.56666666,
+                "runsScored": 421,
+                "runsAllowed": 293,
+                "runDiff": "+128",
+                "streak": "L1",
+                "gamesBack": "-",
+                "gamesPlayed": 59,
+                "record": "39-20",
+                "conference": "SEC"
+              },
+              {
+                "team": "Mississippi State Bulldogs",
+                "abbreviation": "MSST",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/344.png",
+                "wins": 40,
+                "losses": 17,
+                "winPct": 0.7017544,
+                "confWins": null,
+                "confLosses": null,
+                "confWinPct": 0.5483871,
+                "runsScored": 486,
+                "runsAllowed": 259,
+                "runDiff": "+227",
+                "streak": "L1",
+                "gamesBack": "-",
+                "gamesPlayed": 57,
+                "record": "40-17",
+                "conference": "SEC"
+              },
+              {
+                "team": "Tennessee Volunteers",
+                "abbreviation": "TENN",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2633.png",
+                "wins": 38,
+                "losses": 20,
+                "winPct": 0.6551724,
+                "confWins": null,
+                "confLosses": null,
+                "confWinPct": 0.5,
+                "runsScored": 426,
+                "runsAllowed": 290,
+                "runDiff": "+136",
+                "streak": "L1",
+                "gamesBack": "-",
+                "gamesPlayed": 58,
+                "record": "38-20",
+                "conference": "SEC"
+              },
+              {
+                "team": "Ole Miss Rebels",
+                "abbreviation": "MISS",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/145.png",
+                "wins": 36,
+                "losses": 21,
+                "winPct": 0.6315789,
+                "confWins": null,
+                "confLosses": null,
+                "confWinPct": 0.48387095,
+                "runsScored": 393,
+                "runsAllowed": 278,
+                "runDiff": "+115",
+                "streak": "L2",
+                "gamesBack": "-",
+                "gamesPlayed": 57,
+                "record": "36-21",
+                "conference": "SEC"
+              },
+              {
+                "team": "Oklahoma Sooners",
+                "abbreviation": "OU",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/201.png",
+                "wins": 32,
+                "losses": 21,
+                "winPct": 0.6037736,
+                "confWins": null,
+                "confLosses": null,
+                "confWinPct": 0.46666667,
+                "runsScored": 351,
+                "runsAllowed": 297,
+                "runDiff": "+54",
+                "streak": "L1",
+                "gamesBack": "-",
+                "gamesPlayed": 53,
+                "record": "32-21",
+                "conference": "SEC"
+              },
+              {
+                "team": "Vanderbilt Commodores",
+                "abbreviation": "VAN",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/238.png",
+                "wins": 33,
+                "losses": 25,
+                "winPct": 0.5689655,
+                "confWins": null,
+                "confLosses": null,
+                "confWinPct": 0.46666667,
+                "runsScored": 443,
+                "runsAllowed": 320,
+                "runDiff": "+123",
+                "streak": "L1",
+                "gamesBack": "-",
+                "gamesPlayed": 58,
+                "record": "33-25",
+                "conference": "SEC"
+              },
+              {
+                "team": "Kentucky Wildcats",
+                "abbreviation": "UK",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/96.png",
+                "wins": 31,
+                "losses": 21,
+                "winPct": 0.59615386,
+                "confWins": null,
+                "confLosses": null,
+                "confWinPct": 0.43333334,
+                "runsScored": 367,
+                "runsAllowed": 302,
+                "runDiff": "+65",
+                "streak": "L3",
+                "gamesBack": "-",
+                "gamesPlayed": 52,
+                "record": "31-21",
+                "conference": "SEC"
+              },
+              {
+                "team": "LSU Tigers",
+                "abbreviation": "LSU",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/99.png",
+                "wins": 30,
+                "losses": 28,
+                "winPct": 0.51724136,
+                "confWins": null,
+                "confLosses": null,
+                "confWinPct": 0.3,
+                "runsScored": 441,
+                "runsAllowed": 360,
+                "runDiff": "+81",
+                "streak": "L1",
+                "gamesBack": "-",
+                "gamesPlayed": 58,
+                "record": "30-28",
+                "conference": "SEC"
+              },
+              {
+                "team": "South Carolina Gamecocks",
+                "abbreviation": "SC",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2579.png",
+                "wins": 22,
+                "losses": 35,
+                "winPct": 0.3859649,
+                "confWins": null,
+                "confLosses": null,
+                "confWinPct": 0.23333333,
+                "runsScored": 276,
+                "runsAllowed": 309,
+                "runDiff": "-33",
+                "streak": "L13",
+                "gamesBack": "-",
+                "gamesPlayed": 57,
+                "record": "22-35",
+                "conference": "SEC"
+              },
+              {
+                "team": "Missouri Tigers",
+                "abbreviation": "MIZ",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/142.png",
+                "wins": 24,
+                "losses": 31,
+                "winPct": 0.43636364,
+                "confWins": null,
+                "confLosses": null,
+                "confWinPct": 0.2,
+                "runsScored": 340,
+                "runsAllowed": 342,
+                "runDiff": "-2",
+                "streak": "L1",
+                "gamesBack": "-",
+                "gamesPlayed": 55,
+                "record": "24-31",
+                "conference": "SEC"
+              }
+            ]
+          }
+        ],
+        "conference": "SEC",
+        "meta": {
+          "source": "espn-fallback",
+          "fetched_at": "2026-11-21T22:51:05.477Z",
+          "timezone": "America/Chicago"
+        }
+      },
+      "rawResult": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"standings\": [\n    {\n      \"conference\": \"SEC\",\n      \"teams\": [\n        {\n          \"team\": \"Georgia Bulldogs\",\n          \"abbreviation\": \"UGA\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/61.png\",\n          \"wins\": 46,\n          \"losses\": 12,\n          \"winPct\": 0.79310346,\n          \"confWins\": null,\n          \"confLosses\": null,\n          \"confWinPct\": 0.76666665,\n          \"runsScored\": 541,\n          \"runsAllowed\": 291,\n          \"runDiff\": \"+250\",\n          \"streak\": \"W3\",\n          \"gamesBack\": \"-\",\n          \"gamesPlayed\": 58,\n          \"record\": \"46-12\",\n          \"conference\": \"SEC\"\n        },\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"wins\": 40,\n          \"losses\": 13,\n          \"winPct\": 0.754717,\n          \"confWins\": null,\n          \"confLosses\": null,\n          \"confWinPct\": 0.6551724,\n          \"runsScored\": 423,\n          \"runsAllowed\": 240,\n          \"runDiff\": \"+183\",\n          \"streak\": \"L1\",\n          \"gamesBack\": \"-\",\n          \"gamesPlayed\": 53,\n          \"record\": \"40-13\",\n          \"conference\": \"SEC\"\n        },\n        {\n          \"team\": \"Texas A&M Aggies\",\n          \"abbreviation\": \"TA&M\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/245.png\",\n          \"wins\": 39,\n          \"losses\": 14,\n          \"winPct\": 0.7358491,\n          \"confWins\": null,\n          \"confLosses\": null,\n          \"confWinPct\": 0.62068963,\n          \"runsScored\": 477,\n          \"runsAllowed\": 279,\n          \"runDiff\": \"+198\",\n          \"streak\": \"L1\",\n          \"gamesBack\": \"-\",\n          \"gamesPlayed\": 53,\n          \"record\": \"39-14\",\n          \"conference\": \"SEC\"\n        },\n        {\n          \"team\": \"Florida Gators\",\n          \"abbreviation\": \"FLA\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/57.png\",\n          \"wins\": 39,\n          \"losses\": 19,\n          \"winPct\": 0.67241377,\n          \"confWins\": null,\n          \"confLosses\": null,\n          \"confWinPct\": 0.6,\n          \"runsScored\": 416,\n          \"runsAllowed\": 271,\n          \"runDiff\": \"+145\",\n          \"streak\": \"L1\",\n          \"gamesBack\": \"-\",\n          \"gamesPlayed\": 58,\n          \"record\": \"39-19\",\n          \"conference\": \"SEC\"\n        },\n        {\n          \"team\": \"Alabama Crimson Tide\",\n          \"abbreviation\": \"ALA\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/333.png\",\n          \"wins\": 37,\n          \"losses\": 19,\n          \"winPct\": 0.66071427,\n          \"confWins\": null,\n          \"confLosses\": null,\n          \"confWinPct\": 0.6,\n          \"runsScored\": 355,\n          \"runsAllowed\": 278,\n          \"runDiff\": \"+77\",\n          \"streak\": \"L1\",\n          \"gamesBack\": \"-\",\n          \"gamesPlayed\": 56,\n          \"record\": \"37-19\",\n          \"conference\": \"SEC\"\n        },\n        {\n          \"team\": \"Auburn Tigers\",\n          \"abbreviation\": \"AUB\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/2.png\",\n          \"wins\": 38,\n          \"losses\": 19,\n          \"winPct\": 0.6666667,\n          \"confWins\": null,\n          \"confLosses\": null,\n          \"confWinPct\": 0.56666666,\n          \"runsScored\": 387,\n          \"runsAllowed\": 212,\n          \"runDiff\": \"+175\",\n          \"streak\": \"L1\",\n          \"gamesBack\": \"-\",\n          \"gamesPlayed\": 57,\n          \"record\": \"38-19\",\n          \"conference\": \"SEC\"\n        },\n        {\n          \"team\": \"Arkansas Razorbacks\",\n          \"abbreviation\": \"ARK\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/8.png\",\n          \"wins\": 39,\n          \"losses\": 20,\n          \"winPct\": 0.66101694,\n          \"confWins\": null,\n          \"confLosses\": null,\n          \"confWinPct\": 0.56666666,\n          \"runsScored\": 421,\n          \"runsAllowed\": 293,\n          \"runDiff\": \"+128\",\n          \"streak\": \"L1\",\n          \"gamesBack\": \"-\",\n          \"gamesPlayed\": 59,\n          \"record\": \"39-20\",\n          \"conference\": \"SEC\"\n        },\n        {\n          \"team\": \"Mississippi State Bulldogs\",\n          \"abbreviation\": \"MSST\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/344.png\",\n          \"wins\": 40,\n          \"losses\": 17,\n          \"winPct\": 0.7017544,\n          \"confWins\": null,\n          \"confLosses\": null,\n          \"confWinPct\": 0.5483871,\n          \"runsScored\": 486,\n          \"runsAllowed\": 259,\n          \"runDiff\": \"+227\",\n          \"streak\": \"L1\",\n          \"gamesBack\": \"-\",\n          \"gamesPlayed\": 57,\n          \"record\": \"40-17\",\n          \"conference\": \"SEC\"\n        },\n        {\n          \"team\": \"Tennessee Volunteers\",\n          \"abbreviation\": \"TENN\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/2633.png\",\n          \"wins\": 38,\n          \"losses\": 20,\n          \"winPct\": 0.6551724,\n          \"confWins\": null,\n          \"confLosses\": null,\n          \"confWinPct\": 0.5,\n          \"runsScored\": 426,\n          \"runsAllowed\": 290,\n          \"runDiff\": \"+136\",\n          \"streak\": \"L1\",\n          \"gamesBack\": \"-\",\n          \"gamesPlayed\": 58,\n          \"record\": \"38-20\",\n          \"conference\": \"SEC\"\n        },\n        {\n          \"team\": \"Ole Miss Rebels\",\n          \"abbreviation\": \"MISS\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/145.png\",\n          \"wins\": 36,\n          \"losses\": 21,\n          \"winPct\": 0.6315789,\n          \"confWins\": null,\n          \"confLosses\": null,\n          \"confWinPct\": 0.48387095,\n          \"runsScored\": 393,\n          \"runsAllowed\": 278,\n          \"runDiff\": \"+115\",\n          \"streak\": \"L2\",\n          \"gamesBack\": \"-\",\n          \"gamesPlayed\": 57,\n          \"record\": \"36-21\",\n          \"conference\": \"SEC\"\n        },\n        {\n          \"team\": \"Oklahoma Sooners\",\n          \"abbreviation\": \"OU\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/201.png\",\n          \"wins\": 32,\n          \"losses\": 21,\n          \"winPct\": 0.6037736,\n          \"confWins\": null,\n          \"confLosses\": null,\n          \"confWinPct\": 0.46666667,\n          \"runsScored\": 351,\n          \"runsAllowed\": 297,\n          \"runDiff\": \"+54\",\n          \"streak\": \"L1\",\n          \"gamesBack\": \"-\",\n          \"gamesPlayed\": 53,\n          \"record\": \"32-21\",\n          \"conference\": \"SEC\"\n        },\n        {\n          \"team\": \"Vanderbilt Commodores\",\n          \"abbreviation\": \"VAN\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/238.png\",\n          \"wins\": 33,\n          \"losses\": 25,\n          \"winPct\": 0.5689655,\n          \"confWins\": null,\n          \"confLosses\": null,\n          \"confWinPct\": 0.46666667,\n          \"runsScored\": 443,\n          \"runsAllowed\": 320,\n          \"runDiff\": \"+123\",\n          \"streak\": \"L1\",\n          \"gamesBack\": \"-\",\n          \"gamesPlayed\": 58,\n          \"record\": \"33-25\",\n          \"conference\": \"SEC\"\n        },\n        {\n          \"team\": \"Kentucky Wildcats\",\n          \"abbreviation\": \"UK\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/96.png\",\n          \"wins\": 31,\n          \"losses\": 21,\n          \"winPct\": 0.59615386,\n          \"confWins\": null,\n          \"confLosses\": null,\n          \"confWinPct\": 0.43333334,\n          \"runsScored\": 367,\n          \"runsAllowed\": 302,\n          \"runDiff\": \"+65\",\n          \"streak\": \"L3\",\n          \"gamesBack\": \"-\",\n          \"gamesPlayed\": 52,\n          \"record\": \"31-21\",\n          \"conference\": \"SEC\"\n        },\n        {\n          \"team\": \"LSU Tigers\",\n          \"abbreviation\": \"LSU\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/99.png\",\n          \"wins\": 30,\n          \"losses\": 28,\n          \"winPct\": 0.51724136,\n          \"confWins\": null,\n          \"confLosses\": null,\n          \"confWinPct\": 0.3,\n          \"runsScored\": 441,\n          \"runsAllowed\": 360,\n          \"runDiff\": \"+81\",\n          \"streak\": \"L1\",\n          \"gamesBack\": \"-\",\n          \"gamesPlayed\": 58,\n          \"record\": \"30-28\",\n          \"conference\": \"SEC\"\n        },\n        {\n          \"team\": \"South Carolina Gamecocks\",\n          \"abbreviation\": \"SC\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/2579.png\",\n          \"wins\": 22,\n          \"losses\": 35,\n          \"winPct\": 0.3859649,\n          \"confWins\": null,\n          \"confLosses\": null,\n          \"confWinPct\": 0.23333333,\n          \"runsScored\": 276,\n          \"runsAllowed\": 309,\n          \"runDiff\": \"-33\",\n          \"streak\": \"L13\",\n          \"gamesBack\": \"-\",\n          \"gamesPlayed\": 57,\n          \"record\": \"22-35\",\n          \"conference\": \"SEC\"\n        },\n        {\n          \"team\": \"Missouri Tigers\",\n          \"abbreviation\": \"MIZ\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/142.png\",\n          \"wins\": 24,\n          \"losses\": 31,\n          \"winPct\": 0.43636364,\n          \"confWins\": null,\n          \"confLosses\": null,\n          \"confWinPct\": 0.2,\n          \"runsScored\": 340,\n          \"runsAllowed\": 342,\n          \"runDiff\": \"-2\",\n          \"streak\": \"L1\",\n          \"gamesBack\": \"-\",\n          \"gamesPlayed\": 55,\n          \"record\": \"24-31\",\n          \"conference\": \"SEC\"\n        }\n      ]\n    }\n  ],\n  \"conference\": \"SEC\",\n  \"meta\": {\n    \"source\": \"espn-fallback\",\n    \"fetched_at\": \"2026-11-21T22:51:05.477Z\",\n    \"timezone\": \"America/Chicago\"\n  }\n}"
+          }
+        ]
+      }
+    },
+    {
+      "toolName": "bsi_get_team_schedule",
+      "arguments": {
+        "team": "texas"
+      },
+      "endpoint": "https://sabermetrics.blazesportsintel.com/mcp",
+      "retrievedAt": "2026-11-21T22:51:06.841Z",
+      "providerMeta": {
+        "source": "espn",
+        "fetched_at": "2026-11-21T22:51:06.538Z",
+        "timezone": "America/Chicago"
+      },
+      "data": {
+        "schedule": [
+          {
+            "id": "401847609",
+            "date": "2026-02-14T00:30Z",
+            "name": "UC Davis Aggies at Texas Longhorns",
+            "homeAway": "home",
+            "competitors": [
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "12",
+                "homeAway": "home",
+                "winner": true
+              },
+              {
+                "team": "UC Davis Aggies",
+                "abbreviation": "UCD",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/302.png",
+                "score": "2",
+                "homeAway": "away",
+                "winner": false
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401847610",
+            "date": "2026-02-15T00:30Z",
+            "name": "UC Davis Aggies at Texas Longhorns",
+            "homeAway": "home",
+            "competitors": [
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "6",
+                "homeAway": "home",
+                "winner": true
+              },
+              {
+                "team": "UC Davis Aggies",
+                "abbreviation": "UCD",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/302.png",
+                "score": "4",
+                "homeAway": "away",
+                "winner": false
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401847611",
+            "date": "2026-02-15T18:00Z",
+            "name": "UC Davis Aggies at Texas Longhorns",
+            "homeAway": "home",
+            "competitors": [
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "9",
+                "homeAway": "home",
+                "winner": true
+              },
+              {
+                "team": "UC Davis Aggies",
+                "abbreviation": "UCD",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/302.png",
+                "score": "1",
+                "homeAway": "away",
+                "winner": false
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401847612",
+            "date": "2026-02-17T23:00Z",
+            "name": "Lamar Cardinals at Texas Longhorns",
+            "homeAway": "home",
+            "competitors": [
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "14",
+                "homeAway": "home",
+                "winner": true
+              },
+              {
+                "team": "Lamar Cardinals",
+                "abbreviation": "LAM",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2320.png",
+                "score": "4",
+                "homeAway": "away",
+                "winner": false
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401847613",
+            "date": "2026-02-21T00:30Z",
+            "name": "Michigan State Spartans at Texas Longhorns",
+            "homeAway": "home",
+            "competitors": [
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "8",
+                "homeAway": "home",
+                "winner": true
+              },
+              {
+                "team": "Michigan State Spartans",
+                "abbreviation": "MSU",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/127.png",
+                "score": "1",
+                "homeAway": "away",
+                "winner": false
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401847614",
+            "date": "2026-02-21T20:00Z",
+            "name": "Michigan State Spartans at Texas Longhorns",
+            "homeAway": "home",
+            "competitors": [
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "3",
+                "homeAway": "home",
+                "winner": true
+              },
+              {
+                "team": "Michigan State Spartans",
+                "abbreviation": "MSU",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/127.png",
+                "score": "1",
+                "homeAway": "away",
+                "winner": false
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401847615",
+            "date": "2026-02-22T18:00Z",
+            "name": "Michigan State Spartans at Texas Longhorns",
+            "homeAway": "home",
+            "competitors": [
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "4",
+                "homeAway": "home",
+                "winner": true
+              },
+              {
+                "team": "Michigan State Spartans",
+                "abbreviation": "MSU",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/127.png",
+                "score": "0",
+                "homeAway": "away",
+                "winner": false
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401847616",
+            "date": "2026-02-25T00:30Z",
+            "name": "UT Rio Grande Valley Vaqueros at Texas Longhorns",
+            "homeAway": "home",
+            "competitors": [
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "14",
+                "homeAway": "home",
+                "winner": true
+              },
+              {
+                "team": "UT Rio Grande Valley Vaqueros",
+                "abbreviation": "RGV",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/292.png",
+                "score": "0",
+                "homeAway": "away",
+                "winner": false
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401847617",
+            "date": "2026-02-28T02:05Z",
+            "name": "Coastal Carolina Chanticleers at Texas Longhorns",
+            "homeAway": "home",
+            "competitors": [
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "8",
+                "homeAway": "home",
+                "winner": true
+              },
+              {
+                "team": "Coastal Carolina Chanticleers",
+                "abbreviation": "CCU",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/324.png",
+                "score": "1",
+                "homeAway": "away",
+                "winner": false
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401847618",
+            "date": "2026-03-01T01:35Z",
+            "name": "Baylor Bears at Texas Longhorns",
+            "homeAway": "home",
+            "competitors": [
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "5",
+                "homeAway": "home",
+                "winner": true
+              },
+              {
+                "team": "Baylor Bears",
+                "abbreviation": "BAY",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/239.png",
+                "score": "2",
+                "homeAway": "away",
+                "winner": false
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401847619",
+            "date": "2026-03-01T20:00Z",
+            "name": "Texas Longhorns at Ohio State Buckeyes",
+            "homeAway": "away",
+            "competitors": [
+              {
+                "team": "Ohio State Buckeyes",
+                "abbreviation": "OSU",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/194.png",
+                "score": "3",
+                "homeAway": "home",
+                "winner": false
+              },
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "10",
+                "homeAway": "away",
+                "winner": true
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401847620",
+            "date": "2026-03-04T00:30Z",
+            "name": "Houston Christian Huskies at Texas Longhorns",
+            "homeAway": "home",
+            "competitors": [
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "16",
+                "homeAway": "home",
+                "winner": true
+              },
+              {
+                "team": "Houston Christian Huskies",
+                "abbreviation": "HCU",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2277.png",
+                "score": "3",
+                "homeAway": "away",
+                "winner": false
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401847621",
+            "date": "2026-03-07T00:30Z",
+            "name": "South Carolina Upstate Spartans at Texas Longhorns",
+            "homeAway": "home",
+            "competitors": [
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "14",
+                "homeAway": "home",
+                "winner": true
+              },
+              {
+                "team": "South Carolina Upstate Spartans",
+                "abbreviation": "UPST",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2908.png",
+                "score": "2",
+                "homeAway": "away",
+                "winner": false
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401847622",
+            "date": "2026-03-07T22:00Z",
+            "name": "South Carolina Upstate Spartans at Texas Longhorns",
+            "homeAway": "home",
+            "competitors": [
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "11",
+                "homeAway": "home",
+                "winner": true
+              },
+              {
+                "team": "South Carolina Upstate Spartans",
+                "abbreviation": "UPST",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2908.png",
+                "score": "9",
+                "homeAway": "away",
+                "winner": false
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401847623",
+            "date": "2026-03-08T17:00Z",
+            "name": "South Carolina Upstate Spartans at Texas Longhorns",
+            "homeAway": "home",
+            "competitors": [
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "13",
+                "homeAway": "home",
+                "winner": true
+              },
+              {
+                "team": "South Carolina Upstate Spartans",
+                "abbreviation": "UPST",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2908.png",
+                "score": "3",
+                "homeAway": "away",
+                "winner": false
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401847624",
+            "date": "2026-03-10T23:00Z",
+            "name": "Texas Longhorns at Texas State Bobcats",
+            "homeAway": "away",
+            "competitors": [
+              {
+                "team": "Texas State Bobcats",
+                "abbreviation": "TXST",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/326.png",
+                "score": "4",
+                "homeAway": "home",
+                "winner": false
+              },
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "15",
+                "homeAway": "away",
+                "winner": true
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401847525",
+            "date": "2026-03-13T23:30Z",
+            "name": "Ole Miss Rebels at Texas Longhorns",
+            "homeAway": "home",
+            "competitors": [
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "8",
+                "homeAway": "home",
+                "winner": false
+              },
+              {
+                "team": "Ole Miss Rebels",
+                "abbreviation": "MISS",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/145.png",
+                "score": "9",
+                "homeAway": "away",
+                "winner": true
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401847526",
+            "date": "2026-03-14T19:30Z",
+            "name": "Ole Miss Rebels at Texas Longhorns",
+            "homeAway": "home",
+            "competitors": [
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "11",
+                "homeAway": "home",
+                "winner": true
+              },
+              {
+                "team": "Ole Miss Rebels",
+                "abbreviation": "MISS",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/145.png",
+                "score": "2",
+                "homeAway": "away",
+                "winner": false
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401847527",
+            "date": "2026-03-15T18:00Z",
+            "name": "Ole Miss Rebels at Texas Longhorns",
+            "homeAway": "home",
+            "competitors": [
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "8",
+                "homeAway": "home",
+                "winner": true
+              },
+              {
+                "team": "Ole Miss Rebels",
+                "abbreviation": "MISS",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/145.png",
+                "score": "2",
+                "homeAway": "away",
+                "winner": false
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401847625",
+            "date": "2026-03-17T23:30Z",
+            "name": "Tarleton State Texans at Texas Longhorns",
+            "homeAway": "home",
+            "competitors": [
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "1",
+                "homeAway": "home",
+                "winner": false
+              },
+              {
+                "team": "Tarleton State Texans",
+                "abbreviation": "TAR",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2627.png",
+                "score": "6",
+                "homeAway": "away",
+                "winner": true
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401847173",
+            "date": "2026-03-20T23:00Z",
+            "name": "Texas Longhorns at Auburn Tigers",
+            "homeAway": "away",
+            "competitors": [
+              {
+                "team": "Auburn Tigers",
+                "abbreviation": "AUB",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2.png",
+                "score": "4",
+                "homeAway": "home",
+                "winner": true
+              },
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "3",
+                "homeAway": "away",
+                "winner": false
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401847174",
+            "date": "2026-03-21T23:00Z",
+            "name": "Texas Longhorns at Auburn Tigers",
+            "homeAway": "away",
+            "competitors": [
+              {
+                "team": "Auburn Tigers",
+                "abbreviation": "AUB",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2.png",
+                "score": "6",
+                "homeAway": "home",
+                "winner": false
+              },
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "7",
+                "homeAway": "away",
+                "winner": true
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401847175",
+            "date": "2026-03-22T19:00Z",
+            "name": "Texas Longhorns at Auburn Tigers",
+            "homeAway": "away",
+            "competitors": [
+              {
+                "team": "Auburn Tigers",
+                "abbreviation": "AUB",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2.png",
+                "score": "0",
+                "homeAway": "home",
+                "winner": false
+              },
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "5",
+                "homeAway": "away",
+                "winner": true
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401847626",
+            "date": "2026-03-24T23:30Z",
+            "name": "Texas Longhorns at Houston Cougars",
+            "homeAway": "away",
+            "competitors": [
+              {
+                "team": "Houston Cougars",
+                "abbreviation": "HOU",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/248.png",
+                "score": "9",
+                "homeAway": "home",
+                "winner": true
+              },
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "7",
+                "homeAway": "away",
+                "winner": false
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401847493",
+            "date": "2026-03-27T00:00Z",
+            "name": "Oklahoma Sooners at Texas Longhorns",
+            "homeAway": "home",
+            "competitors": [
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "14",
+                "homeAway": "home",
+                "winner": true
+              },
+              {
+                "team": "Oklahoma Sooners",
+                "abbreviation": "OU",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/201.png",
+                "score": "0",
+                "homeAway": "away",
+                "winner": false
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401847494",
+            "date": "2026-03-28T00:00Z",
+            "name": "Oklahoma Sooners at Texas Longhorns",
+            "homeAway": "home",
+            "competitors": [
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "4",
+                "homeAway": "home",
+                "winner": true
+              },
+              {
+                "team": "Oklahoma Sooners",
+                "abbreviation": "OU",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/201.png",
+                "score": "3",
+                "homeAway": "away",
+                "winner": false
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401847495",
+            "date": "2026-03-28T21:00Z",
+            "name": "Oklahoma Sooners at Texas Longhorns",
+            "homeAway": "home",
+            "competitors": [
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "5",
+                "homeAway": "home",
+                "winner": true
+              },
+              {
+                "team": "Oklahoma Sooners",
+                "abbreviation": "OU",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/201.png",
+                "score": "4",
+                "homeAway": "away",
+                "winner": false
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401847627",
+            "date": "2026-03-31T23:30Z",
+            "name": "Texas State Bobcats at Texas Longhorns",
+            "homeAway": "home",
+            "competitors": [
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "10",
+                "homeAway": "home",
+                "winner": true
+              },
+              {
+                "team": "Texas State Bobcats",
+                "abbreviation": "TXST",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/326.png",
+                "score": "8",
+                "homeAway": "away",
+                "winner": false
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401847562",
+            "date": "2026-04-02T23:00Z",
+            "name": "Texas Longhorns at South Carolina Gamecocks",
+            "homeAway": "away",
+            "competitors": [
+              {
+                "team": "South Carolina Gamecocks",
+                "abbreviation": "SC",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2579.png",
+                "score": "9",
+                "homeAway": "home",
+                "winner": true
+              },
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "1",
+                "homeAway": "away",
+                "winner": false
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401847563",
+            "date": "2026-04-03T23:00Z",
+            "name": "Texas Longhorns at South Carolina Gamecocks",
+            "homeAway": "away",
+            "competitors": [
+              {
+                "team": "South Carolina Gamecocks",
+                "abbreviation": "SC",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2579.png",
+                "score": "3",
+                "homeAway": "home",
+                "winner": false
+              },
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "5",
+                "homeAway": "away",
+                "winner": true
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401847564",
+            "date": "2026-04-04T18:00Z",
+            "name": "Texas Longhorns at South Carolina Gamecocks",
+            "homeAway": "away",
+            "competitors": [
+              {
+                "team": "South Carolina Gamecocks",
+                "abbreviation": "SC",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2579.png",
+                "score": "1",
+                "homeAway": "home",
+                "winner": false
+              },
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "4",
+                "homeAway": "away",
+                "winner": true
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401847628",
+            "date": "2026-04-07T23:30Z",
+            "name": "Incarnate Word Cardinals at Texas Longhorns",
+            "homeAway": "home",
+            "competitors": [
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "16",
+                "homeAway": "home",
+                "winner": true
+              },
+              {
+                "team": "Incarnate Word Cardinals",
+                "abbreviation": "UIW",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2916.png",
+                "score": "4",
+                "homeAway": "away",
+                "winner": false
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401847629",
+            "date": "2026-04-11T00:00Z",
+            "name": "Texas Longhorns at Texas A&M Aggies",
+            "homeAway": "away",
+            "competitors": [
+              {
+                "team": "Texas A&M Aggies",
+                "abbreviation": "TA&M",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/245.png",
+                "score": "9",
+                "homeAway": "home",
+                "winner": true
+              },
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "8",
+                "homeAway": "away",
+                "winner": false
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401847630",
+            "date": "2026-04-11T19:00Z",
+            "name": "Texas Longhorns at Texas A&M Aggies",
+            "homeAway": "away",
+            "competitors": [
+              {
+                "team": "Texas A&M Aggies",
+                "abbreviation": "TA&M",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/245.png",
+                "score": "11",
+                "homeAway": "home",
+                "winner": true
+              },
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "4",
+                "homeAway": "away",
+                "winner": false
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401847632",
+            "date": "2026-04-14T23:30Z",
+            "name": "Texas A&M-Corpus Christi Islanders at Texas Longhorns",
+            "homeAway": "home",
+            "competitors": [
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "14",
+                "homeAway": "home",
+                "winner": true
+              },
+              {
+                "team": "Texas A&M-Corpus Christi Islanders",
+                "abbreviation": "AMCC",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/357.png",
+                "score": "7",
+                "homeAway": "away",
+                "winner": false
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401847080",
+            "date": "2026-04-17T23:30Z",
+            "name": "Alabama Crimson Tide at Texas Longhorns",
+            "homeAway": "home",
+            "competitors": [
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "10",
+                "homeAway": "home",
+                "winner": true
+              },
+              {
+                "team": "Alabama Crimson Tide",
+                "abbreviation": "ALA",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/333.png",
+                "score": "2",
+                "homeAway": "away",
+                "winner": false
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401847081",
+            "date": "2026-04-18T17:00Z",
+            "name": "Alabama Crimson Tide at Texas Longhorns",
+            "homeAway": "home",
+            "competitors": [
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "3",
+                "homeAway": "home",
+                "winner": true
+              },
+              {
+                "team": "Alabama Crimson Tide",
+                "abbreviation": "ALA",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/333.png",
+                "score": "1",
+                "homeAway": "away",
+                "winner": false
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401847082",
+            "date": "2026-04-19T18:00Z",
+            "name": "Alabama Crimson Tide at Texas Longhorns",
+            "homeAway": "home",
+            "competitors": [
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "1",
+                "homeAway": "home",
+                "winner": false
+              },
+              {
+                "team": "Alabama Crimson Tide",
+                "abbreviation": "ALA",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/333.png",
+                "score": "2",
+                "homeAway": "away",
+                "winner": true
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401847634",
+            "date": "2026-04-24T23:00Z",
+            "name": "Texas Longhorns at Vanderbilt Commodores",
+            "homeAway": "away",
+            "competitors": [
+              {
+                "team": "Vanderbilt Commodores",
+                "abbreviation": "VAN",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/238.png",
+                "score": "4",
+                "homeAway": "home",
+                "winner": false
+              },
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "11",
+                "homeAway": "away",
+                "winner": true
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401847635",
+            "date": "2026-04-26T00:00Z",
+            "name": "Texas Longhorns at Vanderbilt Commodores",
+            "homeAway": "away",
+            "competitors": [
+              {
+                "team": "Vanderbilt Commodores",
+                "abbreviation": "VAN",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/238.png",
+                "score": "6",
+                "homeAway": "home",
+                "winner": true
+              },
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "0",
+                "homeAway": "away",
+                "winner": false
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401847636",
+            "date": "2026-04-26T17:00Z",
+            "name": "Texas Longhorns at Vanderbilt Commodores",
+            "homeAway": "away",
+            "competitors": [
+              {
+                "team": "Vanderbilt Commodores",
+                "abbreviation": "VAN",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/238.png",
+                "score": "3",
+                "homeAway": "home",
+                "winner": false
+              },
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "4",
+                "homeAway": "away",
+                "winner": true
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401847637",
+            "date": "2026-04-28T23:30Z",
+            "name": "Sam Houston Bearkats at Texas Longhorns",
+            "homeAway": "home",
+            "competitors": [
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "15",
+                "homeAway": "home",
+                "winner": true
+              },
+              {
+                "team": "Sam Houston Bearkats",
+                "abbreviation": "SHSU",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2534.png",
+                "score": "14",
+                "homeAway": "away",
+                "winner": false
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401847419",
+            "date": "2026-05-02T00:30Z",
+            "name": "Mississippi State Bulldogs at Texas Longhorns",
+            "homeAway": "home",
+            "competitors": [
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "3",
+                "homeAway": "home",
+                "winner": true
+              },
+              {
+                "team": "Mississippi State Bulldogs",
+                "abbreviation": "MSST",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/344.png",
+                "score": "1",
+                "homeAway": "away",
+                "winner": false
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401847420",
+            "date": "2026-05-02T19:30Z",
+            "name": "Mississippi State Bulldogs at Texas Longhorns",
+            "homeAway": "home",
+            "competitors": [
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "4",
+                "homeAway": "home",
+                "winner": false
+              },
+              {
+                "team": "Mississippi State Bulldogs",
+                "abbreviation": "MSST",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/344.png",
+                "score": "7",
+                "homeAway": "away",
+                "winner": true
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401847421",
+            "date": "2026-05-03T18:00Z",
+            "name": "Mississippi State Bulldogs at Texas Longhorns",
+            "homeAway": "home",
+            "competitors": [
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "11",
+                "homeAway": "home",
+                "winner": true
+              },
+              {
+                "team": "Mississippi State Bulldogs",
+                "abbreviation": "MSST",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/344.png",
+                "score": "6",
+                "homeAway": "away",
+                "winner": false
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401847638",
+            "date": "2026-05-05T23:30Z",
+            "name": "UTSA Roadrunners at Texas Longhorns",
+            "homeAway": "home",
+            "competitors": [
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "11",
+                "homeAway": "home",
+                "winner": true
+              },
+              {
+                "team": "UTSA Roadrunners",
+                "abbreviation": "UTSA",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2636.png",
+                "score": "8",
+                "homeAway": "away",
+                "winner": false
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401847605",
+            "date": "2026-05-08T22:30Z",
+            "name": "Texas Longhorns at Tennessee Volunteers",
+            "homeAway": "away",
+            "competitors": [
+              {
+                "team": "Tennessee Volunteers",
+                "abbreviation": "TENN",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2633.png",
+                "score": "5",
+                "homeAway": "home",
+                "winner": true
+              },
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "1",
+                "homeAway": "away",
+                "winner": false
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401847606",
+            "date": "2026-05-09T22:00Z",
+            "name": "Texas Longhorns at Tennessee Volunteers",
+            "homeAway": "away",
+            "competitors": [
+              {
+                "team": "Tennessee Volunteers",
+                "abbreviation": "TENN",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2633.png",
+                "score": "14",
+                "homeAway": "home",
+                "winner": true
+              },
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "9",
+                "homeAway": "away",
+                "winner": false
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401847607",
+            "date": "2026-05-10T16:00Z",
+            "name": "Texas Longhorns at Tennessee Volunteers",
+            "homeAway": "away",
+            "competitors": [
+              {
+                "team": "Tennessee Volunteers",
+                "abbreviation": "TENN",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2633.png",
+                "score": "6",
+                "homeAway": "home",
+                "winner": false
+              },
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "13",
+                "homeAway": "away",
+                "winner": true
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401847467",
+            "date": "2026-05-14T23:30Z",
+            "name": "Missouri Tigers at Texas Longhorns",
+            "homeAway": "home",
+            "competitors": [
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "6",
+                "homeAway": "home",
+                "winner": true
+              },
+              {
+                "team": "Missouri Tigers",
+                "abbreviation": "MIZ",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/142.png",
+                "score": "3",
+                "homeAway": "away",
+                "winner": false
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401847468",
+            "date": "2026-05-15T23:30Z",
+            "name": "Missouri Tigers at Texas Longhorns",
+            "homeAway": "home",
+            "competitors": [
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "11",
+                "homeAway": "home",
+                "winner": true
+              },
+              {
+                "team": "Missouri Tigers",
+                "abbreviation": "MIZ",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/142.png",
+                "score": "6",
+                "homeAway": "away",
+                "winner": false
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401847469",
+            "date": "2026-05-16T19:00Z",
+            "name": "Missouri Tigers at Texas Longhorns",
+            "homeAway": "home",
+            "competitors": [
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "12",
+                "homeAway": "home",
+                "winner": true
+              },
+              {
+                "team": "Missouri Tigers",
+                "abbreviation": "MIZ",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/142.png",
+                "score": "7",
+                "homeAway": "away",
+                "winner": false
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401869486",
+            "date": "2026-05-22T21:32Z",
+            "name": "Arkansas Razorbacks at Texas Longhorns",
+            "homeAway": "home",
+            "competitors": [
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "1",
+                "homeAway": "home",
+                "winner": false
+              },
+              {
+                "team": "Arkansas Razorbacks",
+                "abbreviation": "ARK",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/8.png",
+                "score": "8",
+                "homeAway": "away",
+                "winner": true
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": null
+          },
+          {
+            "id": "401873763",
+            "date": "2026-05-29T17:00Z",
+            "name": "Holy Cross Crusaders at Texas Longhorns",
+            "homeAway": "home",
+            "competitors": [
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "19",
+                "homeAway": "home",
+                "winner": true
+              },
+              {
+                "team": "Holy Cross Crusaders",
+                "abbreviation": "HC",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/107.png",
+                "score": "1",
+                "homeAway": "away",
+                "winner": false
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": "UFCU Disch-Falk Field"
+          },
+          {
+            "id": "401873829",
+            "date": "2026-05-30T23:00Z",
+            "name": "Texas Longhorns at Tarleton State Texans",
+            "homeAway": "away",
+            "competitors": [
+              {
+                "team": "Tarleton State Texans",
+                "abbreviation": "TAR",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2627.png",
+                "score": "2",
+                "homeAway": "home",
+                "winner": false
+              },
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "16",
+                "homeAway": "away",
+                "winner": true
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": "UFCU Disch-Falk Field"
+          },
+          {
+            "id": "401873832",
+            "date": "2026-05-31T22:00Z",
+            "name": "Texas Longhorns at UC Santa Barbara Gauchos",
+            "homeAway": "away",
+            "competitors": [
+              {
+                "team": "UC Santa Barbara Gauchos",
+                "abbreviation": "UCSB",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2540.png",
+                "score": "4",
+                "homeAway": "home",
+                "winner": false
+              },
+              {
+                "team": "Texas Longhorns",
+                "abbreviation": "TEX",
+                "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                "score": "6",
+                "homeAway": "away",
+                "winner": true
+              }
+            ],
+            "status": {
+              "completed": true,
+              "description": "Final"
+            },
+            "venue": "UFCU Disch-Falk Field"
+          }
+        ],
+        "team": "texas",
+        "meta": {
+          "source": "espn",
+          "fetched_at": "2026-11-21T22:51:06.538Z",
+          "timezone": "America/Chicago"
+        }
+      },
+      "rawResult": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"schedule\": [\n    {\n      \"id\": \"401847609\",\n      \"date\": \"2026-02-14T00:30Z\",\n      \"name\": \"UC Davis Aggies at Texas Longhorns\",\n      \"homeAway\": \"home\",\n      \"competitors\": [\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"12\",\n          \"homeAway\": \"home\",\n          \"winner\": true\n        },\n        {\n          \"team\": \"UC Davis Aggies\",\n          \"abbreviation\": \"UCD\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/302.png\",\n          \"score\": \"2\",\n          \"homeAway\": \"away\",\n          \"winner\": false\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401847610\",\n      \"date\": \"2026-02-15T00:30Z\",\n      \"name\": \"UC Davis Aggies at Texas Longhorns\",\n      \"homeAway\": \"home\",\n      \"competitors\": [\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"6\",\n          \"homeAway\": \"home\",\n          \"winner\": true\n        },\n        {\n          \"team\": \"UC Davis Aggies\",\n          \"abbreviation\": \"UCD\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/302.png\",\n          \"score\": \"4\",\n          \"homeAway\": \"away\",\n          \"winner\": false\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401847611\",\n      \"date\": \"2026-02-15T18:00Z\",\n      \"name\": \"UC Davis Aggies at Texas Longhorns\",\n      \"homeAway\": \"home\",\n      \"competitors\": [\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"9\",\n          \"homeAway\": \"home\",\n          \"winner\": true\n        },\n        {\n          \"team\": \"UC Davis Aggies\",\n          \"abbreviation\": \"UCD\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/302.png\",\n          \"score\": \"1\",\n          \"homeAway\": \"away\",\n          \"winner\": false\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401847612\",\n      \"date\": \"2026-02-17T23:00Z\",\n      \"name\": \"Lamar Cardinals at Texas Longhorns\",\n      \"homeAway\": \"home\",\n      \"competitors\": [\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"14\",\n          \"homeAway\": \"home\",\n          \"winner\": true\n        },\n        {\n          \"team\": \"Lamar Cardinals\",\n          \"abbreviation\": \"LAM\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/2320.png\",\n          \"score\": \"4\",\n          \"homeAway\": \"away\",\n          \"winner\": false\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401847613\",\n      \"date\": \"2026-02-21T00:30Z\",\n      \"name\": \"Michigan State Spartans at Texas Longhorns\",\n      \"homeAway\": \"home\",\n      \"competitors\": [\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"8\",\n          \"homeAway\": \"home\",\n          \"winner\": true\n        },\n        {\n          \"team\": \"Michigan State Spartans\",\n          \"abbreviation\": \"MSU\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/127.png\",\n          \"score\": \"1\",\n          \"homeAway\": \"away\",\n          \"winner\": false\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401847614\",\n      \"date\": \"2026-02-21T20:00Z\",\n      \"name\": \"Michigan State Spartans at Texas Longhorns\",\n      \"homeAway\": \"home\",\n      \"competitors\": [\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"3\",\n          \"homeAway\": \"home\",\n          \"winner\": true\n        },\n        {\n          \"team\": \"Michigan State Spartans\",\n          \"abbreviation\": \"MSU\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/127.png\",\n          \"score\": \"1\",\n          \"homeAway\": \"away\",\n          \"winner\": false\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401847615\",\n      \"date\": \"2026-02-22T18:00Z\",\n      \"name\": \"Michigan State Spartans at Texas Longhorns\",\n      \"homeAway\": \"home\",\n      \"competitors\": [\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"4\",\n          \"homeAway\": \"home\",\n          \"winner\": true\n        },\n        {\n          \"team\": \"Michigan State Spartans\",\n          \"abbreviation\": \"MSU\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/127.png\",\n          \"score\": \"0\",\n          \"homeAway\": \"away\",\n          \"winner\": false\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401847616\",\n      \"date\": \"2026-02-25T00:30Z\",\n      \"name\": \"UT Rio Grande Valley Vaqueros at Texas Longhorns\",\n      \"homeAway\": \"home\",\n      \"competitors\": [\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"14\",\n          \"homeAway\": \"home\",\n          \"winner\": true\n        },\n        {\n          \"team\": \"UT Rio Grande Valley Vaqueros\",\n          \"abbreviation\": \"RGV\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/292.png\",\n          \"score\": \"0\",\n          \"homeAway\": \"away\",\n          \"winner\": false\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401847617\",\n      \"date\": \"2026-02-28T02:05Z\",\n      \"name\": \"Coastal Carolina Chanticleers at Texas Longhorns\",\n      \"homeAway\": \"home\",\n      \"competitors\": [\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"8\",\n          \"homeAway\": \"home\",\n          \"winner\": true\n        },\n        {\n          \"team\": \"Coastal Carolina Chanticleers\",\n          \"abbreviation\": \"CCU\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/324.png\",\n          \"score\": \"1\",\n          \"homeAway\": \"away\",\n          \"winner\": false\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401847618\",\n      \"date\": \"2026-03-01T01:35Z\",\n      \"name\": \"Baylor Bears at Texas Longhorns\",\n      \"homeAway\": \"home\",\n      \"competitors\": [\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"5\",\n          \"homeAway\": \"home\",\n          \"winner\": true\n        },\n        {\n          \"team\": \"Baylor Bears\",\n          \"abbreviation\": \"BAY\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/239.png\",\n          \"score\": \"2\",\n          \"homeAway\": \"away\",\n          \"winner\": false\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401847619\",\n      \"date\": \"2026-03-01T20:00Z\",\n      \"name\": \"Texas Longhorns at Ohio State Buckeyes\",\n      \"homeAway\": \"away\",\n      \"competitors\": [\n        {\n          \"team\": \"Ohio State Buckeyes\",\n          \"abbreviation\": \"OSU\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/194.png\",\n          \"score\": \"3\",\n          \"homeAway\": \"home\",\n          \"winner\": false\n        },\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"10\",\n          \"homeAway\": \"away\",\n          \"winner\": true\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401847620\",\n      \"date\": \"2026-03-04T00:30Z\",\n      \"name\": \"Houston Christian Huskies at Texas Longhorns\",\n      \"homeAway\": \"home\",\n      \"competitors\": [\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"16\",\n          \"homeAway\": \"home\",\n          \"winner\": true\n        },\n        {\n          \"team\": \"Houston Christian Huskies\",\n          \"abbreviation\": \"HCU\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/2277.png\",\n          \"score\": \"3\",\n          \"homeAway\": \"away\",\n          \"winner\": false\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401847621\",\n      \"date\": \"2026-03-07T00:30Z\",\n      \"name\": \"South Carolina Upstate Spartans at Texas Longhorns\",\n      \"homeAway\": \"home\",\n      \"competitors\": [\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"14\",\n          \"homeAway\": \"home\",\n          \"winner\": true\n        },\n        {\n          \"team\": \"South Carolina Upstate Spartans\",\n          \"abbreviation\": \"UPST\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/2908.png\",\n          \"score\": \"2\",\n          \"homeAway\": \"away\",\n          \"winner\": false\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401847622\",\n      \"date\": \"2026-03-07T22:00Z\",\n      \"name\": \"South Carolina Upstate Spartans at Texas Longhorns\",\n      \"homeAway\": \"home\",\n      \"competitors\": [\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"11\",\n          \"homeAway\": \"home\",\n          \"winner\": true\n        },\n        {\n          \"team\": \"South Carolina Upstate Spartans\",\n          \"abbreviation\": \"UPST\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/2908.png\",\n          \"score\": \"9\",\n          \"homeAway\": \"away\",\n          \"winner\": false\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401847623\",\n      \"date\": \"2026-03-08T17:00Z\",\n      \"name\": \"South Carolina Upstate Spartans at Texas Longhorns\",\n      \"homeAway\": \"home\",\n      \"competitors\": [\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"13\",\n          \"homeAway\": \"home\",\n          \"winner\": true\n        },\n        {\n          \"team\": \"South Carolina Upstate Spartans\",\n          \"abbreviation\": \"UPST\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/2908.png\",\n          \"score\": \"3\",\n          \"homeAway\": \"away\",\n          \"winner\": false\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401847624\",\n      \"date\": \"2026-03-10T23:00Z\",\n      \"name\": \"Texas Longhorns at Texas State Bobcats\",\n      \"homeAway\": \"away\",\n      \"competitors\": [\n        {\n          \"team\": \"Texas State Bobcats\",\n          \"abbreviation\": \"TXST\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/326.png\",\n          \"score\": \"4\",\n          \"homeAway\": \"home\",\n          \"winner\": false\n        },\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"15\",\n          \"homeAway\": \"away\",\n          \"winner\": true\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401847525\",\n      \"date\": \"2026-03-13T23:30Z\",\n      \"name\": \"Ole Miss Rebels at Texas Longhorns\",\n      \"homeAway\": \"home\",\n      \"competitors\": [\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"8\",\n          \"homeAway\": \"home\",\n          \"winner\": false\n        },\n        {\n          \"team\": \"Ole Miss Rebels\",\n          \"abbreviation\": \"MISS\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/145.png\",\n          \"score\": \"9\",\n          \"homeAway\": \"away\",\n          \"winner\": true\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401847526\",\n      \"date\": \"2026-03-14T19:30Z\",\n      \"name\": \"Ole Miss Rebels at Texas Longhorns\",\n      \"homeAway\": \"home\",\n      \"competitors\": [\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"11\",\n          \"homeAway\": \"home\",\n          \"winner\": true\n        },\n        {\n          \"team\": \"Ole Miss Rebels\",\n          \"abbreviation\": \"MISS\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/145.png\",\n          \"score\": \"2\",\n          \"homeAway\": \"away\",\n          \"winner\": false\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401847527\",\n      \"date\": \"2026-03-15T18:00Z\",\n      \"name\": \"Ole Miss Rebels at Texas Longhorns\",\n      \"homeAway\": \"home\",\n      \"competitors\": [\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"8\",\n          \"homeAway\": \"home\",\n          \"winner\": true\n        },\n        {\n          \"team\": \"Ole Miss Rebels\",\n          \"abbreviation\": \"MISS\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/145.png\",\n          \"score\": \"2\",\n          \"homeAway\": \"away\",\n          \"winner\": false\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401847625\",\n      \"date\": \"2026-03-17T23:30Z\",\n      \"name\": \"Tarleton State Texans at Texas Longhorns\",\n      \"homeAway\": \"home\",\n      \"competitors\": [\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"1\",\n          \"homeAway\": \"home\",\n          \"winner\": false\n        },\n        {\n          \"team\": \"Tarleton State Texans\",\n          \"abbreviation\": \"TAR\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/2627.png\",\n          \"score\": \"6\",\n          \"homeAway\": \"away\",\n          \"winner\": true\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401847173\",\n      \"date\": \"2026-03-20T23:00Z\",\n      \"name\": \"Texas Longhorns at Auburn Tigers\",\n      \"homeAway\": \"away\",\n      \"competitors\": [\n        {\n          \"team\": \"Auburn Tigers\",\n          \"abbreviation\": \"AUB\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/2.png\",\n          \"score\": \"4\",\n          \"homeAway\": \"home\",\n          \"winner\": true\n        },\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"3\",\n          \"homeAway\": \"away\",\n          \"winner\": false\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401847174\",\n      \"date\": \"2026-03-21T23:00Z\",\n      \"name\": \"Texas Longhorns at Auburn Tigers\",\n      \"homeAway\": \"away\",\n      \"competitors\": [\n        {\n          \"team\": \"Auburn Tigers\",\n          \"abbreviation\": \"AUB\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/2.png\",\n          \"score\": \"6\",\n          \"homeAway\": \"home\",\n          \"winner\": false\n        },\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"7\",\n          \"homeAway\": \"away\",\n          \"winner\": true\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401847175\",\n      \"date\": \"2026-03-22T19:00Z\",\n      \"name\": \"Texas Longhorns at Auburn Tigers\",\n      \"homeAway\": \"away\",\n      \"competitors\": [\n        {\n          \"team\": \"Auburn Tigers\",\n          \"abbreviation\": \"AUB\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/2.png\",\n          \"score\": \"0\",\n          \"homeAway\": \"home\",\n          \"winner\": false\n        },\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"5\",\n          \"homeAway\": \"away\",\n          \"winner\": true\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401847626\",\n      \"date\": \"2026-03-24T23:30Z\",\n      \"name\": \"Texas Longhorns at Houston Cougars\",\n      \"homeAway\": \"away\",\n      \"competitors\": [\n        {\n          \"team\": \"Houston Cougars\",\n          \"abbreviation\": \"HOU\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/248.png\",\n          \"score\": \"9\",\n          \"homeAway\": \"home\",\n          \"winner\": true\n        },\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"7\",\n          \"homeAway\": \"away\",\n          \"winner\": false\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401847493\",\n      \"date\": \"2026-03-27T00:00Z\",\n      \"name\": \"Oklahoma Sooners at Texas Longhorns\",\n      \"homeAway\": \"home\",\n      \"competitors\": [\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"14\",\n          \"homeAway\": \"home\",\n          \"winner\": true\n        },\n        {\n          \"team\": \"Oklahoma Sooners\",\n          \"abbreviation\": \"OU\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/201.png\",\n          \"score\": \"0\",\n          \"homeAway\": \"away\",\n          \"winner\": false\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401847494\",\n      \"date\": \"2026-03-28T00:00Z\",\n      \"name\": \"Oklahoma Sooners at Texas Longhorns\",\n      \"homeAway\": \"home\",\n      \"competitors\": [\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"4\",\n          \"homeAway\": \"home\",\n          \"winner\": true\n        },\n        {\n          \"team\": \"Oklahoma Sooners\",\n          \"abbreviation\": \"OU\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/201.png\",\n          \"score\": \"3\",\n          \"homeAway\": \"away\",\n          \"winner\": false\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401847495\",\n      \"date\": \"2026-03-28T21:00Z\",\n      \"name\": \"Oklahoma Sooners at Texas Longhorns\",\n      \"homeAway\": \"home\",\n      \"competitors\": [\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"5\",\n          \"homeAway\": \"home\",\n          \"winner\": true\n        },\n        {\n          \"team\": \"Oklahoma Sooners\",\n          \"abbreviation\": \"OU\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/201.png\",\n          \"score\": \"4\",\n          \"homeAway\": \"away\",\n          \"winner\": false\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401847627\",\n      \"date\": \"2026-03-31T23:30Z\",\n      \"name\": \"Texas State Bobcats at Texas Longhorns\",\n      \"homeAway\": \"home\",\n      \"competitors\": [\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"10\",\n          \"homeAway\": \"home\",\n          \"winner\": true\n        },\n        {\n          \"team\": \"Texas State Bobcats\",\n          \"abbreviation\": \"TXST\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/326.png\",\n          \"score\": \"8\",\n          \"homeAway\": \"away\",\n          \"winner\": false\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401847562\",\n      \"date\": \"2026-04-02T23:00Z\",\n      \"name\": \"Texas Longhorns at South Carolina Gamecocks\",\n      \"homeAway\": \"away\",\n      \"competitors\": [\n        {\n          \"team\": \"South Carolina Gamecocks\",\n          \"abbreviation\": \"SC\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/2579.png\",\n          \"score\": \"9\",\n          \"homeAway\": \"home\",\n          \"winner\": true\n        },\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"1\",\n          \"homeAway\": \"away\",\n          \"winner\": false\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401847563\",\n      \"date\": \"2026-04-03T23:00Z\",\n      \"name\": \"Texas Longhorns at South Carolina Gamecocks\",\n      \"homeAway\": \"away\",\n      \"competitors\": [\n        {\n          \"team\": \"South Carolina Gamecocks\",\n          \"abbreviation\": \"SC\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/2579.png\",\n          \"score\": \"3\",\n          \"homeAway\": \"home\",\n          \"winner\": false\n        },\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"5\",\n          \"homeAway\": \"away\",\n          \"winner\": true\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401847564\",\n      \"date\": \"2026-04-04T18:00Z\",\n      \"name\": \"Texas Longhorns at South Carolina Gamecocks\",\n      \"homeAway\": \"away\",\n      \"competitors\": [\n        {\n          \"team\": \"South Carolina Gamecocks\",\n          \"abbreviation\": \"SC\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/2579.png\",\n          \"score\": \"1\",\n          \"homeAway\": \"home\",\n          \"winner\": false\n        },\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"4\",\n          \"homeAway\": \"away\",\n          \"winner\": true\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401847628\",\n      \"date\": \"2026-04-07T23:30Z\",\n      \"name\": \"Incarnate Word Cardinals at Texas Longhorns\",\n      \"homeAway\": \"home\",\n      \"competitors\": [\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"16\",\n          \"homeAway\": \"home\",\n          \"winner\": true\n        },\n        {\n          \"team\": \"Incarnate Word Cardinals\",\n          \"abbreviation\": \"UIW\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/2916.png\",\n          \"score\": \"4\",\n          \"homeAway\": \"away\",\n          \"winner\": false\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401847629\",\n      \"date\": \"2026-04-11T00:00Z\",\n      \"name\": \"Texas Longhorns at Texas A&M Aggies\",\n      \"homeAway\": \"away\",\n      \"competitors\": [\n        {\n          \"team\": \"Texas A&M Aggies\",\n          \"abbreviation\": \"TA&M\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/245.png\",\n          \"score\": \"9\",\n          \"homeAway\": \"home\",\n          \"winner\": true\n        },\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"8\",\n          \"homeAway\": \"away\",\n          \"winner\": false\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401847630\",\n      \"date\": \"2026-04-11T19:00Z\",\n      \"name\": \"Texas Longhorns at Texas A&M Aggies\",\n      \"homeAway\": \"away\",\n      \"competitors\": [\n        {\n          \"team\": \"Texas A&M Aggies\",\n          \"abbreviation\": \"TA&M\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/245.png\",\n          \"score\": \"11\",\n          \"homeAway\": \"home\",\n          \"winner\": true\n        },\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"4\",\n          \"homeAway\": \"away\",\n          \"winner\": false\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401847632\",\n      \"date\": \"2026-04-14T23:30Z\",\n      \"name\": \"Texas A&M-Corpus Christi Islanders at Texas Longhorns\",\n      \"homeAway\": \"home\",\n      \"competitors\": [\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"14\",\n          \"homeAway\": \"home\",\n          \"winner\": true\n        },\n        {\n          \"team\": \"Texas A&M-Corpus Christi Islanders\",\n          \"abbreviation\": \"AMCC\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/357.png\",\n          \"score\": \"7\",\n          \"homeAway\": \"away\",\n          \"winner\": false\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401847080\",\n      \"date\": \"2026-04-17T23:30Z\",\n      \"name\": \"Alabama Crimson Tide at Texas Longhorns\",\n      \"homeAway\": \"home\",\n      \"competitors\": [\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"10\",\n          \"homeAway\": \"home\",\n          \"winner\": true\n        },\n        {\n          \"team\": \"Alabama Crimson Tide\",\n          \"abbreviation\": \"ALA\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/333.png\",\n          \"score\": \"2\",\n          \"homeAway\": \"away\",\n          \"winner\": false\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401847081\",\n      \"date\": \"2026-04-18T17:00Z\",\n      \"name\": \"Alabama Crimson Tide at Texas Longhorns\",\n      \"homeAway\": \"home\",\n      \"competitors\": [\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"3\",\n          \"homeAway\": \"home\",\n          \"winner\": true\n        },\n        {\n          \"team\": \"Alabama Crimson Tide\",\n          \"abbreviation\": \"ALA\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/333.png\",\n          \"score\": \"1\",\n          \"homeAway\": \"away\",\n          \"winner\": false\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401847082\",\n      \"date\": \"2026-04-19T18:00Z\",\n      \"name\": \"Alabama Crimson Tide at Texas Longhorns\",\n      \"homeAway\": \"home\",\n      \"competitors\": [\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"1\",\n          \"homeAway\": \"home\",\n          \"winner\": false\n        },\n        {\n          \"team\": \"Alabama Crimson Tide\",\n          \"abbreviation\": \"ALA\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/333.png\",\n          \"score\": \"2\",\n          \"homeAway\": \"away\",\n          \"winner\": true\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401847634\",\n      \"date\": \"2026-04-24T23:00Z\",\n      \"name\": \"Texas Longhorns at Vanderbilt Commodores\",\n      \"homeAway\": \"away\",\n      \"competitors\": [\n        {\n          \"team\": \"Vanderbilt Commodores\",\n          \"abbreviation\": \"VAN\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/238.png\",\n          \"score\": \"4\",\n          \"homeAway\": \"home\",\n          \"winner\": false\n        },\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"11\",\n          \"homeAway\": \"away\",\n          \"winner\": true\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401847635\",\n      \"date\": \"2026-04-26T00:00Z\",\n      \"name\": \"Texas Longhorns at Vanderbilt Commodores\",\n      \"homeAway\": \"away\",\n      \"competitors\": [\n        {\n          \"team\": \"Vanderbilt Commodores\",\n          \"abbreviation\": \"VAN\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/238.png\",\n          \"score\": \"6\",\n          \"homeAway\": \"home\",\n          \"winner\": true\n        },\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"0\",\n          \"homeAway\": \"away\",\n          \"winner\": false\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401847636\",\n      \"date\": \"2026-04-26T17:00Z\",\n      \"name\": \"Texas Longhorns at Vanderbilt Commodores\",\n      \"homeAway\": \"away\",\n      \"competitors\": [\n        {\n          \"team\": \"Vanderbilt Commodores\",\n          \"abbreviation\": \"VAN\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/238.png\",\n          \"score\": \"3\",\n          \"homeAway\": \"home\",\n          \"winner\": false\n        },\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"4\",\n          \"homeAway\": \"away\",\n          \"winner\": true\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401847637\",\n      \"date\": \"2026-04-28T23:30Z\",\n      \"name\": \"Sam Houston Bearkats at Texas Longhorns\",\n      \"homeAway\": \"home\",\n      \"competitors\": [\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"15\",\n          \"homeAway\": \"home\",\n          \"winner\": true\n        },\n        {\n          \"team\": \"Sam Houston Bearkats\",\n          \"abbreviation\": \"SHSU\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/2534.png\",\n          \"score\": \"14\",\n          \"homeAway\": \"away\",\n          \"winner\": false\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401847419\",\n      \"date\": \"2026-05-02T00:30Z\",\n      \"name\": \"Mississippi State Bulldogs at Texas Longhorns\",\n      \"homeAway\": \"home\",\n      \"competitors\": [\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"3\",\n          \"homeAway\": \"home\",\n          \"winner\": true\n        },\n        {\n          \"team\": \"Mississippi State Bulldogs\",\n          \"abbreviation\": \"MSST\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/344.png\",\n          \"score\": \"1\",\n          \"homeAway\": \"away\",\n          \"winner\": false\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401847420\",\n      \"date\": \"2026-05-02T19:30Z\",\n      \"name\": \"Mississippi State Bulldogs at Texas Longhorns\",\n      \"homeAway\": \"home\",\n      \"competitors\": [\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"4\",\n          \"homeAway\": \"home\",\n          \"winner\": false\n        },\n        {\n          \"team\": \"Mississippi State Bulldogs\",\n          \"abbreviation\": \"MSST\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/344.png\",\n          \"score\": \"7\",\n          \"homeAway\": \"away\",\n          \"winner\": true\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401847421\",\n      \"date\": \"2026-05-03T18:00Z\",\n      \"name\": \"Mississippi State Bulldogs at Texas Longhorns\",\n      \"homeAway\": \"home\",\n      \"competitors\": [\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"11\",\n          \"homeAway\": \"home\",\n          \"winner\": true\n        },\n        {\n          \"team\": \"Mississippi State Bulldogs\",\n          \"abbreviation\": \"MSST\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/344.png\",\n          \"score\": \"6\",\n          \"homeAway\": \"away\",\n          \"winner\": false\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401847638\",\n      \"date\": \"2026-05-05T23:30Z\",\n      \"name\": \"UTSA Roadrunners at Texas Longhorns\",\n      \"homeAway\": \"home\",\n      \"competitors\": [\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"11\",\n          \"homeAway\": \"home\",\n          \"winner\": true\n        },\n        {\n          \"team\": \"UTSA Roadrunners\",\n          \"abbreviation\": \"UTSA\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/2636.png\",\n          \"score\": \"8\",\n          \"homeAway\": \"away\",\n          \"winner\": false\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401847605\",\n      \"date\": \"2026-05-08T22:30Z\",\n      \"name\": \"Texas Longhorns at Tennessee Volunteers\",\n      \"homeAway\": \"away\",\n      \"competitors\": [\n        {\n          \"team\": \"Tennessee Volunteers\",\n          \"abbreviation\": \"TENN\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/2633.png\",\n          \"score\": \"5\",\n          \"homeAway\": \"home\",\n          \"winner\": true\n        },\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"1\",\n          \"homeAway\": \"away\",\n          \"winner\": false\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401847606\",\n      \"date\": \"2026-05-09T22:00Z\",\n      \"name\": \"Texas Longhorns at Tennessee Volunteers\",\n      \"homeAway\": \"away\",\n      \"competitors\": [\n        {\n          \"team\": \"Tennessee Volunteers\",\n          \"abbreviation\": \"TENN\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/2633.png\",\n          \"score\": \"14\",\n          \"homeAway\": \"home\",\n          \"winner\": true\n        },\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"9\",\n          \"homeAway\": \"away\",\n          \"winner\": false\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401847607\",\n      \"date\": \"2026-05-10T16:00Z\",\n      \"name\": \"Texas Longhorns at Tennessee Volunteers\",\n      \"homeAway\": \"away\",\n      \"competitors\": [\n        {\n          \"team\": \"Tennessee Volunteers\",\n          \"abbreviation\": \"TENN\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/2633.png\",\n          \"score\": \"6\",\n          \"homeAway\": \"home\",\n          \"winner\": false\n        },\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"13\",\n          \"homeAway\": \"away\",\n          \"winner\": true\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401847467\",\n      \"date\": \"2026-05-14T23:30Z\",\n      \"name\": \"Missouri Tigers at Texas Longhorns\",\n      \"homeAway\": \"home\",\n      \"competitors\": [\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"6\",\n          \"homeAway\": \"home\",\n          \"winner\": true\n        },\n        {\n          \"team\": \"Missouri Tigers\",\n          \"abbreviation\": \"MIZ\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/142.png\",\n          \"score\": \"3\",\n          \"homeAway\": \"away\",\n          \"winner\": false\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401847468\",\n      \"date\": \"2026-05-15T23:30Z\",\n      \"name\": \"Missouri Tigers at Texas Longhorns\",\n      \"homeAway\": \"home\",\n      \"competitors\": [\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"11\",\n          \"homeAway\": \"home\",\n          \"winner\": true\n        },\n        {\n          \"team\": \"Missouri Tigers\",\n          \"abbreviation\": \"MIZ\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/142.png\",\n          \"score\": \"6\",\n          \"homeAway\": \"away\",\n          \"winner\": false\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401847469\",\n      \"date\": \"2026-05-16T19:00Z\",\n      \"name\": \"Missouri Tigers at Texas Longhorns\",\n      \"homeAway\": \"home\",\n      \"competitors\": [\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"12\",\n          \"homeAway\": \"home\",\n          \"winner\": true\n        },\n        {\n          \"team\": \"Missouri Tigers\",\n          \"abbreviation\": \"MIZ\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/142.png\",\n          \"score\": \"7\",\n          \"homeAway\": \"away\",\n          \"winner\": false\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401869486\",\n      \"date\": \"2026-05-22T21:32Z\",\n      \"name\": \"Arkansas Razorbacks at Texas Longhorns\",\n      \"homeAway\": \"home\",\n      \"competitors\": [\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"1\",\n          \"homeAway\": \"home\",\n          \"winner\": false\n        },\n        {\n          \"team\": \"Arkansas Razorbacks\",\n          \"abbreviation\": \"ARK\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/8.png\",\n          \"score\": \"8\",\n          \"homeAway\": \"away\",\n          \"winner\": true\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": null\n    },\n    {\n      \"id\": \"401873763\",\n      \"date\": \"2026-05-29T17:00Z\",\n      \"name\": \"Holy Cross Crusaders at Texas Longhorns\",\n      \"homeAway\": \"home\",\n      \"competitors\": [\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"19\",\n          \"homeAway\": \"home\",\n          \"winner\": true\n        },\n        {\n          \"team\": \"Holy Cross Crusaders\",\n          \"abbreviation\": \"HC\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/107.png\",\n          \"score\": \"1\",\n          \"homeAway\": \"away\",\n          \"winner\": false\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": \"UFCU Disch-Falk Field\"\n    },\n    {\n      \"id\": \"401873829\",\n      \"date\": \"2026-05-30T23:00Z\",\n      \"name\": \"Texas Longhorns at Tarleton State Texans\",\n      \"homeAway\": \"away\",\n      \"competitors\": [\n        {\n          \"team\": \"Tarleton State Texans\",\n          \"abbreviation\": \"TAR\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/2627.png\",\n          \"score\": \"2\",\n          \"homeAway\": \"home\",\n          \"winner\": false\n        },\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"16\",\n          \"homeAway\": \"away\",\n          \"winner\": true\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": \"UFCU Disch-Falk Field\"\n    },\n    {\n      \"id\": \"401873832\",\n      \"date\": \"2026-05-31T22:00Z\",\n      \"name\": \"Texas Longhorns at UC Santa Barbara Gauchos\",\n      \"homeAway\": \"away\",\n      \"competitors\": [\n        {\n          \"team\": \"UC Santa Barbara Gauchos\",\n          \"abbreviation\": \"UCSB\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/2540.png\",\n          \"score\": \"4\",\n          \"homeAway\": \"home\",\n          \"winner\": false\n        },\n        {\n          \"team\": \"Texas Longhorns\",\n          \"abbreviation\": \"TEX\",\n          \"logo\": \"https://a.espncdn.com/i/teamlogos/ncaa/500/251.png\",\n          \"score\": \"6\",\n          \"homeAway\": \"away\",\n          \"winner\": true\n        }\n      ],\n      \"status\": {\n        \"completed\": true,\n        \"description\": \"Final\"\n      },\n      \"venue\": \"UFCU Disch-Falk Field\"\n    }\n  ],\n  \"team\": \"texas\",\n  \"meta\": {\n    \"source\": \"espn\",\n    \"fetched_at\": \"2026-11-21T22:51:06.538Z\",\n    \"timezone\": \"America/Chicago\"\n  }\n}"
+          }
+        ]
+      }
+    },
+    {
+      "toolName": "bsi_get_rankings",
+      "arguments": {},
+      "endpoint": "https://sabermetrics.blazesportsintel.com/mcp",
+      "retrievedAt": "2026-11-21T22:51:08.814Z",
+      "providerMeta": {
+        "source": "ncaa.com",
+        "fetched_at": "2026-11-21T22:51:08.557Z",
+        "timezone": "America/Chicago"
+      },
+      "data": {
+        "rankings": [
+          {
+            "rank": 1,
+            "previousRank": null,
+            "team": "Oklahoma",
+            "record": "43-23"
+          },
+          {
+            "rank": 2,
+            "previousRank": 4,
+            "team": "North Carolina",
+            "record": "54-14"
+          },
+          {
+            "rank": 3,
+            "previousRank": 3,
+            "team": "Georgia",
+            "record": "53-14"
+          },
+          {
+            "rank": 4,
+            "previousRank": 9,
+            "team": "West Virginia",
+            "record": "47-17"
+          },
+          {
+            "rank": 5,
+            "previousRank": 6,
+            "team": "Texas",
+            "record": "46-15"
+          },
+          {
+            "rank": 6,
+            "previousRank": 16,
+            "team": "Alabama",
+            "record": "42-21"
+          },
+          {
+            "rank": 7,
+            "previousRank": 18,
+            "team": "Ole Miss",
+            "record": "41-23"
+          },
+          {
+            "rank": 8,
+            "previousRank": null,
+            "team": "Troy",
+            "record": "39-32"
+          },
+          {
+            "rank": 9,
+            "previousRank": 5,
+            "team": "Auburn",
+            "record": "42-22"
+          },
+          {
+            "rank": 10,
+            "previousRank": 2,
+            "team": "Georgia Tech",
+            "record": "50-11"
+          },
+          {
+            "rank": 11,
+            "previousRank": 1,
+            "team": "UCLA",
+            "record": "52-8"
+          },
+          {
+            "rank": 12,
+            "previousRank": 13,
+            "team": "Kansas",
+            "record": "45-18"
+          },
+          {
+            "rank": 13,
+            "previousRank": 15,
+            "team": "Oregon",
+            "record": "43-18"
+          },
+          {
+            "rank": 14,
+            "previousRank": 17,
+            "team": "Mississippi State",
+            "record": "43-19"
+          },
+          {
+            "rank": 15,
+            "previousRank": null,
+            "team": "Southern California",
+            "record": "48-18"
+          },
+          {
+            "rank": 16,
+            "previousRank": 10,
+            "team": "Florida",
+            "record": "41-21"
+          },
+          {
+            "rank": 17,
+            "previousRank": 11,
+            "team": "Texas A&M",
+            "record": "41-16"
+          },
+          {
+            "rank": 18,
+            "previousRank": 12,
+            "team": "Florida State",
+            "record": "40-19"
+          },
+          {
+            "rank": 19,
+            "previousRank": null,
+            "team": "Cal Poly",
+            "record": "39-24"
+          },
+          {
+            "rank": 20,
+            "previousRank": null,
+            "team": "St. John's",
+            "record": "36-26"
+          },
+          {
+            "rank": 21,
+            "previousRank": null,
+            "team": "Little Rock",
+            "record": "39-28"
+          },
+          {
+            "rank": 22,
+            "previousRank": 8,
+            "team": "Oregon State",
+            "record": "45-14"
+          },
+          {
+            "rank": 23,
+            "previousRank": 14,
+            "team": "Arkansas",
+            "record": "41-22"
+          },
+          {
+            "rank": 24,
+            "previousRank": 7,
+            "team": "Southern Miss",
+            "record": "44-17"
+          },
+          {
+            "rank": 25,
+            "previousRank": 19,
+            "team": "Oklahoma State",
+            "record": "39-22"
+          }
+        ],
+        "poll": "D1Baseball Top 25 · via NCAA.com",
+        "release": "Through Games JUN 23, 2026",
+        "meta": {
+          "source": "ncaa.com",
+          "fetched_at": "2026-11-21T22:51:08.557Z",
+          "timezone": "America/Chicago"
+        }
+      },
+      "rawResult": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"rankings\": [\n    {\n      \"rank\": 1,\n      \"previousRank\": null,\n      \"team\": \"Oklahoma\",\n      \"record\": \"43-23\"\n    },\n    {\n      \"rank\": 2,\n      \"previousRank\": 4,\n      \"team\": \"North Carolina\",\n      \"record\": \"54-14\"\n    },\n    {\n      \"rank\": 3,\n      \"previousRank\": 3,\n      \"team\": \"Georgia\",\n      \"record\": \"53-14\"\n    },\n    {\n      \"rank\": 4,\n      \"previousRank\": 9,\n      \"team\": \"West Virginia\",\n      \"record\": \"47-17\"\n    },\n    {\n      \"rank\": 5,\n      \"previousRank\": 6,\n      \"team\": \"Texas\",\n      \"record\": \"46-15\"\n    },\n    {\n      \"rank\": 6,\n      \"previousRank\": 16,\n      \"team\": \"Alabama\",\n      \"record\": \"42-21\"\n    },\n    {\n      \"rank\": 7,\n      \"previousRank\": 18,\n      \"team\": \"Ole Miss\",\n      \"record\": \"41-23\"\n    },\n    {\n      \"rank\": 8,\n      \"previousRank\": null,\n      \"team\": \"Troy\",\n      \"record\": \"39-32\"\n    },\n    {\n      \"rank\": 9,\n      \"previousRank\": 5,\n      \"team\": \"Auburn\",\n      \"record\": \"42-22\"\n    },\n    {\n      \"rank\": 10,\n      \"previousRank\": 2,\n      \"team\": \"Georgia Tech\",\n      \"record\": \"50-11\"\n    },\n    {\n      \"rank\": 11,\n      \"previousRank\": 1,\n      \"team\": \"UCLA\",\n      \"record\": \"52-8\"\n    },\n    {\n      \"rank\": 12,\n      \"previousRank\": 13,\n      \"team\": \"Kansas\",\n      \"record\": \"45-18\"\n    },\n    {\n      \"rank\": 13,\n      \"previousRank\": 15,\n      \"team\": \"Oregon\",\n      \"record\": \"43-18\"\n    },\n    {\n      \"rank\": 14,\n      \"previousRank\": 17,\n      \"team\": \"Mississippi State\",\n      \"record\": \"43-19\"\n    },\n    {\n      \"rank\": 15,\n      \"previousRank\": null,\n      \"team\": \"Southern California\",\n      \"record\": \"48-18\"\n    },\n    {\n      \"rank\": 16,\n      \"previousRank\": 10,\n      \"team\": \"Florida\",\n      \"record\": \"41-21\"\n    },\n    {\n      \"rank\": 17,\n      \"previousRank\": 11,\n      \"team\": \"Texas A&M\",\n      \"record\": \"41-16\"\n    },\n    {\n      \"rank\": 18,\n      \"previousRank\": 12,\n      \"team\": \"Florida State\",\n      \"record\": \"40-19\"\n    },\n    {\n      \"rank\": 19,\n      \"previousRank\": null,\n      \"team\": \"Cal Poly\",\n      \"record\": \"39-24\"\n    },\n    {\n      \"rank\": 20,\n      \"previousRank\": null,\n      \"team\": \"St. John's\",\n      \"record\": \"36-26\"\n    },\n    {\n      \"rank\": 21,\n      \"previousRank\": null,\n      \"team\": \"Little Rock\",\n      \"record\": \"39-28\"\n    },\n    {\n      \"rank\": 22,\n      \"previousRank\": 8,\n      \"team\": \"Oregon State\",\n      \"record\": \"45-14\"\n    },\n    {\n      \"rank\": 23,\n      \"previousRank\": 14,\n      \"team\": \"Arkansas\",\n      \"record\": \"41-22\"\n    },\n    {\n      \"rank\": 24,\n      \"previousRank\": 7,\n      \"team\": \"Southern Miss\",\n      \"record\": \"44-17\"\n    },\n    {\n      \"rank\": 25,\n      \"previousRank\": 19,\n      \"team\": \"Oklahoma State\",\n      \"record\": \"39-22\"\n    }\n  ],\n  \"poll\": \"D1Baseball Top 25 · via NCAA.com\",\n  \"release\": \"Through Games JUN 23, 2026\",\n  \"meta\": {\n    \"source\": \"ncaa.com\",\n    \"fetched_at\": \"2026-11-21T22:51:08.557Z\",\n    \"timezone\": \"America/Chicago\"\n  }\n}"
+          }
+        ]
+      }
+    }
+  ],
+  "failures": [],
+  "warnings": [
+    "Retrieval time does not establish the season or statistical coverage date. No conference strength, win probability, NIL value or advanced metric is inferred from missing inputs.",
+    "The standings row does not supply an explicit season; the current calendar year was not substituted.",
+    "Conference wins or losses are unavailable; percentages were not reverse-engineered into a record."
+  ]
+}

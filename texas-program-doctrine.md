@@ -1,93 +1,37 @@
 # Texas Program Doctrine
 
-This file is the stable identity layer for Texas Longhorns baseball intelligence. Use it for framing, context, and program knowledge — not as a substitute for live data.
+Texas baseball is evaluated against national contention: building a complete team, developing players and sustaining postseason opportunity. This is an editorial perspective for interpreting evidence. It is not a forecasting model or a substitute for the requested season's results.
 
-## Program Identity
+## Program context
 
-Texas baseball operates under a national championship standard. Six College World Series titles (1949, 1950, 1975, 1983, 2002, 2005), 38 CWS appearances through 2025. The expectation is not "make a regional" — it's host a regional, win the super regional, compete in Omaha. Anything less demands an explanation.
+Use the local [championship history](references/championship-history.json), [coaching philosophy](references/coaching-philosophy.json) and [program standards](references/program-standards.json) as dated reference material. Verify current staff, roster, venue details and cumulative program totals against [Texas Athletics](https://texaslonghorns.com/sports/baseball) before publishing them. Historical interpretation should identify its era and supporting evidence.
 
-UFCU Disch-Falk Field is one of the best venues in the sport. 7,273 capacity, first-class player development facility, recruiting showpiece. The Austin market — warm weather, major metro, UT brand — creates structural advantages in prospect attraction that persist across coaching eras and conference membership.
+Texas's first SEC baseball season was **2025**; its 2024 baseball season was in the Big 12. See [Texas Athletics' 2025 SEC schedule announcement](https://texaslonghorns.com/news/2024/9/12/baseball-announces-2025-sec-schedule). Conference identity supplies context. It does not, on its own, measure opponent strength or justify adjusting a player's statistics.
 
-## Coaching Eras
+## Questions the doctrine should sharpen
 
-**Augie Garrido (1997-2016):** Two national titles (2002, 2005). Program identity builder. Garrido's Texas was mental toughness, competitive fire, and the belief that Texas should be the standard in college baseball. His decline years (2012-2016) created a development debt the program spent years repaying.
+| Research question | Evidence needed | Interpretation boundary |
+|---|---|---|
+| Is the pitching staff carrying the team? | Same-season innings, earned runs, strikeouts, walks, workload and opponents | Record sample size and distinguish starters from relief work |
+| Is offensive production sustainable? | Counting inputs, opportunities, opponent context and the selected metric's calibration | A small sample or favorable schedule does not establish a stable skill change |
+| Where does roster depth look thin? | Attributed roster captures, verified roles and available playing-time evidence | A missing player or changed role does not establish a transfer, injury or eligibility decision |
+| How does this team compare with an earlier era? | Comparable measures, season cutoffs and documented context | No automatic SEC multiplier establishes equivalence |
+| What merits a closer look? | Observations compared with a declared editorial benchmark | A review flag is not a championship probability or personnel instruction |
 
-**David Pierce (2017-2024):** Rebuilt through recruiting and player development. Pierce's fingerprint: pitching depth, defensive positioning, competitive at-bats. Took Texas to the 2022 College World Series. The program stabilized during his tenure but the championship standard remained the measuring stick — CWS appearances were expected, not celebrated as endpoints.
+## Evidence before interpretation
 
-**Pierce-era evaluation lens (retrospective):** His tenure is judged by draft output, development trajectory of recruited classes, and postseason advancement — not regular-season record alone. A 40-win season that ended in regionals was not the same as a 35-win season that reached Omaha. Pierce left a program with a solid foundation but without a title in eight seasons.
+1. Identify the team, season and statistical cutoff.
+2. Preserve the source, provider fetch time and client retrieval time separately.
+3. State observations first. Explain which comparison or calculation supports each inference.
+4. Identify missing inputs and competing explanations before a recommendation.
+5. Use a recommendation to specify the next useful observation or review, not to invent scouting certainty.
 
-**Jim Schlossnagle (2025-present):** Arrived from Texas A&M (2021-2024), where he made two CWS appearances. Previously built TCU into a national power with five CWS appearances. Prior to TCU, head coach at UNLV. Schlossnagle represents proven championship infrastructure being imported directly into the Texas program.
+The default collector can gather standings, schedules and rankings through the discovered public BSI catalog. It does not expose every historical `cbb_*` tool described in older versions of this file. Richer team inputs can be supplied through the legacy injected adapter only when the caller has a provider that satisfies its full contract. See [data sources](docs/data-sources.md).
 
-**2025 first season:** 44-14 overall record. SEC regular season title. Named SEC Coach of the Year. Immediate validation of the hire — the program responded to a more demanding competitive standard.
+## Benchmarks and voice
 
-**2026 early returns:** 12-0 start through early March. Career milestone reached: 1,000+ Division I wins (1,002-469 overall career record). The pace of transformation has been faster than any realistic projection.
+The “National Championship Standard” values in `program-standards.json` are configurable editorial review policy. Their names express the program's ambition; no calibration dataset establishes them as title-winning cutoffs. Report their role explicitly whenever they are used.
 
-**Schlossnagle philosophy:** Pitching wins championships — build the deepest staff in the SEC. The transfer portal is a weapon: identify specific roster needs and fill them with proven, experienced talent. Compete for Omaha every year — not in five-year plans, now. Mental toughness through relentless internal competition for playing time. Recruit the best arms in Texas and supplement nationally through the portal.
+Write with a clear point of view and proportionate confidence. Make the stakes legible through the sport itself: opportunities created, decisions made, execution observed and evidence still needed. Do not manufacture firsthand observation, private conversations, causal explanations or predictions to strengthen the story.
 
-**Schlossnagle-era evaluation lens:** Judge the program by speed of transformation, portal acquisition quality relative to positional need, and whether the championship standard moves from aspiration to executable reality. The CWS run history at TCU (5 appearances) and Texas A&M (2 appearances) is the baseline expectation, not an aspirational ceiling.
-
-## Roster Construction
-
-**Development model:** Texas recruits elite Texas high school talent and develops it. The in-state pipeline is the foundation — Texas produces more D1 baseball talent per capita than nearly any state. The program's competitive advantage starts with geography.
-
-**Portal strategy:** Selective. Texas uses the portal to fill specific roster gaps, not to rebuild annually. Portal additions should complement the development core, not replace it. Evaluate portal acquisitions by what gap they fill and whether they fit the competitive-at-bat, pitching-depth identity.
-
-**Draft attrition management:** High-end Texas recruits get drafted. This is a feature, not a bug — it means the recruiting pipeline is working. Evaluate each class knowing that 2-3 top prospects may sign pro contracts. The question is whether the program has depth behind the departures.
-
-## SEC-Era Recalibration
-
-Texas joined the SEC in 2024. This changes three things and leaves three things alone.
-
-**What changes:**
-
-- **Schedule intensity:** SEC weekend series are the hardest in the sport, every week. A .500 conference record in the SEC is not a .500 conference record in the Big 12. Use `cbb_conference_strength` to quantify the difference.
-- **Competition for Omaha bids:** The SEC routinely sends 8-10 teams to the NCAA tournament. Texas is no longer the presumptive conference front-runner — they must earn it against deeper competition.
-- **Recruiting competition:** SEC membership puts Texas in direct recruiting battles with LSU, Vanderbilt, Florida, Arkansas, and Mississippi State for the best Southern talent. The in-state pipeline matters even more because national recruiting gets harder.
-
-**What stays:**
-
-- **Facility edge:** UFCU Disch-Falk remains one of the best venues in college baseball. SEC membership doesn't change the physical plant advantage.
-- **In-state talent:** Texas high school baseball produces at an elite level regardless of conference affiliation. The pipeline is geographic, not conference-dependent.
-- **Omaha standard:** The expectation was always national championship contention. SEC membership raises the difficulty but not the standard.
-
-## Season Calendar Anchors
-
-| Phase | Window | What to Evaluate | Key MCP Tools |
-|-------|--------|-----------------|---------------|
-| Fall workouts | Sep-Nov | Roster composition, position battles, new arrivals | `cbb_player_lookup`, `cbb_team_analytics` (prior year baseline) |
-| Preseason | Dec-Jan | Projected lineup, rotation depth, preseason rankings | `cbb_conference_strength`, `cbb://teams` |
-| Opening weekend | Feb Wk 1 | First live data, lineup construction, bullpen usage | `cbb_team_analytics`, `cbb_player_stats` |
-| Non-conference | Feb-Mar | Sample building, stat stabilization, identity formation | `cbb_leaderboard`, `cbb_park_factor`, `cbb_havf_player` |
-| SEC play opens | Mid-Mar | Conference crucible begins — every series matters | `cbb_conference_strength`, `cbb_mmi_game` |
-| SEC grind | Apr | Roster depth tested, midweek management, fatigue patterns | `cbb_team_analytics`, `cbb_compute_batting` (what-ifs) |
-| Selection Sunday | Late May | Resume evaluation, RPI, tournament seeding | `cbb_conference_strength`, `cbb_leaderboard` |
-| Regionals/Supers | Jun Wk 1-2 | Short-series pitching, bullpen leverage, clutch hitting | `cbb_mmi_game`, `cbb_havf_player` |
-| College World Series | Jun Wk 3+ | Peak performance, matchup advantage, program moment | All tools in combination |
-
-## Historical Baselines
-
-Program expectations — what "normal" looks like for Texas baseball:
-
-| Metric | Expected Range | Red Flag Below | Elite Above |
-|--------|---------------|---------------|-------------|
-| Team ERA | 3.50-4.20 | 4.50+ | 3.20- |
-| Team OPS | .750-.830 | .700- | .850+ |
-| BB% (pitching) | 8-11% | 13%+ | 7%- |
-| K% (pitching) | 22-28% | 18%- | 30%+ |
-| Run differential/game | +1.5-2.5 | +0.5- | +3.0+ |
-| Fielding % | .970-.978 | .965- | .980+ |
-| Regional hosting | Expected | Failure to host | #1 national seed |
-
-These baselines are Big 12-era calibrated. SEC competition may compress the expected ranges — use `cbb_conference_strength` to adjust expectations in real time.
-
-## Offensive Identity Standards
-
-Texas at its best plays competitive at-bats: high pitch counts per plate appearance, disciplined chase rates, situational hitting with runners in scoring position. Power is welcome but not the identity — contact quality and plate discipline are the foundation.
-
-Evaluate the lineup by: K/BB ratio, two-strike approach quality, RISP performance relative to overall line, and whether the lineup manufactures runs or depends on extra-base hits.
-
-## Pitching and Defensive Identity
-
-Schlossnagle-era Texas is built on pitching depth — a Friday starter capable of going deep, a Saturday arm who competes, and enough bullpen pieces to cover the back end. The program values command over pure stuff, though the best Texas arms have both. Schlossnagle's emphasis on the deepest staff in the SEC elevates this from a preference to a non-negotiable program identity.
-
-Defensive positioning and up-the-middle stability (C, SS, CF) matter more than corner athleticism. An elite defensive middle infield changes the pitching staff's effectiveness.
+See [analytical boundaries](docs/analytical-frameworks.md), [audience guidance](docs/audiences.md) and [implemented workflows](docs/WORKFLOWS.md).

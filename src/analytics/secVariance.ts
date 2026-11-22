@@ -1,12 +1,8 @@
 /**
- * Legacy scenario multipliers (uncalibrated; not a prediction model).
- *
- * Architecture constraint: The 2024 SEC transition is the primary variance
- * factor. All predictive or comparative logic must weight SEC-era difficulty
- * differently from Big 12 historical data.
- *
- * Baseline era: Big 12 (1996–2024) — multiplier 1.0.
- * SEC era (2025+): multiplier 1.35, reflecting the elevated competition level.
+ * Legacy scenario multipliers retained for API compatibility.
+ * These hand-set values are uncalibrated and do not measure conference strength.
+ * Texas's first SEC baseball season was 2025; default reports preserve that
+ * historical context without using these factors to adjust observed results.
  */
 
 import type { ConferenceEra, SECVarianceFactor } from './types';
